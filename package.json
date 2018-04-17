@@ -1,0 +1,11 @@
+{
+  "name": "savefileexplorer",
+  "version": "1.0.0",
+  "description": "Opens file explorer dialog and saves a file that is encoded on base 64",
+  "main": "www/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Irving Rueda",
+  "license": "ISC"
+}

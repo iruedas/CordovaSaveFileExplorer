@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        id="save-file-explorer" version="0.0.1">
+  <name>Save File Explorer</name>
+  <description>Selects a folder with windows explorer and saves an 64 byte encoded file</description>
+  <license>Apache 2.0</license>
+  <keywords>cordova,device</keywords>
+  <js-module src="www/index.js" name="saveFileExplorer">
+    <clobbers target="window.device" />
+  </js-module>
+  <platform name="windows">
+    <js-module src="src/windows/appStartPluginProxy.js" name="AppStartProxy">
+      <merges target="" />
+    </js-module>	
+    <framework src="src/windows/SaveFileExplorer.csproj" type="projectReference" custom="true" versions="10.*" />	
+  </platform>
+</plugin>
