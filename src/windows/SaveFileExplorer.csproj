@@ -104,8 +104,7 @@
     <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
   <PropertyGroup>
-    <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
-    <RestorePackagesPath>$(SolutionDir)Packages</RestorePackagesPath>
+    <RestoreProjectStyle>PackageReference</RestoreProjectStyle>    
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="BusinessEntities\Response.cs" />
