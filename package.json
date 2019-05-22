@@ -1,5 +1,5 @@
 {
-  "name": "savefileexplorer",
+  "name": "save-file-explorer",
   "version": "1.0.2",
   "description": "Opens file explorer dialog and saves a file that is encoded on base 64",
   "main": "www/index.js",
