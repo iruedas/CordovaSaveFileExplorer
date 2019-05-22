@@ -1,0 +1,329 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>System.ServiceModel.Security</name>
+  </assembly>
+  <members>
+    <member name="T:System.ServiceModel.DnsEndpointIdentity">
+      <summary>Spécifie l'identité DNS du serveur.</summary>
+    </member>
+    <member name="M:System.ServiceModel.DnsEndpointIdentity.#ctor(System.String)">
+      <summary>Initialise une nouvelle instance de cette classe  à partir d'un nom DNS.</summary>
+      <param name="dnsName">Nom DNS.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="dnsName" /> a la valeur null.</exception>
+      <exception cref="T:System.ArgumentException">Le type de revendication de <paramref name="dnsName" /> n'est pas <see cref="P:System.IdentityModel.Claims.ClaimTypes.Dns" />.</exception>
+    </member>
+    <member name="T:System.ServiceModel.MessageSecurityVersion">
+      <summary>Classe de conteneur abstraite qui, lorsqu'elle est implémentée par plusieurs de ses propriétés statiques, contient des informations de version pour les composants de sécurité. </summary>
+    </member>
+    <member name="P:System.ServiceModel.MessageSecurityVersion.BasicSecurityProfileVersion">
+      <summary>Obtient les informations de version pour Basic Security Profile.</summary>
+      <returns>Objet <see cref="T:System.ServiceModel.Security.BasicSecurityProfileVersion" />.</returns>
+    </member>
+    <member name="P:System.ServiceModel.MessageSecurityVersion.SecureConversationVersion">
+      <summary>Obtient la version de WS-SecureConversation qui correspond à la version de la sécurité de message.</summary>
+      <returns>Objet <see cref="T:System.ServiceModel.Security.SecureConversationVersion" /> qui correspond à la version de sécurité du message.</returns>
+    </member>
+    <member name="P:System.ServiceModel.MessageSecurityVersion.SecurityPolicyVersion">
+      <summary>Obtient la version de WS-SecurityPolicy qui correspond à la version de la sécurité de message.</summary>
+      <returns>Objet <see cref="T:System.ServiceModel.Security.SecurityPolicyVersion" /> qui correspond à la version de sécurité du message.</returns>
+    </member>
+    <member name="P:System.ServiceModel.MessageSecurityVersion.SecurityVersion">
+      <summary>Obtient la version de WS-Security qui correspond à la version de la sécurité de message.</summary>
+      <returns>Objet <see cref="T:System.ServiceModel.Security.SecurityVersion" /> qui correspond à la version de sécurité du message.</returns>
+    </member>
+    <member name="P:System.ServiceModel.MessageSecurityVersion.TrustVersion">
+      <summary>Obtient la version de WS-Trust qui correspond à la version de la sécurité de message.</summary>
+      <returns>Objet <see cref="T:System.ServiceModel.Security.TrustVersion" /> qui correspond à la version de sécurité du message.</returns>
+    </member>
+    <member name="P:System.ServiceModel.MessageSecurityVersion.WSSecurity10WSTrustFebruary2005WSSecureConversationFebruary2005WSSecurityPolicy11BasicSecurityProfile10">
+      <summary>Obtient la version de la sécurité de message qui requiert Basic Security Profile 1.0 basé sur les spécifications de sécurité WS-Security 1.0, WS-Trust de février 2005, WS-SecureConversation de février 2005 et WS-SecurityPolicy 1.1.</summary>
+      <returns>Objet <see cref="T:System.ServiceModel.MessageSecurityVersion" /> qui requiert Basic Security Profile basé sur les spécifications de sécurité WS-Security 1.0, WS-Trust de février 2005, WS-SecureConversation de février 2005 et WS-SecurityPolicy 1.1.</returns>
+    </member>
+    <member name="P:System.ServiceModel.MessageSecurityVersion.WSSecurity11WSTrustFebruary2005WSSecureConversationFebruary2005WSSecurityPolicy11">
+      <summary>Obtient la version de la sécurité de message qui requiert les spécifications de sécurité WS-Security 1.1, WS-Trust de février 2005, WS-SecureConversation de février 2005 et WS-SecurityPolicy 1.1.</summary>
+      <returns>Objet <see cref="T:System.ServiceModel.MessageSecurityVersion" /> qui requiert les spécifications de sécurité WS-Security 1.1, WS-Trust de février 2005, WS-SecureConversation de février 2005 et WS-SecurityPolicy 1.1.</returns>
+    </member>
+    <member name="P:System.ServiceModel.MessageSecurityVersion.WSSecurity11WSTrustFebruary2005WSSecureConversationFebruary2005WSSecurityPolicy11BasicSecurityProfile10">
+      <summary>Obtient la version de la sécurité de message qui requiert Basic Security Profile basé sur les spécifications de sécurité WS-Security 1.1, WS-Trust de février 2005, WS-SecureConversation de février 2005 et WS-SecurityPolicy 1.1.</summary>
+      <returns>Objet <see cref="T:System.ServiceModel.MessageSecurityVersion" /> qui requiert Basic Security Profile basé sur les spécifications de sécurité WS-Security 1.1, WS-Trust de février 2005, WS-SecureConversation de février 2005 et WS-SecurityPolicy 1.1.</returns>
+    </member>
+    <member name="T:System.ServiceModel.SpnEndpointIdentity">
+      <summary>Représente un nom de principal du service (SPN) pour une identité lorsque la liaison utilise Kerberos.</summary>
+    </member>
+    <member name="M:System.ServiceModel.SpnEndpointIdentity.#ctor(System.String)">
+      <summary>Initialise une nouvelle instance de <see cref="T:System.ServiceModel.SpnEndpointIdentity" /> avec le nom de principal du service (SPN) spécifié.</summary>
+      <param name="spnName">SPN.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="spnName" /> a la valeur null.</exception>
+    </member>
+    <member name="P:System.ServiceModel.SpnEndpointIdentity.SpnLookupTime">
+      <summary>Spécifie la durée maximale de recherche autorisée pour le nom de principal du service (SPN).</summary>
+      <returns>
+        <see cref="T:System.TimeSpan" />La valeur par défaut est 1 minute.</returns>
+      <exception cref="T:System.ArgumentOutOfRangeException">La valeur est inférieure à 0.</exception>
+    </member>
+    <member name="T:System.ServiceModel.UpnEndpointIdentity">
+      <summary>Représente un nom d'utilisateur principal (UPN) pour une identité utilisée lorsque la liaison utilise le mode d'authentification SSPINegotiate.</summary>
+    </member>
+    <member name="M:System.ServiceModel.UpnEndpointIdentity.#ctor(System.String)">
+      <summary>Initialise une nouvelle instance de la classe <see cref="T:System.ServiceModel.UpnEndpointIdentity" />. </summary>
+      <param name="upnName">Nom UPN.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="upnName" /> a la valeur null.</exception>
+      <exception cref="T:System.ArgumentException">Le type de revendication de <paramref name="upnName" /> n'est pas <see cref="P:System.IdentityModel.Claims.ClaimTypes.Upn" />.</exception>
+    </member>
+    <member name="T:System.ServiceModel.Channels.LocalClientSecuritySettings">
+      <summary>Spécifie des paramètres de sécurité client locaux.</summary>
+    </member>
+    <member name="M:System.ServiceModel.Channels.LocalClientSecuritySettings.#ctor">
+      <summary>Initialise une nouvelle instance de la classe <see cref="T:System.ServiceModel.Channels.LocalClientSecuritySettings" />. </summary>
+    </member>
+    <member name="M:System.ServiceModel.Channels.LocalClientSecuritySettings.Clone">
+      <summary>Crée une nouvelle instance de cette classe, qui est une copie ou un clone de l'instance actuelle.</summary>
+      <returns>Nouvelle instance de <see cref="T:System.ServiceModel.Channels.LocalClientSecuritySettings" />.</returns>
+    </member>
+    <member name="P:System.ServiceModel.Channels.LocalClientSecuritySettings.MaxClockSkew">
+      <summary>Obtient ou définit la différence de temps autorisée maximale entre les horloges système des deux correspondants qui communiquent. </summary>
+      <returns>
+        <see cref="T:System.TimeSpan" /> qui représente la différence de temps autorisée maximale entre les horloges système des deux correspondants qui communiquent.La valeur par défaut est 5 minutes.</returns>
+      <exception cref="T:System.ArgumentOutOfRangeException">Une valeur inférieure à 0 est assignée set à la propriété.</exception>
+    </member>
+    <member name="P:System.ServiceModel.Channels.LocalClientSecuritySettings.ReplayWindow">
+      <summary>Obtient ou définit la durée maximale pendant laquelle une valeur à usage unique de message est valide.</summary>
+      <returns>Objet <see cref="T:System.TimeSpan" /> qui représente la durée maximale pendant laquelle une valeur à usage unique de message est valide.La valeur par défaut est cinq minutes.</returns>
+      <exception cref="T:System.ArgumentOutOfRangeException">Une valeur inférieure à 0 est assignée set à la propriété.</exception>
+    </member>
+    <member name="P:System.ServiceModel.Channels.LocalClientSecuritySettings.TimestampValidityDuration">
+      <summary>Obtient ou définit la durée maximale pendant laquelle les messages sont valides une fois envoyés par le client.Si un message est reçu par le service après cette durée, celui-ci doit l'ignorer.</summary>
+      <returns>Objet <see cref="T:System.TimeSpan" /> qui représente la durée maximale pendant laquelle les messages sont valides une fois envoyés par le client.La valeur par défaut est 5 minutes.</returns>
+      <exception cref="T:System.ArgumentOutOfRangeException">Une valeur   inférieure à 0 est assignée set à la propriété.</exception>
+    </member>
+    <member name="T:System.ServiceModel.Channels.SecurityBindingElement">
+      <summary>Classe abstraite qui, une fois implémentée, représente un élément de liaison qui prend en charge la sécurité des messages SOAP de canaux.</summary>
+    </member>
+    <member name="M:System.ServiceModel.Channels.SecurityBindingElement.BuildChannelFactory``1(System.ServiceModel.Channels.BindingContext)">
+      <summary>Crée une fabrique de canal basée sur les paramètres <see cref="T:System.ServiceModel.Channels.SecurityBindingElement" /> et le contexte de liaison transmis.La fabrique de canaux créée est une fabrique de canaux de sécurité de messages SOAP, qui comprend en interne une référence à la fabrique de canaux correspondant au contexte de liaison (lequel inclut la fabrique de canaux de transport).</summary>
+      <returns>Fabrique de canal basée sur les paramètres <see cref="T:System.ServiceModel.Channels.SecurityBindingElement" /> et le contexte de liaison transmis.</returns>
+      <param name="context">
+        <see cref="T:System.ServiceModel.Channels.BindingContext" />.</param>
+      <typeparam name="TChannel">Type de fabrique de canaux.</typeparam>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="context" /> a la valeur null.</exception>
+      <exception cref="T:System.ArgumentException">Un canal de type <paramref name="TChannel" /> n'est pas pris en charge.</exception>
+    </member>
+    <member name="M:System.ServiceModel.Channels.SecurityBindingElement.BuildChannelFactoryCore``1(System.ServiceModel.Channels.BindingContext)">
+      <summary>En cas d'implémentation, crée une fabrique de canaux d'un type spécifié.</summary>
+      <returns>Fabrique de canaux d'un type spécifié.</returns>
+      <param name="context">
+        <see cref="T:System.ServiceModel.Channels.BindingContext" />.</param>
+      <typeparam name="TChannel">Type de fabrique de canaux.</typeparam>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="context" /> a la valeur null.</exception>
+      <exception cref="T:System.ArgumentException">Un canal de type <paramref name="TChannel" /> n'est pas pris en charge.</exception>
+    </member>
+    <member name="M:System.ServiceModel.Channels.SecurityBindingElement.CanBuildChannelFactory``1(System.ServiceModel.Channels.BindingContext)">
+      <summary>Détermine si une fabrique de canaux du type spécifié peut être construite. </summary>
+      <returns>true si la fabrication de canal du type spécifié peut être créée ; sinon, false.</returns>
+      <param name="context">
+        <see cref="T:System.ServiceModel.Channels.BindingContext" />.</param>
+      <typeparam name="TChannel">Type de fabrique de canaux.</typeparam>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="context" /> a la valeur null.</exception>
+    </member>
+    <member name="M:System.ServiceModel.Channels.SecurityBindingElement.CreateSecureConversationBindingElement(System.ServiceModel.Channels.SecurityBindingElement)">
+      <summary>Crée un élément de liaison de sécurité symétrique configuré pour établir une conversation sécurisée entre le client et le service.Le jeton de contexte de sécurité émis à la fin du protocole de transfert de conversation sécurisé est utilisé pour sécuriser les messages.L'élément de liaison de sécurité du démarrage indique comment les messages protocolaires de conversation sont sécurisés.</summary>
+      <returns>Objet <see cref="T:System.ServiceModel.Channels.SecurityBindingElement" />.</returns>
+      <param name="bootstrapSecurity">
+        <see cref="T:System.ServiceModel.Channels.SecurityBindingElement" /> qui contient la spécification de la façon dont les messages protocolaires de conversation sont sécurisés.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="bootstrapSecurity" /> a la valeur null.</exception>
+    </member>
+    <member name="M:System.ServiceModel.Channels.SecurityBindingElement.CreateUserNameOverTransportBindingElement">
+      <summary>Crée un élément de liaison de sécurité configuré pour l'authentification du client en fonction du nom d'utilisateur et du mot de passe envoyés dans le cadre du message SOAP.L'élément de liaison requiert que le transport assure l'authentification du serveur ainsi que la protection des messages (par exemple, HTTPS).</summary>
+      <returns>Objet <see cref="T:System.ServiceModel.Channels.TransportSecurityBindingElement" />.</returns>
+    </member>
+    <member name="P:System.ServiceModel.Channels.SecurityBindingElement.EndpointSupportingTokenParameters">
+      <summary>Obtient le point de terminaison qui prend en charge des paramètres de jeton.</summary>
+      <returns>Objet <see cref="T:System.ServiceModel.Security.Tokens.SupportingTokenParameters" /> qui représente le point de terminaison qui prend en charge les paramètres de jeton.</returns>
+    </member>
+    <member name="M:System.ServiceModel.Channels.SecurityBindingElement.GetProperty``1(System.ServiceModel.Channels.BindingContext)">
+      <summary>Obtient un objet spécifié à l'aide de l'objet <see cref="T:System.ServiceModel.Channels.BindingContext" /> spécifié.</summary>
+      <returns>Objet spécifié à partir de <see cref="T:System.ServiceModel.Channels.BindingContext" /> ou null si l'objet est introuvable.</returns>
+      <param name="context">
+        <see cref="T:System.ServiceModel.Channels.BindingContext" />.</param>
+      <typeparam name="T">Propriété à obtenir.</typeparam>
+    </member>
+    <member name="P:System.ServiceModel.Channels.SecurityBindingElement.IncludeTimestamp">
+      <summary>Obtient ou définit une valeur qui indique si l'horodatage est inclus dans chaque message. </summary>
+      <returns>true si l'horodatage est inclus dans chaque message ; sinon false.La valeur par défaut est true.</returns>
+    </member>
+    <member name="P:System.ServiceModel.Channels.SecurityBindingElement.LocalClientSettings">
+      <summary>Obtient les propriétés de liaison spécifiques aux paramètres de sécurité locaux utilisés par le client.</summary>
+      <returns>
+        <see cref="T:System.ServiceModel.Channels.LocalClientSecuritySettings" /> qui représente les propriétés de liaison spécifiques aux paramètres de sécurité locaux utilisés par le client.</returns>
+    </member>
+    <member name="P:System.ServiceModel.Channels.SecurityBindingElement.MessageSecurityVersion">
+      <summary>Obtient ou définit la version de sécurité du message.</summary>
+      <returns>Objet <see cref="T:System.ServiceModel.MessageSecurityVersion" /> qui représente la version du message par défaut.</returns>
+      <exception cref="T:System.ArgumentNullException">set avec une valeur null.</exception>
+    </member>
+    <member name="P:System.ServiceModel.Channels.SecurityBindingElement.SecurityHeaderLayout">
+      <summary>Obtient ou définit l'ordre des éléments dans l'en-tête de sécurité de cette liaison.</summary>
+      <returns>
+        <see cref="T:System.ServiceModel.Channels.SecurityHeaderLayout" /> qui représente l'ordre des éléments dans l'en-tête de sécurité de cette liaison.La valeur par défaut est <see cref="F:System.ServiceModel.Channels.SecurityHeaderLayout.Strict" />.</returns>
+      <exception cref="T:System.ArgumentOutOfRangeException">La valeur n'est pas une valeur <see cref="T:System.ServiceModel.Channels.SecurityHeaderLayout" /> correcte.</exception>
+    </member>
+    <member name="M:System.ServiceModel.Channels.SecurityBindingElement.ToString">
+      <summary>Renvoie la description de cette classe.</summary>
+      <returns>Description de l'instance <see cref="T:System.ServiceModel.Channels.SecurityBindingElement" /> active.</returns>
+    </member>
+    <member name="T:System.ServiceModel.Channels.SecurityHeaderLayout">
+      <summary>Décrit la disposition de l'en-tête de sécurité.</summary>
+    </member>
+    <member name="F:System.ServiceModel.Channels.SecurityHeaderLayout.Lax">
+      <summary>Les éléments sont ajoutés à l'en-tête de sécurité dans n'importe quel ordre qui confirme WSS: SOAP Message security.</summary>
+    </member>
+    <member name="F:System.ServiceModel.Channels.SecurityHeaderLayout.Strict">
+      <summary>Les éléments sont ajoutés à l'en-tête de sécurité conformément au principe général "déclarer avant d'utiliser".</summary>
+    </member>
+    <member name="T:System.ServiceModel.Channels.TransportSecurityBindingElement">
+      <summary>Représente un élément de liaison personnalisé qui prend en charge une sécurité en mode mixte (par exemple, la sécurité de message optimisée sur un transport sécurisé).</summary>
+    </member>
+    <member name="M:System.ServiceModel.Channels.TransportSecurityBindingElement.#ctor">
+      <summary>Crée une instance de la classe <see cref="T:System.ServiceModel.Channels.TransportSecurityBindingElement" />.</summary>
+    </member>
+    <member name="M:System.ServiceModel.Channels.TransportSecurityBindingElement.Clone">
+      <summary>Crée un objet <see cref="T:System.ServiceModel.Channels.BindingElement" /> initialisé à partir de la classe actuelle. </summary>
+      <returns>Objet <see cref="T:System.ServiceModel.Channels.BindingElement" /> dont les valeurs de propriétés sont égales à celles de l'instance active.</returns>
+    </member>
+    <member name="M:System.ServiceModel.Channels.TransportSecurityBindingElement.GetProperty``1(System.ServiceModel.Channels.BindingContext)">
+      <summary>Obtient une propriété à partir de la <see cref="T:System.ServiceModel.Channels.BindingContext" /> spécifiée.</summary>
+      <returns>Propriété issue du <see cref="T:System.ServiceModel.Channels.BindingContext" /> spécifié ou null si l'objet est introuvable.</returns>
+      <param name="context">
+        <see cref="T:System.ServiceModel.Channels.BindingContext" />
+      </param>
+      <typeparam name="T">Propriété à obtenir.</typeparam>
+    </member>
+    <member name="T:System.ServiceModel.Security.BasicSecurityProfileVersion">
+      <summary>Fournit une version de message qui correspond à la spécification Basic Security Profil.</summary>
+    </member>
+    <member name="P:System.ServiceModel.Security.BasicSecurityProfileVersion.BasicSecurityProfile10">
+      <summary>Fournit une version de message qui correspond à la spécification Basic Security Profil.</summary>
+      <returns>Classe qui possède une méthode ToString qui retourne la version au format texte.</returns>
+    </member>
+    <member name="T:System.ServiceModel.Security.SecureConversationVersion">
+      <summary>Contient le jeu de versions de WS-SecureConversation prises en charge.Il s'agit d'une classe abstraite.</summary>
+    </member>
+    <member name="P:System.ServiceModel.Security.SecureConversationVersion.Default">
+      <summary>Obtient la version par défaut.</summary>
+      <returns>Version par défaut.</returns>
+    </member>
+    <member name="P:System.ServiceModel.Security.SecureConversationVersion.Namespace">
+      <summary>Obtient l'espace de noms pour cette version de WS-SecureConversation.</summary>
+      <returns>Espace de noms pour cette version de WS-SecureConversation.</returns>
+    </member>
+    <member name="P:System.ServiceModel.Security.SecureConversationVersion.Prefix">
+      <summary>Obtient le préfixe de la version de WS-SecureConversation.</summary>
+      <returns>Préfixe de la version de WS-SecureConversation.</returns>
+    </member>
+    <member name="P:System.ServiceModel.Security.SecureConversationVersion.WSSecureConversationFeb2005">
+      <summary>Obtient la version de février 2005 de WS-SecureConversation.</summary>
+      <returns>Version de février 2005 de WS-SecureConversation.</returns>
+    </member>
+    <member name="T:System.ServiceModel.Security.SecurityPolicyVersion">
+      <summary>Contient le jeu de versions de WS-SecurityPolicy prises en charge.Il s'agit d'une classe abstraite.</summary>
+    </member>
+    <member name="P:System.ServiceModel.Security.SecurityPolicyVersion.Namespace">
+      <summary>Obtient l'espace de noms pour cette version de WS-SecurityPolicy.</summary>
+      <returns>Espace de noms pour cette version de WS-SecurityPolicy.</returns>
+    </member>
+    <member name="P:System.ServiceModel.Security.SecurityPolicyVersion.Prefix">
+      <summary>Obtient le préfixe.</summary>
+      <returns>Préfixe.</returns>
+    </member>
+    <member name="P:System.ServiceModel.Security.SecurityPolicyVersion.WSSecurityPolicy11">
+      <summary>Obtient la version 1.1 de WS-SecurityPolicy.</summary>
+      <returns>Version 1.1 de WS-SecurityPolicy.</returns>
+    </member>
+    <member name="T:System.ServiceModel.Security.SecurityVersion">
+      <summary>Contient le jeu de versions de WS-Security prises en charge.Il s'agit d'une classe abstraite.</summary>
+    </member>
+    <member name="P:System.ServiceModel.Security.SecurityVersion.WSSecurity10">
+      <summary>Obtient la version 1.0 de WS-Security.</summary>
+      <returns>Version 1.0 de WS-Security.</returns>
+    </member>
+    <member name="P:System.ServiceModel.Security.SecurityVersion.WSSecurity11">
+      <summary>Obtient la version 1.1 de WS-Security.</summary>
+      <returns>Version 1.1 de WS-Security.</returns>
+    </member>
+    <member name="T:System.ServiceModel.Security.TrustVersion">
+      <summary>Contient le jeu de versions de WS-Trust prises en charge.Il s'agit d'une classe abstraite.</summary>
+    </member>
+    <member name="P:System.ServiceModel.Security.TrustVersion.Default">
+      <summary>Obtient la version par défaut.</summary>
+      <returns>Version par défaut.</returns>
+    </member>
+    <member name="P:System.ServiceModel.Security.TrustVersion.Namespace">
+      <summary>Obtient l'espace de noms pour cette version de Trust.</summary>
+      <returns>Espace de noms pour cette version de Trust.</returns>
+    </member>
+    <member name="P:System.ServiceModel.Security.TrustVersion.Prefix">
+      <summary>Obtient le préfixe.</summary>
+      <returns>Préfixe.</returns>
+    </member>
+    <member name="P:System.ServiceModel.Security.TrustVersion.WSTrustFeb2005">
+      <summary>Obtient la version de février 2005 de WS-Trust.</summary>
+      <returns>Version de février 2005 de WS-Trust.</returns>
+    </member>
+    <member name="T:System.ServiceModel.Security.Tokens.SecureConversationSecurityTokenParameters">
+      <summary>Représente les paramètres pour un jeton de sécurité de conversation sécurisée.</summary>
+    </member>
+    <member name="M:System.ServiceModel.Security.Tokens.SecureConversationSecurityTokenParameters.#ctor">
+      <summary>Initialise une nouvelle instance de la classe <see cref="T:System.ServiceModel.Security.Tokens.SecureConversationSecurityTokenParameters" />.</summary>
+    </member>
+    <member name="M:System.ServiceModel.Security.Tokens.SecureConversationSecurityTokenParameters.#ctor(System.ServiceModel.Channels.SecurityBindingElement)">
+      <summary>Initialise une nouvelle instance de la classe <see cref="T:System.ServiceModel.Security.Tokens.SecureConversationSecurityTokenParameters" /> à partir des propriétés d'un <see cref="T:System.ServiceModel.Channels.SecurityBindingElement" /> spécifié.</summary>
+      <param name="bootstrapSecurityBindingElement">Élément de liaison de sécurité d'amorçage.</param>
+    </member>
+    <member name="P:System.ServiceModel.Security.Tokens.SecureConversationSecurityTokenParameters.BootstrapSecurityBindingElement">
+      <summary>Obtient ou définit l'élément de liaison de sécurité de démarrage.</summary>
+      <returns>Élément de liaison de sécurité d'amorçage.</returns>
+    </member>
+    <member name="T:System.ServiceModel.Security.Tokens.SecurityTokenParameters">
+      <summary>Spécifie une classe abstract qui, en cas d'implémentation, représente les paramètres de jeton de sécurité.</summary>
+    </member>
+    <member name="M:System.ServiceModel.Security.Tokens.SecurityTokenParameters.Clone">
+      <summary>Clone une autre instance de cette instance de la classe.</summary>
+      <returns>Copie de l'instance <see cref="T:System.ServiceModel.Security.Tokens.SecurityTokenParameters" />.</returns>
+      <exception cref="T:System.InvalidOperationException">Impossible de cloner cette instance de la classe.</exception>
+    </member>
+    <member name="T:System.ServiceModel.Security.Tokens.SupportingTokenParameters">
+      <summary>Représente les paramètres pour la prise en charge des jetons de sécurité requis par l'élément de liaison de sécurité.</summary>
+    </member>
+    <member name="M:System.ServiceModel.Security.Tokens.SupportingTokenParameters.#ctor">
+      <summary>Initialise une nouvelle instance de la classe <see cref="T:System.ServiceModel.Security.Tokens.SupportingTokenParameters" />.</summary>
+    </member>
+    <member name="M:System.ServiceModel.Security.Tokens.SupportingTokenParameters.Clone">
+      <summary>Clone une autre instance de cette instance de la classe.</summary>
+      <returns>
+        <see cref="T:System.ServiceModel.Security.Tokens.SupportingTokenParameters" />
+      </returns>
+    </member>
+    <member name="P:System.ServiceModel.Security.Tokens.SupportingTokenParameters.Endorsing">
+      <summary>Obtient une collection de paramètres de jeton de sécurité pour l'approbation des jetons de prise en charge requis par l'élément de liaison de sécurité</summary>
+      <returns>Collection de <see cref="T:System.ServiceModel.Security.Tokens.SecurityTokenParameters" />.</returns>
+    </member>
+    <member name="P:System.ServiceModel.Security.Tokens.SupportingTokenParameters.SignedEncrypted">
+      <summary>Obtient une collection de paramètres de jeton de sécurité pour les jetons de prise en charge signés et chiffrés requis par l'élément de liaison de sécurité</summary>
+      <returns>Collection de <see cref="T:System.ServiceModel.Security.Tokens.SecurityTokenParameters" />.</returns>
+    </member>
+    <member name="T:System.ServiceModel.Security.Tokens.UserNameSecurityTokenParameters">
+      <summary>Représente les paramètres pour un jeton de sécurité de nom d'utilisateur.</summary>
+    </member>
+    <member name="M:System.ServiceModel.Security.Tokens.UserNameSecurityTokenParameters.#ctor">
+      <summary>Initialise une nouvelle instance de la classe <see cref="T:System.ServiceModel.Security.Tokens.UserNameSecurityTokenParameters" />.</summary>
+    </member>
+  </members>
+</doc>

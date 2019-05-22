@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Directives xmlns="http://schemas.microsoft.com/netfx/2013/01/metadata">
+  <Library Name="*System.Reactive.Linq*">
+    <Type Name="System.Reactive.ReflectionUtils">
+      <Method Name="GetMethod">
+        <TypeParameter Name="type" Dynamic="Required Public"/>
+      </Method>
+      <Method Name="GetEventEx">
+        <TypeParameter Name="type" Dynamic="Required Public"/>
+      </Method>
+      <Method Name="IsAssignableFrom">
+        <TypeParameter Name="type1" Browse="Required Public"/>
+        <TypeParameter Name="type2" Browse="Required Public"/>
+      </Method>
+    </Type>
+  </Library>
+</Directives>

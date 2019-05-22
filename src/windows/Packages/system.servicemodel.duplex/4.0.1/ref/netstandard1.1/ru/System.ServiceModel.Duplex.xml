@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>System.ServiceModel.Duplex</name>
+  </assembly>
+  <members>
+    <member name="T:System.ServiceModel.CallbackBehaviorAttribute">
+      <summary>Настраивает реализацию службы обратного вызова в клиентском приложении.</summary>
+    </member>
+    <member name="M:System.ServiceModel.CallbackBehaviorAttribute.#ctor">
+      <summary>Инициализирует новый экземпляр класса <see cref="T:System.ServiceModel.CallbackBehaviorAttribute" />.  </summary>
+    </member>
+    <member name="P:System.ServiceModel.CallbackBehaviorAttribute.AutomaticSessionShutdown">
+      <summary>Указывает, необходимо ли автоматически закрывать сеанс при закрытии службой дуплексного сеанса.</summary>
+      <returns>Значение true, если объекты дуплексного обратного вызова автоматически закрывают сеанс при закрытии службой дуплексного сеанса; в противном случае — значение false.Значение по умолчанию — true.</returns>
+    </member>
+    <member name="M:System.ServiceModel.CallbackBehaviorAttribute.System#ServiceModel#Description#IEndpointBehavior#AddBindingParameters(System.ServiceModel.Description.ServiceEndpoint,System.ServiceModel.Channels.BindingParameterCollection)">
+      <summary>Настраивает элементы привязки для поддержки поведения обратного вызова.</summary>
+      <param name="serviceEndpoint">Конечная точка объекта обратного вызова.</param>
+      <param name="parameters">Коллекция настраиваемых параметров привязки.</param>
+    </member>
+    <member name="M:System.ServiceModel.CallbackBehaviorAttribute.System#ServiceModel#Description#IEndpointBehavior#ApplyClientBehavior(System.ServiceModel.Description.ServiceEndpoint,System.ServiceModel.Dispatcher.ClientRuntime)">
+      <summary>Настраивает среду выполнения клиента для поддержки объекта обратного вызова.</summary>
+      <param name="serviceEndpoint">Конечная точка, настраиваемая атрибутом.</param>
+      <param name="clientRuntime">Объект среды выполнения клиента, настраиваемый атрибутом.</param>
+    </member>
+    <member name="M:System.ServiceModel.CallbackBehaviorAttribute.System#ServiceModel#Description#IEndpointBehavior#ApplyDispatchBehavior(System.ServiceModel.Description.ServiceEndpoint,System.ServiceModel.Dispatcher.EndpointDispatcher)">
+      <summary>Реализация метода <see cref="M:System.ServiceModel.Description.IEndpointBehavior.ApplyDispatchBehavior(System.ServiceModel.Description.ServiceEndpoint,System.ServiceModel.Dispatcher.EndpointDispatcher)" />.Данная реализация не используется.</summary>
+      <param name="serviceEndpoint">Изменяемая конечная точка.   </param>
+      <param name="endpointDispatcher">Изменяемый методом диспетчер конечной точки.   </param>
+    </member>
+    <member name="M:System.ServiceModel.CallbackBehaviorAttribute.System#ServiceModel#Description#IEndpointBehavior#Validate(System.ServiceModel.Description.ServiceEndpoint)">
+      <summary>Проверяет описание конечной точки до построения среды выполнения.</summary>
+      <param name="serviceEndpoint">Проверяемая конечная точка.</param>
+    </member>
+    <member name="P:System.ServiceModel.CallbackBehaviorAttribute.UseSynchronizationContext">
+      <summary>Возвращает или задает значение, определяющее, следует ли использовать текущий контекст синхронизации для выбора потока исполнения.</summary>
+      <returns>true, если все вызовы службы должны запускаться в потоке, указанном контекстом <see cref="T:System.Threading.SynchronizationContext" />; в противном случае — false.Значение по умолчанию — true.</returns>
+    </member>
+    <member name="T:System.ServiceModel.DuplexChannelFactory`1">
+      <summary>Предоставляет средства для создания дуплексных каналов различных типов, используемых клиентами для передачи сообщений в конечные точки служб и приема сообщений из конечных точек служб, и управления этими каналами.</summary>
+      <typeparam name="TChannel">Тип канала, создаваемого фабрикой каналов.</typeparam>
+    </member>
+    <member name="M:System.ServiceModel.DuplexChannelFactory`1.#ctor(System.ServiceModel.InstanceContext,System.ServiceModel.Channels.Binding)">
+      <summary>Инициализирует новый экземпляр класса <see cref="T:System.ServiceModel.DuplexChannelFactory`1" /> контекстом, реализующим контракт обратного вызова, и указанной привязкой.</summary>
+      <param name="callbackInstance">Объект <see cref="T:System.ServiceModel.InstanceContext" />, используемый клиентом для прослушивания сообщений из подключенной службы.</param>
+      <param name="binding">Привязка <see cref="T:System.ServiceModel.Channels.Binding" />, используемая для подключения к службе по каналам, созданным фабрикой.</param>
+      <exception cref="T:System.ArgumentNullException">Значение параметра <paramref name="callbackInstance" /> или <paramref name="binding" /> — null.</exception>
+    </member>
+    <member name="M:System.ServiceModel.DuplexChannelFactory`1.#ctor(System.ServiceModel.InstanceContext,System.ServiceModel.Channels.Binding,System.ServiceModel.EndpointAddress)">
+      <summary>Инициализирует новый экземпляр класса <see cref="T:System.ServiceModel.DuplexChannelFactory`1" /> объектом, реализующим контракт обратного вызова, и указанными привязкой и адресом конечной точки.</summary>
+      <param name="callbackInstance">Объект <see cref="T:System.ServiceModel.InstanceContext" />, используемый клиентом для прослушивания сообщений из подключенной службы.</param>
+      <param name="binding">Привязка <see cref="T:System.ServiceModel.Channels.Binding" />, используемая для подключения к службе по каналам, созданным фабрикой.</param>
+      <param name="remoteAddress">Объект <see cref="T:System.ServiceModel.EndpointAddress" />, представляющий расположение службы.</param>
+      <exception cref="T:System.ArgumentNullException">Значение параметра <paramref name="callbackInstance" />, <paramref name="binding" /> или <paramref name="remoteAddress" /> — null.</exception>
+    </member>
+    <member name="M:System.ServiceModel.DuplexChannelFactory`1.#ctor(System.ServiceModel.InstanceContext,System.ServiceModel.Channels.Binding,System.String)">
+      <summary>Инициализирует новый экземпляр класса <see cref="T:System.ServiceModel.DuplexChannelFactory`1" /> указанными контекстом экземпляра, привязкой и удаленным адресом.</summary>
+      <param name="callbackInstance">Объект <see cref="T:System.ServiceModel.InstanceContext" />, используемый клиентом для прослушивания сообщений из подключенной службы.</param>
+      <param name="binding">Привязка <see cref="T:System.ServiceModel.Channels.Binding" />, используемая для подключения к службе по каналам, созданным фабрикой.</param>
+      <param name="remoteAddress">Удаленный адрес, предоставляющий расположение службы.</param>
+      <exception cref="T:System.ArgumentNullException">Значение параметра <paramref name="callbackInstance" />, <paramref name="binding" /> или <paramref name="remoteAddress" /> — null.</exception>
+    </member>
+    <member name="M:System.ServiceModel.DuplexChannelFactory`1.#ctor(System.ServiceModel.InstanceContext,System.String)">
+      <summary>Инициализирует новый экземпляр класса <see cref="T:System.ServiceModel.DuplexChannelFactory`1" /> объектом, реализующим контракт обратного вызова, и указанной конфигурацией.</summary>
+      <param name="callbackInstance">Объект <see cref="T:System.ServiceModel.InstanceContext" />, используемый клиентом для прослушивания сообщений из подключенной службы.</param>
+      <param name="endpointConfigurationName">Имя, используемое для конфигурации конечной точки.</param>
+      <exception cref="T:System.ArgumentNullException">Значение параметра <paramref name="callbackInstance" /> или <paramref name="endpointConfigurationName" /> — null.</exception>
+    </member>
+    <member name="M:System.ServiceModel.DuplexChannelFactory`1.#ctor(System.ServiceModel.InstanceContext,System.String,System.ServiceModel.EndpointAddress)">
+      <summary>Инициализирует новый экземпляр класса <see cref="T:System.ServiceModel.DuplexChannelFactory`1" /> объектом, реализующим контракт обратного вызова, и указанными конфигурацией и адресом конечной точки.</summary>
+      <param name="callbackInstance">Объект <see cref="T:System.ServiceModel.InstanceContext" />, используемый клиентом для прослушивания сообщений из подключенной службы.</param>
+      <param name="endpointConfigurationName">Имя, используемое для конфигурации конечной точки.</param>
+      <param name="remoteAddress">Объект <see cref="T:System.ServiceModel.EndpointAddress" />, представляющий расположение службы.</param>
+      <exception cref="T:System.ArgumentNullException">Значение параметра <paramref name="callbackInstance" />, <paramref name="endpointConfigurationName" /> или <paramref name="remoteAddress" /> — null.</exception>
+    </member>
+    <member name="M:System.ServiceModel.DuplexChannelFactory`1.CreateChannel(System.ServiceModel.EndpointAddress,System.Uri)">
+      <summary>Создает дуплексный канал между службой и экземпляром обратного вызова на клиенте.</summary>
+      <returns>Дуплексный канал типа <paramref name="TChannel" /> (универсальный параметр для фабрики) между клиентом и службой.</returns>
+      <param name="address">Объект <see cref="T:System.ServiceModel.EndpointAddress" />, представляющий расположение службы.</param>
+      <param name="via">Объект <see cref="T:System.Uri" />, содержащий адрес транспорта, по которому отправляется сообщение.</param>
+      <exception cref="T:System.ArgumentNullException">Параметр <paramref name="address" /> имеет значение null.</exception>
+    </member>
+    <member name="M:System.ServiceModel.DuplexChannelFactory`1.CreateChannel(System.ServiceModel.InstanceContext)">
+      <summary>Создает дуплексный канал между службой и экземпляром обратного вызова на клиенте.</summary>
+      <returns>Дуплексный канал типа <paramref name="TChannel" /> (универсальный параметр для фабрики) между клиентом и службой.</returns>
+      <param name="callbackInstance">Объект <see cref="T:System.ServiceModel.InstanceContext" />, используемый клиентом для прослушивания сообщений из подключенной службы.</param>
+      <exception cref="T:System.InvalidOperationException">Параметр <paramref name="callbackInstance" /> или <paramref name="callbackInstance" />.UserObject имеет значение null.</exception>
+    </member>
+    <member name="M:System.ServiceModel.DuplexChannelFactory`1.CreateChannel(System.ServiceModel.InstanceContext,System.ServiceModel.EndpointAddress)">
+      <summary>Создает дуплексный канал между службой и экземпляром обратного вызова на клиенте.</summary>
+      <returns>Дуплексный канал типа <paramref name="TChannel" /> (универсальный параметр для фабрики) между клиентом и службой.</returns>
+      <param name="callbackInstance">Объект <see cref="T:System.ServiceModel.InstanceContext" />, используемый клиентом для прослушивания сообщений из подключенной службы.</param>
+      <param name="address">Объект <see cref="T:System.ServiceModel.EndpointAddress" />, представляющий расположение службы.</param>
+      <exception cref="T:System.ArgumentNullException">Параметр <paramref name="address" /> имеет значение null.</exception>
+      <exception cref="T:System.InvalidOperationException">Параметр <paramref name="callbackInstance" /> или <paramref name="callbackInstance" />.UserObject имеет значение null.</exception>
+    </member>
+    <member name="M:System.ServiceModel.DuplexChannelFactory`1.CreateChannel(System.ServiceModel.InstanceContext,System.ServiceModel.EndpointAddress,System.Uri)">
+      <summary>Создает дуплексный канал между службой и экземпляром обратного вызова на клиенте.</summary>
+      <returns>Канал типа <paramref name="TChannel" /> (универсальный параметр для фабрики) между клиентом и службой.</returns>
+      <param name="callbackInstance">Объект <see cref="T:System.ServiceModel.InstanceContext" />, используемый клиентом для прослушивания сообщений из подключенной службы.</param>
+      <param name="address">Объект <see cref="T:System.ServiceModel.EndpointAddress" />, представляющий расположение службы.</param>
+      <param name="via">Объект <see cref="T:System.Uri" />, содержащий адрес транспорта, по которому отправляется сообщение.</param>
+      <exception cref="T:System.ArgumentNullException">Параметр <paramref name="address" /> имеет значение null.</exception>
+      <exception cref="T:System.InvalidOperationException">Параметр <paramref name="callbackInstance" /> или <paramref name="callbackInstance" />.UserObject имеет значение null.</exception>
+    </member>
+    <member name="T:System.ServiceModel.DuplexClientBase`1">
+      <summary>Используется для создания канала для дуплексной службы и связи этого канала с объектом обратного вызова.</summary>
+      <typeparam name="TChannel">Тип создаваемого канала.</typeparam>
+    </member>
+    <member name="M:System.ServiceModel.DuplexClientBase`1.#ctor(System.ServiceModel.InstanceContext)">
+      <summary>Инициализирует новый экземпляр класса <see cref="T:System.ServiceModel.DuplexClientBase`1" />, используя указанный объект обратного вызова.</summary>
+      <param name="callbackInstance">Объект <see cref="T:System.ServiceModel.InstanceContext" />, связывающий объект обратного вызова с каналом к службе.</param>
+      <exception cref="T:System.ArgumentNullException">Экземпляр обратного вызова имеет значение null.</exception>
+    </member>
+    <member name="M:System.ServiceModel.DuplexClientBase`1.#ctor(System.ServiceModel.InstanceContext,System.ServiceModel.Channels.Binding,System.ServiceModel.EndpointAddress)">
+      <summary>Инициализирует новый экземпляр класса <see cref="T:System.ServiceModel.DuplexClientBase`1" />, используя указанные объект обратного вызова, привязку и адрес конечной точки службы.</summary>
+      <param name="callbackInstance">Объект, используемый для создания контекста экземпляра, связывающего объект обратного вызова с каналом к службе.</param>
+      <param name="binding">Привязка, с помощью которой вызывается служба.</param>
+      <param name="remoteAddress">Адрес используемой конечной точки службы.</param>
+    </member>
+    <member name="M:System.ServiceModel.DuplexClientBase`1.#ctor(System.ServiceModel.InstanceContext,System.String)">
+      <summary>Инициализирует новый экземпляр класса <see cref="T:System.ServiceModel.DuplexClientBase`1" />, используя указанные объект обратного вызова и имя конфигурации.</summary>
+      <param name="callbackInstance">Объект, используемый для создания контекста экземпляра, связывающего объект обратного вызова с каналом к службе.</param>
+      <param name="endpointConfigurationName">Имя конечной точки клиента в файле конфигурации приложения.</param>
+      <exception cref="T:System.ArgumentNullException">Экземпляр обратного вызова имеет значение null.</exception>
+      <exception cref="T:System.ArgumentNullException">Имя конфигурации имеет значение null.</exception>
+    </member>
+    <member name="M:System.ServiceModel.DuplexClientBase`1.#ctor(System.ServiceModel.InstanceContext,System.String,System.ServiceModel.EndpointAddress)">
+      <summary>Инициализирует новый экземпляр класса <see cref="T:System.ServiceModel.DuplexClientBase`1" />, используя указанные объект обратного вызова, имя конфигурации и адрес конечной точки службы.</summary>
+      <param name="callbackInstance">Объект, используемый для создания контекста экземпляра, связывающего объект обратного вызова с каналом к службе.</param>
+      <param name="endpointConfigurationName">Имя конечной точки клиента в файле конфигурации приложения.</param>
+      <param name="remoteAddress">Адрес используемой конечной точки службы.</param>
+      <exception cref="T:System.ArgumentNullException">Экземпляр обратного вызова имеет значение null.</exception>
+      <exception cref="T:System.ArgumentNullException">Имя конфигурации имеет значение null.</exception>
+      <exception cref="T:System.ArgumentNullException">Адрес имеет значение null.</exception>
+    </member>
+    <member name="M:System.ServiceModel.DuplexClientBase`1.#ctor(System.ServiceModel.InstanceContext,System.String,System.String)">
+      <summary>Инициализирует новый экземпляр класса <see cref="T:System.ServiceModel.DuplexClientBase`1" />, используя указанные объект обратного вызова, имя конфигурации и адрес конечной точки службы.</summary>
+      <param name="callbackInstance">Объект, используемый для создания контекста экземпляра, связывающего объект обратного вызова с каналом к службе.</param>
+      <param name="endpointConfigurationName">Имя конечной точки клиента в файле конфигурации приложения.</param>
+      <param name="remoteAddress">Адрес используемой конечной точки службы.</param>
+      <exception cref="T:System.ArgumentNullException">Экземпляр обратного вызова имеет значение null.</exception>
+      <exception cref="T:System.ArgumentNullException">Имя конфигурации имеет значение null.</exception>
+      <exception cref="T:System.ArgumentNullException">Адрес имеет значение null.</exception>
+    </member>
+    <member name="T:System.ServiceModel.InstanceContext">
+      <summary>Представляет сведения контекста экземпляра службы.</summary>
+    </member>
+    <member name="M:System.ServiceModel.InstanceContext.#ctor(System.Object)">
+      <summary>Инициализирует новый экземпляр класса <see cref="T:System.ServiceModel.InstanceContext" /> для заданного объекта, который реализует экземпляр службы.</summary>
+      <param name="implementation">Объект, реализующий экземпляр службы.</param>
+    </member>
+    <member name="M:System.ServiceModel.InstanceContext.GetServiceInstance(System.ServiceModel.Channels.Message)">
+      <summary>Возвращает экземпляр службы для контекста экземпляра в ответ на входящее сообщение.</summary>
+      <returns>Объект, представляющий экземпляр службы.</returns>
+      <param name="message">Входящее сообщение, вызвавшее создание объекта службы.</param>
+      <exception cref="T:System.InvalidOperationException">Экземпляр службы находится в состоянии создания или открытия, либо он не инициализирован.</exception>
+      <exception cref="T:System.ServiceModel.CommunicationObjectAbortedException">Экземпляр службы прерван.</exception>
+      <exception cref="T:System.ObjectDisposedException">Экземпляр службы уже закрыт и не может быть изменен в этом состоянии.</exception>
+      <exception cref="T:System.ServiceModel.CommunicationObjectFaultedException">Экземпляр службы находится в состоянии сбоя и не может быть изменен в этом состоянии.</exception>
+    </member>
+    <member name="P:System.ServiceModel.InstanceContext.SynchronizationContext">
+      <summary>Возвращает или задает контекст, используемый для синхронизации потоков с текущим контекстом экземпляра.</summary>
+      <returns>Объект <see cref="T:System.Threading.SynchronizationContext" />, используемый для синхронизации потоков с текущим контекстом экземпляра.</returns>
+      <exception cref="T:System.InvalidOperationException">Объект связи находится в состоянии открытия или закрытия и не может быть изменен в этих состояниях.</exception>
+      <exception cref="T:System.ServiceModel.CommunicationObjectAbortedException">Объект связи прерван и не может быть изменен в этом состоянии.</exception>
+      <exception cref="T:System.ObjectDisposedException">Объект связи уже закрыт и не может быть изменен в этом состоянии.</exception>
+      <exception cref="T:System.ServiceModel.CommunicationObjectFaultedException">Объект связи находится в состоянии сбоя и не может быть изменен в этом состоянии.</exception>
+    </member>
+    <member name="P:System.ServiceModel.InstanceContext.System#ServiceModel#IExtensibleObject{T}#Extensions">
+      <summary>Коллекция объектов расширения.</summary>
+      <returns>Возвращает <see cref="T:System.ServiceModel.IExtensionCollection`1" />.</returns>
+    </member>
+  </members>
+</doc>

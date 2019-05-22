@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata minClientVersion="2.12">
+    <id>System.ServiceModel.Http</id>
+    <version>4.1.0</version>
+    <title>System.ServiceModel.Http</title>
+    <authors>Microsoft</authors>
+    <owners>microsoft,dotnetframework</owners>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <licenseUrl>http://go.microsoft.com/fwlink/?LinkId=329770</licenseUrl>
+    <iconUrl>http://go.microsoft.com/fwlink/?LinkID=288859</iconUrl>
+    <description>Provides classes that allow applications to consume HTTP and WebSocket web services. Use the System.ServiceModel.BasicHttpBinding class for communication with ASMX-based web services and other services that conform to the WS-I Basic Profile 1.1. Whereas, use the System.ServiceModel.NetHttpBinding class for communication with .NET-based WebSocket services.
+
+Commonly Used Types:
+System.ServiceModel.BasicHttpBinding
+System.ServiceModel.Channels.HttpRequestMessageProperty
+System.ServiceModel.Channels.HttpResponseMessageProperty
+System.ServiceModel.Channels.HttpTransportBindingElement
+System.ServiceModel.Channels.HttpsTransportBindingElement
+System.ServiceModel.HttpClientCredentialType
+System.ServiceModel.BasicHttpSecurityMode
+System.ServiceModel.HttpTransportSecurity
+System.ServiceModel.BasicHttpMessageCredentialType
+System.ServiceModel.HttpBindingBase
+ 
+TFS ID: 1612576, GitHub SHA: https://github.com/dotnet/corefx/tree/f47c814b003d17da52940739e227f04e52b10279 
+When using NuGet 3.x this package requires at least version 3.4.</description>
+    <copyright>© Microsoft Corporation.  All rights reserved.</copyright>
+    <serviceable>true</serviceable>
+    <dependencies>
+      <group targetFramework="MonoAndroid1.0" />
+      <group targetFramework="MonoTouch1.0" />
+      <group targetFramework=".NETFramework4.5" />
+      <group targetFramework=".NETFramework4.6" />
+      <group targetFramework=".NETCore5.0">
+        <dependency id="System.Net.Primitives" version="4.0.11" />
+        <dependency id="System.Net.WebHeaderCollection" version="4.0.1" />
+        <dependency id="System.Private.ServiceModel" version="4.1.0" exclude="Compile" />
+        <dependency id="System.Runtime" version="4.1.0" />
+        <dependency id="System.Runtime.Serialization.Xml" version="4.1.1" />
+        <dependency id="System.ServiceModel.Primitives" version="4.1.0" />
+        <dependency id="System.Text.Encoding" version="4.0.11" />
+      </group>
+      <group targetFramework=".NETStandard1.0">
+        <dependency id="System.Net.Primitives" version="4.0.11" />
+        <dependency id="System.Net.Requests" version="4.0.11" />
+        <dependency id="System.Runtime" version="4.1.0" />
+        <dependency id="System.ServiceModel.Primitives" version="4.1.0" />
+        <dependency id="System.Text.Encoding" version="4.0.11" />
+      </group>
+      <group targetFramework=".NETStandard1.1">
+        <dependency id="System.Net.Primitives" version="4.0.11" />
+        <dependency id="System.Net.Requests" version="4.0.11" />
+        <dependency id="System.Runtime" version="4.1.0" />
+        <dependency id="System.Runtime.Serialization.Xml" version="4.1.1" />
+        <dependency id="System.ServiceModel.Primitives" version="4.1.0" />
+        <dependency id="System.Text.Encoding" version="4.0.11" />
+      </group>
+      <group targetFramework=".NETStandard1.3">
+        <dependency id="System.Net.Primitives" version="4.0.11" />
+        <dependency id="System.Net.WebHeaderCollection" version="4.0.1" />
+        <dependency id="System.Private.ServiceModel" version="4.1.0" exclude="Compile" />
+        <dependency id="System.Runtime" version="4.1.0" />
+        <dependency id="System.Runtime.Serialization.Xml" version="4.1.1" />
+        <dependency id="System.ServiceModel.Primitives" version="4.1.0" />
+        <dependency id="System.Text.Encoding" version="4.0.11" />
+      </group>
+      <group targetFramework=".NETPortable0.0-Profile78" />
+      <group targetFramework="Windows8.0" />
+      <group targetFramework="WindowsPhone8.0" />
+      <group targetFramework="Xamarin.iOS1.0" />
+      <group targetFramework="Xamarin.Mac2.0" />
+      <group targetFramework="Xamarin.TVOS1.0" />
+      <group targetFramework="Xamarin.WatchOS1.0" />
+    </dependencies>
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="mscorlib" targetFramework=".NETFramework4.6" />
+      <frameworkAssembly assemblyName="System.ServiceModel" targetFramework=".NETFramework4.5" />
+      <frameworkAssembly assemblyName="System.ServiceModel" targetFramework=".NETFramework4.6" />
+    </frameworkAssemblies>
+  </metadata>
+</package>

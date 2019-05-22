@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Directives xmlns="http://schemas.microsoft.com/netfx/2013/01/metadata">
+  <Library Name="*GalaSoft.MvvmLight.Win8*">
+    <Assembly Name="GalaSoft.MvvmLight.Win8">
+      <Type Name="GalaSoft.MvvmLight.Command.RelayCommand{T}">
+        <GenericParameter Name="T" Browse="Required Public" />
+      </Type>
+      <Type Name="GalaSoft.MvvmLight.Messaging.Messenger">
+        <Method Name="Send{TMessage, TTarget}">
+          <GenericParameter Name="TTarget" Browse="Required Public"/>
+        </Method>
+        <Method Name="SendToTargetOrType{TMessage}">
+          <GenericParameter Name="TMessage" Browse="Required Public"/>
+        </Method>
+        <Method Name="Register{TMessage}">
+          <GenericParameter Name="TMessage" Browse="Required Public"/>
+        </Method>
+      </Type>
+    </Assembly>
+  </Library>
+</Directives>

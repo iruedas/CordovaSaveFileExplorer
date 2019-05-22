@@ -1,0 +1,265 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>System.ServiceModel.NetTcp</name>
+  </assembly>
+  <members>
+    <member name="T:System.ServiceModel.MessageSecurityOverTcp">
+      <summary>Consente di configurare la sicurezza a livello di messaggio relativamente a un messaggio inviato utilizzando il trasporto TCP. </summary>
+    </member>
+    <member name="M:System.ServiceModel.MessageSecurityOverTcp.#ctor">
+      <summary>Inizializza una nuova istanza della classe <see cref="T:System.ServiceModel.MessageSecurityOverTcp" />.</summary>
+    </member>
+    <member name="P:System.ServiceModel.MessageSecurityOverTcp.ClientCredentialType">
+      <summary>Specifica il tipo di credenziale client utilizzato dal client per autenticarsi presso il servizio a livello SOAP. </summary>
+      <returns>Oggetto <see cref="T:System.ServiceModel.MessageCredentialType" />.Il valore predefinito è <see cref="F:System.ServiceModel.MessageCredentialType.Windows" />.</returns>
+      <exception cref="T:System.ArgumentOutOfRangeException">Il valore della proprietà <see cref="P:System.ServiceModel.MessageSecurityOverTcp.ClientCredentialType" /> non è un valore valido dell'enumerazione <see cref="T:System.ServiceModel.MessageCredentialType" />.</exception>
+    </member>
+    <member name="T:System.ServiceModel.NetTcpBinding">
+      <summary>Associazione protetta e affidabile adatta per le comunicazioni fra computer.</summary>
+    </member>
+    <member name="M:System.ServiceModel.NetTcpBinding.#ctor">
+      <summary>Inizializza una nuova istanza della classe <see cref="T:System.ServiceModel.NetTcpBinding" />. </summary>
+    </member>
+    <member name="M:System.ServiceModel.NetTcpBinding.#ctor(System.ServiceModel.SecurityMode)">
+      <summary>Inizializza una nuova istanza della classe <see cref="T:System.ServiceModel.NetTcpBinding" /> con il tipo specificato di sicurezza.</summary>
+      <param name="securityMode">Valore <see cref="T:System.ServiceModel.SecurityMode" /> che specifica il tipo di sicurezza utilizzato con l'associazione.</param>
+    </member>
+    <member name="M:System.ServiceModel.NetTcpBinding.#ctor(System.String)">
+      <summary>Inizializza una nuova istanza della classe <see cref="T:System.ServiceModel.NetTcpBinding" /> con un nome di configurazione specificato.</summary>
+      <param name="configurationName">Nome di configurazione dell'associazione relativo all'elemento <see cref="T:System.ServiceModel.NetTcpBinding" />.</param>
+    </member>
+    <member name="M:System.ServiceModel.NetTcpBinding.CreateBindingElements">
+      <summary>Consente di creare una raccolta contenente gli elementi dell'associazione.</summary>
+      <returns>Oggetto <see cref="T:System.Collections.Generic.ICollection`1" /> di tipo <see cref="T:System.ServiceModel.Channels.BindingElement" /> che costituisce l'associazione.</returns>
+    </member>
+    <member name="P:System.ServiceModel.NetTcpBinding.EnvelopeVersion">
+      <summary>Consente di ottenere la versione di SOAP utilizzata per i messaggi elaborati da questa associazione. </summary>
+      <returns>Valore della versione <see cref="T:System.ServiceModel.EnvelopeVersion" /> utilizzata con questa associazione.Il valore è SOAP 1.2.</returns>
+    </member>
+    <member name="P:System.ServiceModel.NetTcpBinding.MaxBufferPoolSize">
+      <summary>Ottiene o imposta la dimensione massima in byte consentita per un pool di buffer che archivia messaggi TCP elaborati dall'associazione.</summary>
+      <returns>Dimensione massima consentita per un pool di buffer che archivia messaggi TCP elaborati dall'associazione.Il valore predefinito è 524.288 byte.</returns>
+    </member>
+    <member name="P:System.ServiceModel.NetTcpBinding.MaxBufferSize">
+      <summary>Ottiene o imposta un valore che specifica la dimensione massima, in byte, del buffer utilizzato per archiviare messaggi in memoria.</summary>
+      <returns>Dimensione massima (in byte) del buffer utilizzato per memorizzare messaggi in memoria.Il valore predefinito è 65.536 byte.</returns>
+    </member>
+    <member name="P:System.ServiceModel.NetTcpBinding.MaxReceivedMessageSize">
+      <summary>Ottiene o imposta la dimensione massima in byte di un messaggio ricevuto che viene elaborato dall'associazione.</summary>
+      <returns>Dimensione massima (in byte) di un messaggio ricevuto che viene elaborato dall'associazione.Il valore predefinito è 65.536 byte.</returns>
+    </member>
+    <member name="P:System.ServiceModel.NetTcpBinding.ReaderQuotas">
+      <summary>Ottiene o imposta vincoli sulla complessità dei messaggi SOAP che possono essere elaborati dagli endpoint configurati con questa associazione.</summary>
+      <returns>Classe <see cref="T:System.Xml.XmlDictionaryReaderQuotas" /> che specifica i vincoli di complessità nei messaggi SOAP scambiati.I valori predefiniti per questi vincoli sono riportati nella seguente sezione Osservazioni.</returns>
+    </member>
+    <member name="P:System.ServiceModel.NetTcpBinding.Scheme">
+      <summary>Restituisce lo schema URI per il trasporto.</summary>
+      <returns>Schema URI per il trasporto, ovvero "net.tcp".</returns>
+    </member>
+    <member name="P:System.ServiceModel.NetTcpBinding.Security">
+      <summary>Ottiene un oggetto che specifica il tipo di sicurezza utilizzato con i servizi configurati con questa associazione.</summary>
+      <returns>Oggetto <see cref="T:System.ServiceModel.NetTcpSecurity" /> contenente i tipi di sicurezza utilizzati con questa associazione.La modalità di sicurezza predefinita per NetTCPBinding è <see cref="F:System.ServiceModel.SecurityMode.Transport" />.</returns>
+    </member>
+    <member name="P:System.ServiceModel.NetTcpBinding.TransferMode">
+      <summary>Ottiene o imposta un valore che indica se il servizio configurato con l'associazione utilizza modalità di trasferimento messaggi con flusso o con memorizzazione nel buffer (o entrambe).</summary>
+      <returns>Valore <see cref="T:System.ServiceModel.TransferMode" /> che indica se il servizio configurato con l'associazione utilizza modalità di trasferimento messaggi con flusso o con memorizzazione nel buffer (o entrambe).</returns>
+    </member>
+    <member name="T:System.ServiceModel.NetTcpSecurity">
+      <summary>Consente di specificare i tipi di sicurezza a livello di trasporto e di messaggio utilizzati da un endpoint configurato con un'associazione <see cref="T:System.ServiceModel.NetTcpBinding" />.</summary>
+    </member>
+    <member name="M:System.ServiceModel.NetTcpSecurity.#ctor">
+      <summary>Inizializza una nuova istanza della classe <see cref="T:System.ServiceModel.NetTcpSecurity" />.</summary>
+    </member>
+    <member name="P:System.ServiceModel.NetTcpSecurity.Message">
+      <summary>Consente di ottenere il tipo di requisiti di sicurezza a livello di messaggio di un servizio configurato con un'associazione <see cref="T:System.ServiceModel.NetTcpBinding" />.</summary>
+      <returns>Oggetto <see cref="T:System.ServiceModel.MessageSecurityOverTcp" /> che indica il tipo di requisiti di sicurezza a livello di messaggio di un endpoint.</returns>
+    </member>
+    <member name="P:System.ServiceModel.NetTcpSecurity.Mode">
+      <summary>Ottiene o imposta un valore che indica se un endpoint configurato con un'associazione <see cref="T:System.ServiceModel.NetTcpBinding" /> utilizza meccanismi di sicurezza a livello di messaggio o di trasporto.</summary>
+      <returns>Valore dell'enumerazione <see cref="T:System.ServiceModel.SecurityMode" /> che indica se un endpoint utilizza meccanismi di sicurezza a livello di messaggio o di trasporto.Il valore predefinito è <see cref="F:System.ServiceModel.SecurityMode.Transport" />.</returns>
+      <exception cref="T:System.ArgumentOutOfRangeException">Il valore non è definito.</exception>
+    </member>
+    <member name="P:System.ServiceModel.NetTcpSecurity.Transport">
+      <summary>Ottiene il tipo di requisiti di sicurezza a livello di messaggio di un endpoint configurato con un binding <see cref="T:System.ServiceModel.NetTcpBinding" />.</summary>
+      <returns>Oggetto <see cref="T:System.ServiceModel.TcpTransportSecurity" /> che indica il tipo di requisiti di sicurezza a livello di trasporto di un endpoint.</returns>
+    </member>
+    <member name="T:System.ServiceModel.TcpClientCredentialType">
+      <summary>Enumera i tipi di credenziale validi per i client TCP.</summary>
+    </member>
+    <member name="F:System.ServiceModel.TcpClientCredentialType.Certificate">
+      <summary>Specifica l'autenticazione client mediante un certificato.</summary>
+    </member>
+    <member name="F:System.ServiceModel.TcpClientCredentialType.None">
+      <summary>Specifica l'autenticazione anonima.</summary>
+    </member>
+    <member name="F:System.ServiceModel.TcpClientCredentialType.Windows">
+      <summary>Consente di specificare l'autenticazione client mediante Windows.</summary>
+    </member>
+    <member name="T:System.ServiceModel.TcpTransportSecurity">
+      <summary>Fornisce proprietà che controllano i parametri di autenticazione e il livello di sicurezza del trasporto TCP.</summary>
+    </member>
+    <member name="M:System.ServiceModel.TcpTransportSecurity.#ctor">
+      <summary>Inizializza una nuova istanza della classe <see cref="T:System.ServiceModel.TcpTransportSecurity" />.</summary>
+    </member>
+    <member name="P:System.ServiceModel.TcpTransportSecurity.ClientCredentialType">
+      <summary>Consente di ottenere o impostare il tipo di credenziale client utilizzata per l'autenticazione.</summary>
+      <returns>Restituisce <see cref="T:System.ServiceModel.TcpClientCredentialType" />.</returns>
+    </member>
+    <member name="T:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement">
+      <summary>Classe astratta che completa la classe base <see cref="T:System.ServiceModel.Channels.TransportBindingElement" /> con proprietà aggiuntive comuni ai trasporti orientati alla connessione quali TCP e Named Pipe.  </summary>
+    </member>
+    <member name="M:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement.CanBuildChannelFactory``1(System.ServiceModel.Channels.BindingContext)">
+      <summary>Determina se è possibile compilare una channel factory del tipo specificato.</summary>
+      <returns>true se è possibile compilare una channel factory. In caso contrario, false.</returns>
+      <param name="context">Classe <see cref="T:System.ServiceModel.Channels.BindingContext" /> per il canale.</param>
+      <typeparam name="TChannel">Tipo di canale da verificare.</typeparam>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="context" /> è null.</exception>
+    </member>
+    <member name="P:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement.ConnectionBufferSize">
+      <summary>Ottiene o imposta la dimensione del buffer utilizzato per trasmettere un blocco del messaggio serializzato in transito dal client o servizio.</summary>
+      <returns>Dimensione del buffer di connessione.Il valore predefinito è 8192 byte.</returns>
+      <exception cref="T:System.ArgumentOutOfRangeException">Il valore è minore di zero.</exception>
+    </member>
+    <member name="M:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement.GetProperty``1(System.ServiceModel.Channels.BindingContext)">
+      <summary>Ottiene proprietà dallo stack dell'associazione, se presenti.</summary>
+      <returns>Oggetto <paramref name="T" /> dallo stack dell'associazione, se presente.</returns>
+      <param name="context">Contesto di associazione.</param>
+      <typeparam name="T">Tipo della proprietà.</typeparam>
+    </member>
+    <member name="P:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement.MaxBufferSize">
+      <summary>Ottiene o imposta le dimensioni massime del buffer da utilizzare.Per i messaggi trasmessi come flusso, questo valore deve essere uguale o superiore alla dimensione massima possibile delle intestazioni di messaggio, che vengono lette in modalità di memorizzazione nel buffer.</summary>
+      <returns>Numero massimo di byte utilizzato per memorizzare messaggi in ingresso in memoria.Il valore predefinito è 65.536 byte.</returns>
+      <exception cref="T:System.ArgumentOutOfRangeException">Il valore è minore o uguale a zero.</exception>
+    </member>
+    <member name="P:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement.TransferMode">
+      <summary>Ottiene o imposta un valore che indica se i messaggi vengono memorizzati nel buffer o trasmessi con il trasporto orientato alla connessione.</summary>
+      <returns>Valore <see cref="T:System.ServiceModel.TransferMode" /> che indica se un canale utilizza la modalità di trasferimento messaggi tramite flusso o tramite memorizzazione nel buffer.Il valore predefinito è <see cref="F:System.ServiceModel.TransferMode.Buffered" />.</returns>
+      <exception cref="T:System.ArgumentOutOfRangeException">Il valore non è una struttura <see cref="T:System.ServiceModel.TransferMode" /> valida.</exception>
+    </member>
+    <member name="T:System.ServiceModel.Channels.SslStreamSecurityBindingElement">
+      <summary>Rappresenta un elemento di associazione personalizzato che supporta la sicurezza del canale mediante un flusso SSL.</summary>
+    </member>
+    <member name="M:System.ServiceModel.Channels.SslStreamSecurityBindingElement.#ctor">
+      <summary>Inizializza una nuova istanza della classe <see cref="T:System.ServiceModel.Channels.SslStreamSecurityBindingElement" />. </summary>
+    </member>
+    <member name="M:System.ServiceModel.Channels.SslStreamSecurityBindingElement.BuildChannelFactory``1(System.ServiceModel.Channels.BindingContext)">
+      <summary>Crea una channel factory di un tipo specificato.</summary>
+      <returns>Oggetto <see cref="T:System.serviceModel.Channels.IChannelFactory" /> che rappresenta il channel factory di tipo <paramref name="TChannel" />.</returns>
+      <param name="context">Campo <see cref="T:System.serviceModel.Channels.BindingContext" />.</param>
+      <typeparam name="TChannel">Tipo di channel factory.</typeparam>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="context" /> è null.</exception>
+    </member>
+    <member name="M:System.ServiceModel.Channels.SslStreamSecurityBindingElement.CanBuildChannelFactory``1(System.ServiceModel.Channels.BindingContext)">
+      <summary>Ottiene un valore che indica se può essere creata una channel factory del tipo specificato.</summary>
+      <returns>true se può essere compilata una channel factory del tipo specificato. In caso contrario, false.</returns>
+      <param name="context">Campo <see cref="T:System.ServiceModel.Channels.BindingContext" />.</param>
+      <typeparam name="TChannel">Tipo di channel factory.</typeparam>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="context" /> è null.</exception>
+    </member>
+    <member name="M:System.ServiceModel.Channels.SslStreamSecurityBindingElement.Clone">
+      <summary>Crea una nuova istanza che è una copia dell'istanza corrente.</summary>
+      <returns>Istanza <see cref="T:System.ServiceModel.Channels.SslStreamSecurityBindingElement" /> che rappresenta una copia dell'istanza corrente.</returns>
+    </member>
+    <member name="M:System.ServiceModel.Channels.SslStreamSecurityBindingElement.GetProperty``1(System.ServiceModel.Channels.BindingContext)">
+      <summary>Ottiene un oggetto specificato da <see cref="T:System.ServiceModel.Channels.BindingContext" />.</summary>
+      <returns>Oggetto di tipo <paramref name="T" /> dalla proprietà <see cref="T:System.ServiceModel.Channels.BindingContext" /> oppure null se l'oggetto non viene trovato.</returns>
+      <param name="context">Oggetto <see cref="T:System.ServiceModel.Channels.BindingContext" />.</param>
+      <typeparam name="T">Tipo dell'oggetto da ottenere.</typeparam>
+    </member>
+    <member name="T:System.ServiceModel.Channels.TcpConnectionPoolSettings">
+      <summary>Rappresenta proprietà che controllano il comportamento del pool di connessione di TCP.</summary>
+    </member>
+    <member name="P:System.ServiceModel.Channels.TcpConnectionPoolSettings.GroupName">
+      <summary>Ottiene o imposta il nome del gruppo del pool di connessioni nel client.</summary>
+      <returns>Nome del gruppo del pool di connessioni nel client.Il nome predefinito è "predefinito".</returns>
+      <exception cref="T:System.ArgumentNullException">Il valore è null.</exception>
+    </member>
+    <member name="P:System.ServiceModel.Channels.TcpConnectionPoolSettings.IdleTimeout">
+      <summary>Ottiene o imposta il periodo massimo di inattività della connessione nel pool di connessioni prima che venga interrotta.</summary>
+      <returns>Restituisce la struttura <see cref="T:System.TimeSpan" /> che indica il periodo massimo di inattività della connessione nel pool di connessioni prima che venga interrotta.</returns>
+      <exception cref="T:System.ArgumentOutOfRangeException">Il valore è minore di zero.</exception>
+    </member>
+    <member name="P:System.ServiceModel.Channels.TcpConnectionPoolSettings.LeaseTimeout">
+      <summary>Ottiene o imposta l'intervallo di tempo dopo il quale viene chiusa una connessione nel pool di connessioni.</summary>
+      <returns>Restituisce una struttura <see cref="T:System.TimeSpan" /> che indica l'intervallo di tempo dopo il quale una connessione TCP memorizzata nella cache viene eliminata dal pool di connessioni.</returns>
+      <exception cref="T:System.ArgumentOutOfRangeException">Il valore non può essere minore di zero.</exception>
+    </member>
+    <member name="P:System.ServiceModel.Channels.TcpConnectionPoolSettings.MaxOutboundConnectionsPerEndpoint">
+      <summary>Ottiene o imposta il numero massimo di connessioni in uscita per ogni endpoint memorizzato nella cache del pool di connessioni.</summary>
+      <returns>Numero massimo di connessioni in uscita per ogni endpoint memorizzato nella cache del pool di connessioni.Il valore predefinito è 10.</returns>
+      <exception cref="T:System.ArgumentOutOfRangeException">Il valore è minore o uguale a zero.</exception>
+    </member>
+    <member name="T:System.ServiceModel.Channels.TcpTransportBindingElement">
+      <summary>Rappresenta l'elemento di associazione per il trasporto TCP.</summary>
+    </member>
+    <member name="M:System.ServiceModel.Channels.TcpTransportBindingElement.#ctor">
+      <summary>Inizializza una nuova istanza della classe <see cref="T:System.ServiceModel.Channels.TcpTransportBindingElement" />. </summary>
+    </member>
+    <member name="M:System.ServiceModel.Channels.TcpTransportBindingElement.#ctor(System.ServiceModel.Channels.TcpTransportBindingElement)">
+      <summary>Inizializza una nuova istanza della classe <see cref="T:System.ServiceModel.Channels.TcpTransportBindingElement" />.</summary>
+      <param name="elementToBeCloned">Istanza della classe <see cref="T:System.ServiceModel.Channels.TcpTransportBindingElement" />.</param>
+    </member>
+    <member name="M:System.ServiceModel.Channels.TcpTransportBindingElement.BuildChannelFactory``1(System.ServiceModel.Channels.BindingContext)">
+      <summary>Crea una channel factory che può essere utilizzata per creare un canale.</summary>
+      <returns>Restituisce una channel factory del tipo specificato.</returns>
+      <param name="context">Membri <see cref="T:System.ServiceModel.Channels.BindingContext" /> che descrivono associazioni, comportamenti, contratti e altre informazioni richieste per creare la channel factory.</param>
+      <typeparam name="TChannel">Tipo di channel factory.</typeparam>
+      <exception cref="T:System.ArgumentNullException">Il parametro <paramref name="context" /> non può essere null.</exception>
+      <exception cref="T:System.ArgumentException">È stato passato un argomento non valido.</exception>
+    </member>
+    <member name="M:System.ServiceModel.Channels.TcpTransportBindingElement.Clone">
+      <summary>Crea una copia dell'elemento di associazione corrente.</summary>
+      <returns>Restituisce una copia dell'elemento di associazione corrente.</returns>
+    </member>
+    <member name="P:System.ServiceModel.Channels.TcpTransportBindingElement.ConnectionPoolSettings">
+      <summary>Ottiene una raccolta di impostazioni del pool delle connessioni.</summary>
+      <returns>Oggetto <see cref="T:System.ServiceModel.Channels.TcpConnectionPoolSettings" /> che contiene varie proprietà riferite al pool di connessioni.</returns>
+    </member>
+    <member name="M:System.ServiceModel.Channels.TcpTransportBindingElement.GetProperty``1(System.ServiceModel.Channels.BindingContext)">
+      <summary>Ottiene un oggetto specificato da <see cref="T:System.ServiceModel.Channels.BindingContext" />.</summary>
+      <returns>Oggetto specificato da <see cref="T:System.ServiceModel.Channels.BindingContext" /> o null se l'oggetto non viene trovato.</returns>
+      <param name="context">Oggetto <see cref="T:System.ServiceModel.Channels.BindingContext" />.</param>
+      <typeparam name="T">Oggetto da ottenere.</typeparam>
+    </member>
+    <member name="P:System.ServiceModel.Channels.TcpTransportBindingElement.Scheme">
+      <summary>Restituisce lo schema URI per il trasporto.</summary>
+      <returns>Restituisce lo schema URI per il trasporto che è "net.tcp".</returns>
+    </member>
+    <member name="T:System.ServiceModel.Channels.WindowsStreamSecurityBindingElement">
+      <summary>Rappresenta l'elemento di associazione utilizzato per specificare le impostazioni di sicurezza del flusso di Windows.</summary>
+    </member>
+    <member name="M:System.ServiceModel.Channels.WindowsStreamSecurityBindingElement.#ctor">
+      <summary>Inizializza una nuova istanza della classe <see cref="T:System.ServiceModel.Channels.WindowsStreamSecurityBindingElement" />.  </summary>
+    </member>
+    <member name="M:System.ServiceModel.Channels.WindowsStreamSecurityBindingElement.BuildChannelFactory``1(System.ServiceModel.Channels.BindingContext)">
+      <summary>Crea una channel factory che può essere utilizzata per creare un canale.</summary>
+      <returns>Restituisce una channel factory del tipo specificato.Questo metodo aggiunge questa istanza della classe a <see cref="P:System.ServiceModel.Channels.BindingContext.BindingParameters" /> e viene delegato al metodo di compilazione <see cref="M:System.ServiceModel.Channels.BindingContext.BuildInnerChannelFactory``1" />.</returns>
+      <param name="context">Membri <see cref="T:System.ServiceModel.Channels.BindingContext" /> che descrivono associazioni, comportamenti, contratti e altre informazioni richieste per creare la channel factory.</param>
+      <typeparam name="TChannel">Tipo di channel factory.</typeparam>
+      <exception cref="T:System.ArgumentNullException">Il parametro <paramref name="context" /> non può essere null.</exception>
+    </member>
+    <member name="M:System.ServiceModel.Channels.WindowsStreamSecurityBindingElement.CanBuildChannelFactory``1(System.ServiceModel.Channels.BindingContext)">
+      <summary>Determina se è possibile compilare una channel factory del tipo specificato.</summary>
+      <returns>true se è possibile compilare una channel factory. In caso contrario, false.</returns>
+      <param name="context">Contesto di associazione.</param>
+      <typeparam name="TChannel">Tipo di canale da verificare.</typeparam>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="context" /> è null.</exception>
+    </member>
+    <member name="M:System.ServiceModel.Channels.WindowsStreamSecurityBindingElement.Clone">
+      <summary>Crea un nuovo elemento di associazione da questa istanza della classe. </summary>
+      <returns>
+        <see cref="T:System.ServiceModel.Channels.BindingElement" />.</returns>
+    </member>
+    <member name="M:System.ServiceModel.Channels.WindowsStreamSecurityBindingElement.GetProperty``1(System.ServiceModel.Channels.BindingContext)">
+      <summary>Ottiene un oggetto specificato da <see cref="T:System.ServiceModel.Channels.BindingContext" />.</summary>
+      <returns>Oggetto specificato dalla classe <see cref="T:System.ServiceModel.Channels.BindingContext" /> oppure null se l'oggetto non viene individuato.</returns>
+      <param name="context">Oggetto <see cref="T:System.ServiceModel.Channels.BindingContext" />.</param>
+      <typeparam name="T">Oggetto da ottenere.</typeparam>
+    </member>
+  </members>
+</doc>

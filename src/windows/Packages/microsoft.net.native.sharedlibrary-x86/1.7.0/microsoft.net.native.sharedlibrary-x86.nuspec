@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>Microsoft.Net.Native.SharedLibrary-x86</id>
+    <version>1.7.0</version>
+    <authors>Microsoft</authors>
+    <owners>Microsoft</owners>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <developmentDependency>true</developmentDependency>
+    <licenseUrl>https://go.microsoft.com/fwlink/?linkid=838619</licenseUrl>
+    <projectUrl>http://github.com/dotnet</projectUrl>
+    <description>.Net Native Compilers package. Referencing this package will cause the project to be built using the specific version of the .NET Native compiler contained in the package, as opposed to any system installed version.
+
+Supported Platforms:
+- UWP tools 1.7</description>
+    <releaseNotes></releaseNotes>
+    <language>en-US</language>
+    <tags>Compiler Compilation .Net</tags>
+  </metadata>
+</package>

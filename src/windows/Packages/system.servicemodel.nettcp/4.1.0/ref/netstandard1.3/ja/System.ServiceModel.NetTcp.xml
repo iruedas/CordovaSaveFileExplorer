@@ -1,0 +1,299 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>System.ServiceModel.NetTcp</name>
+  </assembly>
+  <members>
+    <member name="T:System.ServiceModel.MessageSecurityOverTcp">
+      <summary>TCP トランスポートを使用して送信されるメッセージのメッセージ レベルのセキュリティを構成します。</summary>
+    </member>
+    <member name="M:System.ServiceModel.MessageSecurityOverTcp.#ctor">
+      <summary>
+        <see cref="T:System.ServiceModel.MessageSecurityOverTcp" /> クラスの新しいインスタンスを初期化します。</summary>
+    </member>
+    <member name="P:System.ServiceModel.MessageSecurityOverTcp.ClientCredentialType">
+      <summary>クライアントが SOAP レベルでクライアント自身をサービスに対して認証するために使用する、クライアント資格情報の種類を指定します。</summary>
+      <returns>
+        <see cref="T:System.ServiceModel.MessageCredentialType" />既定値は、<see cref="F:System.ServiceModel.MessageCredentialType.Windows" /> です。</returns>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <see cref="P:System.ServiceModel.MessageSecurityOverTcp.ClientCredentialType" /> の値が有効な <see cref="T:System.ServiceModel.MessageCredentialType" /> ではありません。</exception>
+    </member>
+    <member name="T:System.ServiceModel.NetTcpBinding">
+      <summary>複数コンピューターの通信に適した、セキュリティで保護された信頼できるバインドです。</summary>
+    </member>
+    <member name="M:System.ServiceModel.NetTcpBinding.#ctor">
+      <summary>
+        <see cref="T:System.ServiceModel.NetTcpBinding" /> クラスの新しいインスタンスを初期化します。</summary>
+    </member>
+    <member name="M:System.ServiceModel.NetTcpBinding.#ctor(System.ServiceModel.SecurityMode)">
+      <summary>使用されるセキュリティの種類を指定して、<see cref="T:System.ServiceModel.NetTcpBinding" /> クラスの新しいインスタンスを初期化します。</summary>
+      <param name="securityMode">バインドで使用されるセキュリティの種類を指定する <see cref="T:System.ServiceModel.SecurityMode" /> 値。</param>
+    </member>
+    <member name="M:System.ServiceModel.NetTcpBinding.#ctor(System.String)">
+      <summary>指定した構成名を使用して、<see cref="T:System.ServiceModel.NetTcpBinding" /> クラスの新しいインスタンスを初期化します。</summary>
+      <param name="configurationName">
+        <see cref="T:System.ServiceModel.NetTcpBinding" /> のバインディング構成の名前。</param>
+    </member>
+    <member name="M:System.ServiceModel.NetTcpBinding.CreateBindingElements">
+      <summary>バインド用のバインド要素でコレクションを作成します。</summary>
+      <returns>バインドを構成する <see cref="T:System.ServiceModel.Channels.BindingElement" /> 型の <see cref="T:System.Collections.Generic.ICollection`1" />。</returns>
+    </member>
+    <member name="P:System.ServiceModel.NetTcpBinding.EnvelopeVersion">
+      <summary>このバインドによって処理されるメッセージで使用される SOAP のバージョンを取得します。</summary>
+      <returns>このバインドと共に使用される <see cref="T:System.ServiceModel.EnvelopeVersion" /> の値。既定値は SOAP 1.2 です。</returns>
+    </member>
+    <member name="P:System.ServiceModel.NetTcpBinding.MaxBufferPoolSize">
+      <summary>バインディングによって処理される TCP メッセージを保存するバッファー プールで許可される最大サイズ (バイト単位) を取得または設定します。</summary>
+      <returns>バインドによって処理される TCP メッセージを保存するバッファー プールの最大サイズ。既定値は 524,288 バイトです。</returns>
+    </member>
+    <member name="P:System.ServiceModel.NetTcpBinding.MaxBufferSize">
+      <summary>メッセージをメモリに保存するために使用するバッファーの最大サイズをバイト単位で指定する値を取得または設定します。</summary>
+      <returns>メモリ内でメッセージの保存に使用されるバッファーの最大サイズ (バイト単位)。既定値は 65,536 バイトです。</returns>
+    </member>
+    <member name="P:System.ServiceModel.NetTcpBinding.MaxReceivedMessageSize">
+      <summary>このバインディングで処理される受信メッセージの最大サイズ (バイト単位) を取得または設定します。</summary>
+      <returns>バインドで処理される受信メッセージの最大サイズ (バイト)。既定値は 65,536 バイトです。</returns>
+    </member>
+    <member name="P:System.ServiceModel.NetTcpBinding.ReaderQuotas">
+      <summary>このバインディングで構成されたエンドポイントにより処理可能な、SOAP メッセージの複雑さに対する制約を取得または設定します。</summary>
+      <returns>交換される SOAP メッセージに対する複雑さの制約を指定する <see cref="T:System.Xml.XmlDictionaryReaderQuotas" />。これらの制約の既定値については、後の「解説」で説明します。</returns>
+    </member>
+    <member name="P:System.ServiceModel.NetTcpBinding.Scheme">
+      <summary>トランスポートの URI スキームを返します。</summary>
+      <returns>"net.tcp" であるトランスポートの URI スキーム。</returns>
+    </member>
+    <member name="P:System.ServiceModel.NetTcpBinding.Security">
+      <summary>この要素を使用して構成されたサービスで使用されるセキュリティの種類を指定するオブジェクトを取得します。</summary>
+      <returns>このバインドで使用されるセキュリティの種類を格納する <see cref="T:System.ServiceModel.NetTcpSecurity" />。NetTCPBinding の既定のセキュリティ モードは <see cref="F:System.ServiceModel.SecurityMode.Transport" /> です。</returns>
+    </member>
+    <member name="P:System.ServiceModel.NetTcpBinding.TransferMode">
+      <summary>このバインディングを使用して構成されたサービスが、メッセージ転送のストリーミング モードまたはバッファー モード (あるいは両方のモード) を使用するかどうかを示す値を取得または設定します。</summary>
+      <returns>バインディングで構成されたサービスがメッセージ転送のストリーム モードまたはバッファー モード (あるいは両方のモード) を使用するかどうかを示す <see cref="T:System.ServiceModel.TransferMode" /> 値。</returns>
+    </member>
+    <member name="T:System.ServiceModel.NetTcpSecurity">
+      <summary>
+        <see cref="T:System.ServiceModel.NetTcpBinding" /> を使用して構成されたエンドポイントで使用される、トランスポート レベルとメッセージ レベルのセキュリティの種類を指定します。</summary>
+    </member>
+    <member name="M:System.ServiceModel.NetTcpSecurity.#ctor">
+      <summary>
+        <see cref="T:System.ServiceModel.NetTcpSecurity" /> クラスの新しいインスタンスを初期化します。</summary>
+    </member>
+    <member name="P:System.ServiceModel.NetTcpSecurity.Message">
+      <summary>
+        <see cref="T:System.ServiceModel.NetTcpBinding" /> を使用して構成されたサービスの、メッセージ レベルのセキュリティ要件の種類を取得します。</summary>
+      <returns>エンドポイントのメッセージ レベルのセキュリティ要件の種類を示す <see cref="T:System.ServiceModel.MessageSecurityOverTcp" />。</returns>
+    </member>
+    <member name="P:System.ServiceModel.NetTcpSecurity.Mode">
+      <summary>
+        <see cref="T:System.ServiceModel.NetTcpBinding" /> を使用して構成されたエンドポイントでメッセージレベルのセキュリティが使用されるか、トランスポートレベルのセキュリティが使用されるかを指定する値を取得または設定します。</summary>
+      <returns>エンドポイントで使用されるセキュリティがメッセージレベルかトランスポートレベルかを示す <see cref="T:System.ServiceModel.SecurityMode" /> の値。既定値は <see cref="F:System.ServiceModel.SecurityMode.Transport" /> です。</returns>
+      <exception cref="T:System.ArgumentOutOfRangeException">値が定義されていません。</exception>
+    </member>
+    <member name="P:System.ServiceModel.NetTcpSecurity.Transport">
+      <summary>
+        <see cref="T:System.ServiceModel.NetTcpBinding" /> を使用して構成されたエンドポイントの、メッセージ レベルのセキュリティ要件の種類を取得します。</summary>
+      <returns>エンドポイントのトランスポート レベルのセキュリティ要件の種類を示す <see cref="T:System.ServiceModel.TcpTransportSecurity" />。</returns>
+    </member>
+    <member name="T:System.ServiceModel.TcpClientCredentialType">
+      <summary>TCP クライアントの有効な資格情報の種類を列挙します。</summary>
+    </member>
+    <member name="F:System.ServiceModel.TcpClientCredentialType.Certificate">
+      <summary>証明書を使用するクライアント認証を指定します。</summary>
+    </member>
+    <member name="F:System.ServiceModel.TcpClientCredentialType.None">
+      <summary>匿名認証を指定します。</summary>
+    </member>
+    <member name="F:System.ServiceModel.TcpClientCredentialType.Windows">
+      <summary>Windows を使用するクライアント認証を指定します。</summary>
+    </member>
+    <member name="T:System.ServiceModel.TcpTransportSecurity">
+      <summary>TCP トランスポートの認証パラメーターと保護レベルを制御するプロパティを提供します。</summary>
+    </member>
+    <member name="M:System.ServiceModel.TcpTransportSecurity.#ctor">
+      <summary>
+        <see cref="T:System.ServiceModel.TcpTransportSecurity" /> クラスの新しいインスタンスを初期化します。</summary>
+    </member>
+    <member name="P:System.ServiceModel.TcpTransportSecurity.ClientCredentialType">
+      <summary>認証で使用されるクライアント資格情報の種類を取得または設定します。</summary>
+      <returns>
+        <see cref="T:System.ServiceModel.TcpClientCredentialType" /> を返します。</returns>
+    </member>
+    <member name="T:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement">
+      <summary>TCP や名前付きパイプなどの接続指向トランスポートに共通するプロパティを追加して基本 <see cref="T:System.ServiceModel.Channels.TransportBindingElement" /> を補完する抽象クラス。</summary>
+    </member>
+    <member name="M:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement.CanBuildChannelFactory``1(System.ServiceModel.Channels.BindingContext)">
+      <summary>指定した種類のチャネル ファクトリを作成できるかどうかを判断します。</summary>
+      <returns>チャネル ファクトリを作成できる場合は true、それ以外の場合は false。</returns>
+      <param name="context">チャネルの <see cref="T:System.ServiceModel.Channels.BindingContext" />。</param>
+      <typeparam name="TChannel">チェックするチャネルの種類。</typeparam>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="context" /> は null なので、</exception>
+    </member>
+    <member name="P:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement.ConnectionBufferSize">
+      <summary>クライアントまたサービスからネットワークでシリアル化されたメッセージのチャンクを転送するために使用されるバッファーのサイズを取得または設定します。</summary>
+      <returns>接続バッファーのサイズ。既定値は 8,192 バイトです。</returns>
+      <exception cref="T:System.ArgumentOutOfRangeException">値が 0 未満です。</exception>
+    </member>
+    <member name="M:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement.GetProperty``1(System.ServiceModel.Channels.BindingContext)">
+      <summary>バインド スタックにプロパティがある場合は、そのプロパティを取得します。</summary>
+      <returns>バインド スタックに <paramref name="T" /> オブジェクトがある場合はそのオブジェクト。</returns>
+      <param name="context">バインディング コンテキスト。</param>
+      <typeparam name="T">プロパティの型。</typeparam>
+    </member>
+    <member name="P:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement.MaxBufferSize">
+      <summary>使用するバッファーの最大サイズを取得または設定します。ストリーム メッセージの場合、この値は少なくともメッセージ ヘッダーで使用できる最大サイズにする必要があります。これは、バッファー モードで読み取られます。</summary>
+      <returns>メモリ内で入力メッセージのバッファーに使用される最大バイト数。既定値は 65,536 バイトです。</returns>
+      <exception cref="T:System.ArgumentOutOfRangeException">値が 0 以下です。</exception>
+    </member>
+    <member name="P:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement.TransferMode">
+      <summary>接続指向のトランスポートでメッセージをバッファーするか、ストリーム配信するかを示す値を取得または設定します。</summary>
+      <returns>チャネルがメッセージ転送でストリーム配信モードとバッファー モードのどちらを使用するかを示す <see cref="T:System.ServiceModel.TransferMode" /> の値。既定値は、<see cref="F:System.ServiceModel.TransferMode.Buffered" /> です。</returns>
+      <exception cref="T:System.ArgumentOutOfRangeException">値が有効な <see cref="T:System.ServiceModel.TransferMode" /> ではありません。</exception>
+    </member>
+    <member name="T:System.ServiceModel.Channels.SslStreamSecurityBindingElement">
+      <summary>SSL ストリームを使用するチャネル セキュリティをサポートするカスタム バインディング要素を表します。</summary>
+    </member>
+    <member name="M:System.ServiceModel.Channels.SslStreamSecurityBindingElement.#ctor">
+      <summary>
+        <see cref="T:System.ServiceModel.Channels.SslStreamSecurityBindingElement" /> クラスの新しいインスタンスを初期化します。</summary>
+    </member>
+    <member name="M:System.ServiceModel.Channels.SslStreamSecurityBindingElement.BuildChannelFactory``1(System.ServiceModel.Channels.BindingContext)">
+      <summary>指定した種類のチャネル ファクトリを作成します。</summary>
+      <returns>
+        <paramref name="TChannel" /> 型のチャネル ファクトリを表す <see cref="T:System.serviceModel.Channels.IChannelFactory" /> オブジェクト。</returns>
+      <param name="context">
+        <see cref="T:System.serviceModel.Channels.BindingContext" />。</param>
+      <typeparam name="TChannel">チャネル ファクトリの種類。</typeparam>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="context" /> は null なので、</exception>
+    </member>
+    <member name="M:System.ServiceModel.Channels.SslStreamSecurityBindingElement.CanBuildChannelFactory``1(System.ServiceModel.Channels.BindingContext)">
+      <summary>指定した種類のチャネル ファクトリを作成できるかどうかを示す値を取得します。</summary>
+      <returns>指定した型のチャネル ファクトリを作成できる場合は true。それ以外の場合は false。</returns>
+      <param name="context">
+        <see cref="T:System.ServiceModel.Channels.BindingContext" />。</param>
+      <typeparam name="TChannel">チャネル ファクトリの種類。</typeparam>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="context" /> は null なので、</exception>
+    </member>
+    <member name="M:System.ServiceModel.Channels.SslStreamSecurityBindingElement.Clone">
+      <summary>現在のインスタンスのコピーである新しいインスタンスを作成します。</summary>
+      <returns>現在のインスタンスのコピーで <see cref="T:System.ServiceModel.Channels.SslStreamSecurityBindingElement" /> インスタンス。</returns>
+    </member>
+    <member name="M:System.ServiceModel.Channels.SslStreamSecurityBindingElement.GetProperty``1(System.ServiceModel.Channels.BindingContext)">
+      <summary>
+        <see cref="T:System.ServiceModel.Channels.BindingContext" /> から指定したオブジェクトを取得します。</summary>
+      <returns>
+        <see cref="T:System.ServiceModel.Channels.BindingContext" /> からの <paramref name="T" /> 型のオブジェクト。オブジェクトが見つからない場合は null。</returns>
+      <param name="context">
+        <see cref="T:System.ServiceModel.Channels.BindingContext" />
+      </param>
+      <typeparam name="T">取得対象のオブジェクトの型。</typeparam>
+    </member>
+    <member name="T:System.ServiceModel.Channels.TcpConnectionPoolSettings">
+      <summary>TCP 接続プールの動作を制御するプロパティを表します。</summary>
+    </member>
+    <member name="P:System.ServiceModel.Channels.TcpConnectionPoolSettings.GroupName">
+      <summary>クライアント上の接続プール グループのグループ名を取得または設定します。</summary>
+      <returns>クライアントの接続プール グループのグループ名。既定の名前は "default" です。</returns>
+      <exception cref="T:System.ArgumentNullException">値が null です。</exception>
+    </member>
+    <member name="P:System.ServiceModel.Channels.TcpConnectionPoolSettings.IdleTimeout">
+      <summary>接続プール内の接続が切断されるまでの最大アイドル時間を取得または設定します。</summary>
+      <returns>接続プール内でアイドル状態の接続が切断されるまでの最長時間を示す <see cref="T:System.TimeSpan" /> 構造体を返します。</returns>
+      <exception cref="T:System.ArgumentOutOfRangeException">値が 0 未満です。</exception>
+    </member>
+    <member name="P:System.ServiceModel.Channels.TcpConnectionPoolSettings.LeaseTimeout">
+      <summary>接続プール内の接続が閉じられるまでの時間を取得または設定します。</summary>
+      <returns>キャッシュされた TCP 接続が接続プールから削除されるまでの時間を示す <see cref="T:System.TimeSpan" /> 構造体を返します。</returns>
+      <exception cref="T:System.ArgumentOutOfRangeException">値は 0 未満には設定できません。</exception>
+    </member>
+    <member name="P:System.ServiceModel.Channels.TcpConnectionPoolSettings.MaxOutboundConnectionsPerEndpoint">
+      <summary>接続プールにキャッシュされている各エンドポイントの発信接続の最大数を取得または設定します。</summary>
+      <returns>接続プールにキャッシュされている各エンドポイントの発信接続で許可される最大数。既定値は 10 です。</returns>
+      <exception cref="T:System.ArgumentOutOfRangeException">値が 0 以下です。</exception>
+    </member>
+    <member name="T:System.ServiceModel.Channels.TcpTransportBindingElement">
+      <summary>TCP トランスポートのバインド要素を表します。</summary>
+    </member>
+    <member name="M:System.ServiceModel.Channels.TcpTransportBindingElement.#ctor">
+      <summary>
+        <see cref="T:System.ServiceModel.Channels.TcpTransportBindingElement" /> クラスの新しいインスタンスを初期化します。</summary>
+    </member>
+    <member name="M:System.ServiceModel.Channels.TcpTransportBindingElement.#ctor(System.ServiceModel.Channels.TcpTransportBindingElement)">
+      <summary>
+        <see cref="T:System.ServiceModel.Channels.TcpTransportBindingElement" /> クラスの新しいインスタンスを初期化します。</summary>
+      <param name="elementToBeCloned">
+        <see cref="T:System.ServiceModel.Channels.TcpTransportBindingElement" /> クラスのインスタンス。</param>
+    </member>
+    <member name="M:System.ServiceModel.Channels.TcpTransportBindingElement.BuildChannelFactory``1(System.ServiceModel.Channels.BindingContext)">
+      <summary>チャネルを作成するために使用できるチャネル ファクトリを作成します。</summary>
+      <returns>指定した種類のチャネル ファクトリを返します。</returns>
+      <param name="context">バインド、動作、コントラクト、およびチャネル ファクトリの作成に必要なその他の情報を記述する <see cref="T:System.ServiceModel.Channels.BindingContext" /> メンバー。</param>
+      <typeparam name="TChannel">チャネル ファクトリの種類。</typeparam>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="context" /> に null は指定できません。</exception>
+      <exception cref="T:System.ArgumentException">無効な引数が渡されました。</exception>
+    </member>
+    <member name="M:System.ServiceModel.Channels.TcpTransportBindingElement.Clone">
+      <summary>現在のバインディング要素のコピーを作成します。</summary>
+      <returns>現在のバインド要素のコピーを返します。</returns>
+    </member>
+    <member name="P:System.ServiceModel.Channels.TcpTransportBindingElement.ConnectionPoolSettings">
+      <summary>接続プール設定のコレクションを取得します。</summary>
+      <returns>接続プールに関連するさまざまなプロパティを格納する <see cref="T:System.ServiceModel.Channels.TcpConnectionPoolSettings" /> オブジェクト。</returns>
+    </member>
+    <member name="M:System.ServiceModel.Channels.TcpTransportBindingElement.GetProperty``1(System.ServiceModel.Channels.BindingContext)">
+      <summary>
+        <see cref="T:System.ServiceModel.Channels.BindingContext" /> から指定したオブジェクトを取得します。</summary>
+      <returns>
+        <see cref="T:System.ServiceModel.Channels.BindingContext" /> から取得した指定オブジェクト。オブジェクトが見つからない場合は null。</returns>
+      <param name="context">
+        <see cref="T:System.ServiceModel.Channels.BindingContext" />
+      </param>
+      <typeparam name="T">取得するオブジェクト。</typeparam>
+    </member>
+    <member name="P:System.ServiceModel.Channels.TcpTransportBindingElement.Scheme">
+      <summary>トランスポートの URI スキームを返します。</summary>
+      <returns>"net.tcp" であるトランスポートの URI スキームを返します。</returns>
+    </member>
+    <member name="T:System.ServiceModel.Channels.WindowsStreamSecurityBindingElement">
+      <summary>Windows ストリーム セキュリティ設定を指定するために使用されるバインド要素を表します。</summary>
+    </member>
+    <member name="M:System.ServiceModel.Channels.WindowsStreamSecurityBindingElement.#ctor">
+      <summary>
+        <see cref="T:System.ServiceModel.Channels.WindowsStreamSecurityBindingElement" /> クラスの新しいインスタンスを初期化します。</summary>
+    </member>
+    <member name="M:System.ServiceModel.Channels.WindowsStreamSecurityBindingElement.BuildChannelFactory``1(System.ServiceModel.Channels.BindingContext)">
+      <summary>チャネルを作成するために使用できるチャネル ファクトリを作成します。</summary>
+      <returns>指定した種類のチャネル ファクトリを返します。このメソッドは、このクラス インスタンスを <see cref="P:System.ServiceModel.Channels.BindingContext.BindingParameters" /> に追加し、ビルド メソッド <see cref="M:System.ServiceModel.Channels.BindingContext.BuildInnerChannelFactory``1" /> に代行させます。</returns>
+      <param name="context">バインド、動作、コントラクト、およびチャネル ファクトリの作成に必要なその他の情報を記述する <see cref="T:System.ServiceModel.Channels.BindingContext" /> メンバー。</param>
+      <typeparam name="TChannel">チャネル ファクトリの種類。</typeparam>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="context" /> に null は指定できません。</exception>
+    </member>
+    <member name="M:System.ServiceModel.Channels.WindowsStreamSecurityBindingElement.CanBuildChannelFactory``1(System.ServiceModel.Channels.BindingContext)">
+      <summary>指定した種類のチャネル ファクトリを作成できるかどうかを判断します。</summary>
+      <returns>チャネル ファクトリを作成できる場合は true、それ以外の場合は false。</returns>
+      <param name="context">バインディング コンテキスト。</param>
+      <typeparam name="TChannel">チェックするチャネルの種類。</typeparam>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="context" /> は null なので、</exception>
+    </member>
+    <member name="M:System.ServiceModel.Channels.WindowsStreamSecurityBindingElement.Clone">
+      <summary>クラスのこのインスタンスから新しいバインド要素を作成します。</summary>
+      <returns>
+        <see cref="T:System.ServiceModel.Channels.BindingElement" />.</returns>
+    </member>
+    <member name="M:System.ServiceModel.Channels.WindowsStreamSecurityBindingElement.GetProperty``1(System.ServiceModel.Channels.BindingContext)">
+      <summary>
+        <see cref="T:System.ServiceModel.Channels.BindingContext" /> から指定したオブジェクトを取得します。</summary>
+      <returns>
+        <see cref="T:System.ServiceModel.Channels.BindingContext" /> から取得した指定オブジェクト。オブジェクトが見つからない場合は null。</returns>
+      <param name="context">
+        <see cref="T:System.ServiceModel.Channels.BindingContext" />
+      </param>
+      <typeparam name="T">取得するオブジェクト。</typeparam>
+    </member>
+  </members>
+</doc>

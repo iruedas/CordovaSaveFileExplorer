@@ -1,0 +1,346 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>System.ServiceModel.Security</name>
+  </assembly>
+  <members>
+    <member name="T:System.ServiceModel.DnsEndpointIdentity">
+      <summary>指定伺服器的 DNS 身分識別。</summary>
+    </member>
+    <member name="M:System.ServiceModel.DnsEndpointIdentity.#ctor(System.String)">
+      <summary>從 DNS 名稱初始化這個類別的新執行個體。</summary>
+      <param name="dnsName">DNS 名稱。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="dnsName" /> 為 null。</exception>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="dnsName" /> 的宣告型別不是 <see cref="P:System.IdentityModel.Claims.ClaimTypes.Dns" />。</exception>
+    </member>
+    <member name="T:System.ServiceModel.MessageSecurityVersion">
+      <summary>一個抽象容器類別，當它的數個靜態屬性實作它時，此類別會包含安全性元件的版本資訊。</summary>
+    </member>
+    <member name="P:System.ServiceModel.MessageSecurityVersion.BasicSecurityProfileVersion">
+      <summary>取得 Basic Security Profile 的版本資訊。</summary>
+      <returns>
+        <see cref="T:System.ServiceModel.Security.BasicSecurityProfileVersion" /> 物件。</returns>
+    </member>
+    <member name="P:System.ServiceModel.MessageSecurityVersion.SecureConversationVersion">
+      <summary>取得對應於訊息安全性版本的 WS-SecureConversation 版本。</summary>
+      <returns>
+        <see cref="T:System.ServiceModel.Security.SecureConversationVersion" /> 物件，對應至訊息安全性版本。</returns>
+    </member>
+    <member name="P:System.ServiceModel.MessageSecurityVersion.SecurityPolicyVersion">
+      <summary>取得對應於訊息安全性版本的 WS-SecurityPolicy 版本。</summary>
+      <returns>
+        <see cref="T:System.ServiceModel.Security.SecurityPolicyVersion" /> 物件，對應至訊息安全性版本。</returns>
+    </member>
+    <member name="P:System.ServiceModel.MessageSecurityVersion.SecurityVersion">
+      <summary>取得對應於訊息安全性版本的 WS-Security 版本。</summary>
+      <returns>
+        <see cref="T:System.ServiceModel.Security.SecurityVersion" /> 物件，對應至訊息安全性版本。</returns>
+    </member>
+    <member name="P:System.ServiceModel.MessageSecurityVersion.TrustVersion">
+      <summary>取得對應於訊息安全性版本的 WS-Trust 版本。</summary>
+      <returns>
+        <see cref="T:System.ServiceModel.Security.TrustVersion" /> 物件，對應至訊息安全性版本。</returns>
+    </member>
+    <member name="P:System.ServiceModel.MessageSecurityVersion.WSSecurity10WSTrustFebruary2005WSSecureConversationFebruary2005WSSecurityPolicy11BasicSecurityProfile10">
+      <summary>取得要求 Basic Security Profile 1.0 (採用 WS-Security 1.0、WS-Trust of February 2005、WS-SecureConversation of February 2005 與 WS-SecurityPolicy 1.1 安全性規格) 的訊息安全性版本。</summary>
+      <returns>
+        <see cref="T:System.ServiceModel.MessageSecurityVersion" /> 物件，要求 Basic Security Profile 1.0 (採用 WS-Security 1.0、WS-Trust of February 2005、WS-SecureConversation of February 2005 與 WS-SecurityPolicy 1.1 安全性規格)。</returns>
+    </member>
+    <member name="P:System.ServiceModel.MessageSecurityVersion.WSSecurity11WSTrustFebruary2005WSSecureConversationFebruary2005WSSecurityPolicy11">
+      <summary>取得要求 WS-Security 1.1、WS-Trust of February 2005、WS-SecureConversation of February 2005 與 WS-SecurityPolicy 1.1 安全性規格的訊息安全性版本。</summary>
+      <returns>
+        <see cref="T:System.ServiceModel.MessageSecurityVersion" /> 物件，要求 WS-Security 1.1、WS-Trust of February 2005、WS-SecureConversation of February 2005 與 WS-SecurityPolicy 1.1 安全性規格。</returns>
+    </member>
+    <member name="P:System.ServiceModel.MessageSecurityVersion.WSSecurity11WSTrustFebruary2005WSSecureConversationFebruary2005WSSecurityPolicy11BasicSecurityProfile10">
+      <summary>取得要求 Basic Security Profile (採用 WS-Security 1.1、WS-Trust of February 2005、WS-SecureConversation of February 2005 與 WS-SecurityPolicy 1.1 安全性規格) 的訊息安全性版本。</summary>
+      <returns>
+        <see cref="T:System.ServiceModel.MessageSecurityVersion" /> 物件，要求 Basic Security Profile (採用 WS-Security 1.1、WS-Trust of February 2005、WS-SecureConversation of February 2005 與 WS-SecurityPolicy 1.1 安全性規格)。</returns>
+    </member>
+    <member name="T:System.ServiceModel.SpnEndpointIdentity">
+      <summary>當繫結使用 Kerberos 時，代表身分識別的服務主要名稱 (SPN)。</summary>
+    </member>
+    <member name="M:System.ServiceModel.SpnEndpointIdentity.#ctor(System.String)">
+      <summary>使用指定的服務主要名稱 (SPN)，初始化 <see cref="T:System.ServiceModel.SpnEndpointIdentity" /> 類別的新執行個體。</summary>
+      <param name="spnName">SPN。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="spnName" /> 為 null。</exception>
+    </member>
+    <member name="P:System.ServiceModel.SpnEndpointIdentity.SpnLookupTime">
+      <summary>指定查閱服務主要名稱 (SPN) 所允許的最長時間。</summary>
+      <returns>
+        <see cref="T:System.TimeSpan" />。預設為 1 分鐘。</returns>
+      <exception cref="T:System.ArgumentOutOfRangeException">此值設為小於 0 的值。</exception>
+    </member>
+    <member name="T:System.ServiceModel.UpnEndpointIdentity">
+      <summary>表示當繫結利用 SSPINegotiate 驗證模式時，所使用之身分識別的使用者主要名稱 (UPN)。</summary>
+    </member>
+    <member name="M:System.ServiceModel.UpnEndpointIdentity.#ctor(System.String)">
+      <summary>初始化 <see cref="T:System.ServiceModel.UpnEndpointIdentity" /> 類別的新執行個體。</summary>
+      <param name="upnName">UPN 名稱。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="upnName" /> 為 null。</exception>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="upnName" /> 的宣告型別不是 <see cref="P:System.IdentityModel.Claims.ClaimTypes.Upn" />。</exception>
+    </member>
+    <member name="T:System.ServiceModel.Channels.LocalClientSecuritySettings">
+      <summary>指定本機用戶端的安全性設定。</summary>
+    </member>
+    <member name="M:System.ServiceModel.Channels.LocalClientSecuritySettings.#ctor">
+      <summary>初始化 <see cref="T:System.ServiceModel.Channels.LocalClientSecuritySettings" /> 類別的新執行個體。</summary>
+    </member>
+    <member name="M:System.ServiceModel.Channels.LocalClientSecuritySettings.Clone">
+      <summary>建立這個類別的新執行個體，這是目前執行個體的複本或複製 (Clone)。</summary>
+      <returns>
+        <see cref="T:System.ServiceModel.Channels.LocalClientSecuritySettings" /> 的新執行個體。</returns>
+    </member>
+    <member name="P:System.ServiceModel.Channels.LocalClientSecuritySettings.MaxClockSkew">
+      <summary>取得或設定通訊雙方系統時鐘之間可允許的最大時間差異。</summary>
+      <returns>
+        <see cref="T:System.TimeSpan" />，表示通訊雙方系統時鐘之間的最大允許時間差異。預設值為 5 分鐘。</returns>
+      <exception cref="T:System.ArgumentOutOfRangeException">這個屬性設定為小於 0 的值。set</exception>
+    </member>
+    <member name="P:System.ServiceModel.Channels.LocalClientSecuritySettings.ReplayWindow">
+      <summary>取得或設定訊息 Nonce 有效的最長時間。</summary>
+      <returns>
+        <see cref="T:System.TimeSpan" />，表示訊息 Nonce 有效的最長時間。預設為五分鐘。</returns>
+      <exception cref="T:System.ArgumentOutOfRangeException">這個屬性設定為小於 0 的值。set</exception>
+    </member>
+    <member name="P:System.ServiceModel.Channels.LocalClientSecuritySettings.TimestampValidityDuration">
+      <summary>取得或設定用戶端所傳送訊息有效的最長持續時間。如果服務在這段期間之後收到訊息，它應該捨棄該訊息。</summary>
+      <returns>
+        <see cref="T:System.TimeSpan" />，表示用戶端所傳送訊息有效的最長持續時間。預設值為 5 分鐘。</returns>
+      <exception cref="T:System.ArgumentOutOfRangeException">這個屬性設定為小於 0 的值。set </exception>
+    </member>
+    <member name="T:System.ServiceModel.Channels.SecurityBindingElement">
+      <summary>抽象類別 (Abstract Class)，其在實作時可表示支援通道 SOAP 訊息安全性的繫結項目。</summary>
+    </member>
+    <member name="M:System.ServiceModel.Channels.SecurityBindingElement.BuildChannelFactory``1(System.ServiceModel.Channels.BindingContext)">
+      <summary>根據傳入的 <see cref="T:System.ServiceModel.Channels.SecurityBindingElement" /> 設定和繫結內容建立通道處理站。所建立的通道處理站是 SOAP 訊息安全性通道處理站，其內部具有對應至繫結內容之通道處理站的參考 (包括傳輸通道處理站)。</summary>
+      <returns>以傳入的 <see cref="T:System.ServiceModel.Channels.SecurityBindingElement" /> 設定和繫結內容為基礎的通道處理站。</returns>
+      <param name="context">
+        <see cref="T:System.ServiceModel.Channels.BindingContext" />。</param>
+      <typeparam name="TChannel">通道處理站的型別。</typeparam>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="context" /> 為 null。</exception>
+      <exception cref="T:System.ArgumentException">不支援 <paramref name="TChannel" /> 型別的通道。</exception>
+    </member>
+    <member name="M:System.ServiceModel.Channels.SecurityBindingElement.BuildChannelFactoryCore``1(System.ServiceModel.Channels.BindingContext)">
+      <summary>當實作時會建立指定型別的通道處理站。</summary>
+      <returns>指定型別的通道處理站。</returns>
+      <param name="context">
+        <see cref="T:System.ServiceModel.Channels.BindingContext" />。</param>
+      <typeparam name="TChannel">通道處理站的型別。</typeparam>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="context" /> 為 null。</exception>
+      <exception cref="T:System.ArgumentException">不支援 <paramref name="TChannel" /> 型別的通道。</exception>
+    </member>
+    <member name="M:System.ServiceModel.Channels.SecurityBindingElement.CanBuildChannelFactory``1(System.ServiceModel.Channels.BindingContext)">
+      <summary>判斷是否可以建置指定型別的通道處理站。</summary>
+      <returns>如果能建置指定型別的通道處理站，則為 true，否則為 false。</returns>
+      <param name="context">
+        <see cref="T:System.ServiceModel.Channels.BindingContext" />。</param>
+      <typeparam name="TChannel">通道處理站的型別。</typeparam>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="context" /> 為 null。</exception>
+    </member>
+    <member name="M:System.ServiceModel.Channels.SecurityBindingElement.CreateSecureConversationBindingElement(System.ServiceModel.Channels.SecurityBindingElement)">
+      <summary>建立對稱式安全性繫結項目，這個項目則設定為建立用戶端與服務之間的安全對話。在安全對話交換結束時發出的安全性內容權杖是用來確保這些訊息的安全。啟動安裝安全性繫結項目會指定如何保護安全對話交換訊息。</summary>
+      <returns>
+        <see cref="T:System.ServiceModel.Channels.SecurityBindingElement" /> 物件。</returns>
+      <param name="bootstrapSecurity">包含如何保護安全對話信號交換訊息安全之規格的 <see cref="T:System.ServiceModel.Channels.SecurityBindingElement" />。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="bootstrapSecurity" /> 為 null。</exception>
+    </member>
+    <member name="M:System.ServiceModel.Channels.SecurityBindingElement.CreateUserNameOverTransportBindingElement">
+      <summary>建立安全性繫結項目，這個項目則設定為以 SOAP 訊息傳送之一部分的使用者名稱和密碼為基礎的用戶端驗證。這個繫結項目需要傳輸提供伺服器驗證和訊息保護 (例如 HTTPS)。</summary>
+      <returns>
+        <see cref="T:System.ServiceModel.Channels.TransportSecurityBindingElement" /> 物件。</returns>
+    </member>
+    <member name="P:System.ServiceModel.Channels.SecurityBindingElement.EndpointSupportingTokenParameters">
+      <summary>取得支援權杖參數的端點。</summary>
+      <returns>
+        <see cref="T:System.ServiceModel.Security.Tokens.SupportingTokenParameters" />物件，表示支援權杖參數的端點。</returns>
+    </member>
+    <member name="M:System.ServiceModel.Channels.SecurityBindingElement.GetProperty``1(System.ServiceModel.Channels.BindingContext)">
+      <summary>取得使用指定之 <see cref="T:System.ServiceModel.Channels.BindingContext" /> 的指定物件。</summary>
+      <returns>來自 <see cref="T:System.ServiceModel.Channels.BindingContext" /> 的指定物件，如果找不到該物件，則為 null。</returns>
+      <param name="context">
+        <see cref="T:System.ServiceModel.Channels.BindingContext" />。</param>
+      <typeparam name="T">要取得的屬性。</typeparam>
+    </member>
+    <member name="P:System.ServiceModel.Channels.SecurityBindingElement.IncludeTimestamp">
+      <summary>取得或設定值，這個值表示時間戳記是否包含在各個訊息中。</summary>
+      <returns>如果時間戳記包含在各個訊息中，則為 true，否則為 false。預設為 true。</returns>
+    </member>
+    <member name="P:System.ServiceModel.Channels.SecurityBindingElement.LocalClientSettings">
+      <summary>取得用戶端所使用本機安全性設定的特定繫結項目。</summary>
+      <returns>
+        <see cref="T:System.ServiceModel.Channels.LocalClientSecuritySettings" />，表示用戶端所使用本機安全性設定的特定繫結屬性。</returns>
+    </member>
+    <member name="P:System.ServiceModel.Channels.SecurityBindingElement.MessageSecurityVersion">
+      <summary>取得或設定訊息安全性版本。</summary>
+      <returns>
+        <see cref="T:System.ServiceModel.MessageSecurityVersion" /> 物件，表示訊息安全性版本。</returns>
+      <exception cref="T:System.ArgumentNullException">set 具有 null 值。</exception>
+    </member>
+    <member name="P:System.ServiceModel.Channels.SecurityBindingElement.SecurityHeaderLayout">
+      <summary>取得或設定此繫結之安全性標頭中的項目順序。</summary>
+      <returns>
+        <see cref="T:System.ServiceModel.Channels.SecurityHeaderLayout" />，表示此繫結之安全性標頭中的項目順序。預設為 <see cref="F:System.ServiceModel.Channels.SecurityHeaderLayout.Strict" />。</returns>
+      <exception cref="T:System.ArgumentOutOfRangeException">此值不是有效的 <see cref="T:System.ServiceModel.Channels.SecurityHeaderLayout" /> 值。</exception>
+    </member>
+    <member name="M:System.ServiceModel.Channels.SecurityBindingElement.ToString">
+      <summary>傳回這個類別的描述。</summary>
+      <returns>目前 <see cref="T:System.ServiceModel.Channels.SecurityBindingElement" /> 執行個體的描述。</returns>
+    </member>
+    <member name="T:System.ServiceModel.Channels.SecurityHeaderLayout">
+      <summary>描述安全性標頭的配置。</summary>
+    </member>
+    <member name="F:System.ServiceModel.Channels.SecurityHeaderLayout.Lax">
+      <summary>會依據符合 WSS: SOAP 訊息安全性的任何順序，將項目加入至安全性標頭中。</summary>
+    </member>
+    <member name="F:System.ServiceModel.Channels.SecurityHeaderLayout.Strict">
+      <summary>會根據「使用前宣告」的一般原則，將項目加入至安全性標頭中。</summary>
+    </member>
+    <member name="T:System.ServiceModel.Channels.TransportSecurityBindingElement">
+      <summary>代表支援混合模式安全性 (例如，透過安全傳輸的最佳化訊息安全性) 的自訂繫結項目。</summary>
+    </member>
+    <member name="M:System.ServiceModel.Channels.TransportSecurityBindingElement.#ctor">
+      <summary>建立 <see cref="T:System.ServiceModel.Channels.TransportSecurityBindingElement" /> 類別的執行個體。</summary>
+    </member>
+    <member name="M:System.ServiceModel.Channels.TransportSecurityBindingElement.Clone">
+      <summary>建立從現有的類別初始化的新 <see cref="T:System.ServiceModel.Channels.BindingElement" /> 物件。</summary>
+      <returns>屬性值與目前執行個體相等的 <see cref="T:System.ServiceModel.Channels.BindingElement" /> 物件。</returns>
+    </member>
+    <member name="M:System.ServiceModel.Channels.TransportSecurityBindingElement.GetProperty``1(System.ServiceModel.Channels.BindingContext)">
+      <summary>從指定的 <see cref="T:System.ServiceModel.Channels.BindingContext" /> 中取得屬性。</summary>
+      <returns>來自指定 <see cref="T:System.ServiceModel.Channels.BindingContext" /> 的屬性，如果找不到物件，則為 null。</returns>
+      <param name="context">
+        <see cref="T:System.ServiceModel.Channels.BindingContext" />。</param>
+      <typeparam name="T">要取得的屬性。</typeparam>
+    </member>
+    <member name="T:System.ServiceModel.Security.BasicSecurityProfileVersion">
+      <summary>提供對應於 Basic Security Profile 規格的訊息版本。</summary>
+    </member>
+    <member name="P:System.ServiceModel.Security.BasicSecurityProfileVersion.BasicSecurityProfile10">
+      <summary>提供對應於 Basic Security Profile 規格的訊息版本。</summary>
+      <returns>類別，這個類別具有的 ToString 方法會傳回文字格式的版本資訊。</returns>
+    </member>
+    <member name="T:System.ServiceModel.Security.SecureConversationVersion">
+      <summary>包含一組支援的 WS-SecureConversation 版本。這是個抽象類別。</summary>
+    </member>
+    <member name="P:System.ServiceModel.Security.SecureConversationVersion.Default">
+      <summary>取得預設版本。</summary>
+      <returns>預設版本。</returns>
+    </member>
+    <member name="P:System.ServiceModel.Security.SecureConversationVersion.Namespace">
+      <summary>取得這個 WS-SecureConversation 版本的命名空間。</summary>
+      <returns>這個 WS-SecureConversation 版本的命名空間。</returns>
+    </member>
+    <member name="P:System.ServiceModel.Security.SecureConversationVersion.Prefix">
+      <summary>取得 WS-SecureConversation 版本的前置詞。</summary>
+      <returns>WS-SecureConversation 版本的前置詞。</returns>
+    </member>
+    <member name="P:System.ServiceModel.Security.SecureConversationVersion.WSSecureConversationFeb2005">
+      <summary>取得 WS-SecureConversation 的 2005 年 2 月版本。</summary>
+      <returns>WS-SecureConversation 的 2005 年 2 月版本。</returns>
+    </member>
+    <member name="T:System.ServiceModel.Security.SecurityPolicyVersion">
+      <summary>包含一組支援的 WS-SecurityPolicy 版本。這是個抽象類別。</summary>
+    </member>
+    <member name="P:System.ServiceModel.Security.SecurityPolicyVersion.Namespace">
+      <summary>取得這個 WS-SecurityPolicy 版本的命名空間。</summary>
+      <returns>這個 WS-SecurityPolicy 版本的命名空間。</returns>
+    </member>
+    <member name="P:System.ServiceModel.Security.SecurityPolicyVersion.Prefix">
+      <summary>取得前置詞。</summary>
+      <returns>前置字元。</returns>
+    </member>
+    <member name="P:System.ServiceModel.Security.SecurityPolicyVersion.WSSecurityPolicy11">
+      <summary>取得 WS-SecurityPolicy 1.1 版。</summary>
+      <returns>WS-SecurityPolicy 1.1 版。</returns>
+    </member>
+    <member name="T:System.ServiceModel.Security.SecurityVersion">
+      <summary>包含一組支援的 WS-Security 版本。這是個抽象類別。</summary>
+    </member>
+    <member name="P:System.ServiceModel.Security.SecurityVersion.WSSecurity10">
+      <summary>取得 WS-Security 1.0 版。</summary>
+      <returns>WS-Security 1.0 版。</returns>
+    </member>
+    <member name="P:System.ServiceModel.Security.SecurityVersion.WSSecurity11">
+      <summary>取得 WS-Security 1.1 版。</summary>
+      <returns>WS-Security 1.1 版。</returns>
+    </member>
+    <member name="T:System.ServiceModel.Security.TrustVersion">
+      <summary>包含一組支援的 WS-Trust 版本。這是個抽象類別。</summary>
+    </member>
+    <member name="P:System.ServiceModel.Security.TrustVersion.Default">
+      <summary>取得預設版本。</summary>
+      <returns>預設版本。</returns>
+    </member>
+    <member name="P:System.ServiceModel.Security.TrustVersion.Namespace">
+      <summary>取得這個信任版本的命名空間。</summary>
+      <returns>這個信任版本的命名空間。</returns>
+    </member>
+    <member name="P:System.ServiceModel.Security.TrustVersion.Prefix">
+      <summary>取得前置詞。</summary>
+      <returns>前置字元。</returns>
+    </member>
+    <member name="P:System.ServiceModel.Security.TrustVersion.WSTrustFeb2005">
+      <summary>取得 WS-Trust 的 2005 年 2 月版本。</summary>
+      <returns>WS-Trust 的 2005 年 2 月版本。</returns>
+    </member>
+    <member name="T:System.ServiceModel.Security.Tokens.SecureConversationSecurityTokenParameters">
+      <summary>表示安全對話安全性權杖的參數。</summary>
+    </member>
+    <member name="M:System.ServiceModel.Security.Tokens.SecureConversationSecurityTokenParameters.#ctor">
+      <summary>初始化 <see cref="T:System.ServiceModel.Security.Tokens.SecureConversationSecurityTokenParameters" /> 類別的新執行個體。</summary>
+    </member>
+    <member name="M:System.ServiceModel.Security.Tokens.SecureConversationSecurityTokenParameters.#ctor(System.ServiceModel.Channels.SecurityBindingElement)">
+      <summary>從指定的 <see cref="T:System.ServiceModel.Channels.SecurityBindingElement" /> 的屬性中，初始化 <see cref="T:System.ServiceModel.Security.Tokens.SecureConversationSecurityTokenParameters" /> 類別的新執行個體。</summary>
+      <param name="bootstrapSecurityBindingElement">啟動載入器安全性繫結項目。</param>
+    </member>
+    <member name="P:System.ServiceModel.Security.Tokens.SecureConversationSecurityTokenParameters.BootstrapSecurityBindingElement">
+      <summary>取得或設定啟動程序安全性繫結項目。</summary>
+      <returns>啟動載入器安全性繫結項目。</returns>
+    </member>
+    <member name="T:System.ServiceModel.Security.Tokens.SecurityTokenParameters">
+      <summary>指定 abstract 類別，可在實作之後表示安全性權杖參數。</summary>
+    </member>
+    <member name="M:System.ServiceModel.Security.Tokens.SecurityTokenParameters.Clone">
+      <summary>複製這個類別執行個體的另一個執行個體。</summary>
+      <returns>
+        <see cref="T:System.ServiceModel.Security.Tokens.SecurityTokenParameters" /> 執行個體的複本。</returns>
+      <exception cref="T:System.InvalidOperationException">無法複製這個類別執行個體。</exception>
+    </member>
+    <member name="T:System.ServiceModel.Security.Tokens.SupportingTokenParameters">
+      <summary>表示安全性繫結項目所需之支援安全性權杖的參數。</summary>
+    </member>
+    <member name="M:System.ServiceModel.Security.Tokens.SupportingTokenParameters.#ctor">
+      <summary>初始化 <see cref="T:System.ServiceModel.Security.Tokens.SupportingTokenParameters" /> 類別的新執行個體。</summary>
+    </member>
+    <member name="M:System.ServiceModel.Security.Tokens.SupportingTokenParameters.Clone">
+      <summary>複製這個類別執行個體的另一個執行個體。</summary>
+      <returns>
+        <see cref="T:System.ServiceModel.Security.Tokens.SupportingTokenParameters" />。</returns>
+    </member>
+    <member name="P:System.ServiceModel.Security.Tokens.SupportingTokenParameters.Endorsing">
+      <summary>為安全性繫結項目所需之簽署支援權杖，取得安全性權杖參數的集合。</summary>
+      <returns>
+        <see cref="T:System.ServiceModel.Security.Tokens.SecurityTokenParameters" /> 的集合。</returns>
+    </member>
+    <member name="P:System.ServiceModel.Security.Tokens.SupportingTokenParameters.SignedEncrypted">
+      <summary>為安全性繫結項目所需之已簽署及加密的支援權杖，取得安全性權杖參數的集合。</summary>
+      <returns>
+        <see cref="T:System.ServiceModel.Security.Tokens.SecurityTokenParameters" /> 的集合。</returns>
+    </member>
+    <member name="T:System.ServiceModel.Security.Tokens.UserNameSecurityTokenParameters">
+      <summary>表示使用者名稱安全性權杖的參數。</summary>
+    </member>
+    <member name="M:System.ServiceModel.Security.Tokens.UserNameSecurityTokenParameters.#ctor">
+      <summary>初始化 <see cref="T:System.ServiceModel.Security.Tokens.UserNameSecurityTokenParameters" /> 類別的新執行個體。</summary>
+    </member>
+  </members>
+</doc>

@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Directives xmlns="http://schemas.microsoft.com/netfx/2013/01/metadata">
+  <Library Name="*MyToolkit*">
+    <Type Name="MyToolkit.Caching.CacheManager">
+      <Method Name="AddItem{T}">
+        <GenericParameter Name="T" Serialize="Required All" />
+      </Method>
+      <Method Name="GetItem{T}">
+        <GenericParameter Name="T" Browse="Public" />
+      </Method>
+    </Type>
+    
+    <Type Name="System.Linq.Enumerable" Browse="Public">
+      <Method Name="OfType{T}" Dynamic="Required" />
+    </Type>
+
+    <Type Name="MyToolkit.Caching.DataManagerBase">
+      <Method Name="LoadPropertyForItemAsync{T, TProperty}">
+        <GenericParameter Name="T" Serialize="Required All"/>
+      </Method>
+    </Type>
+
+    <Type Name="Windows.UI.Colors" Dynamic="Required All" />
+
+    <Type Name="MyToolkit.Paging.Frame">
+      <Method Name="NavigateAsync">
+        <TypeParameter Name="type" Dynamic="Public" />
+        <Parameter Name="parameter" Browse="Public" />
+      </Method>
+      <Method Name="Initialize">
+        <TypeParameter Name="sourcePageType" Dynamic="Public" />
+        <Parameter Name="parameter" Browse="Public" />
+      </Method>
+    </Type>
+    <Type Name="MyToolkit.Messaging.NavigateMessage">
+      <Method Name=".ctor">
+        <TypeParameter Name="page" Dynamic="Public" />
+        <Parameter Name="parameter" Browse="Public" />
+      </Method>
+    </Type>
+
+    <Type Name="MyToolkit.Utilities.DataContractSerialization">
+      <Method Name="CanSerialize">
+        <TypeParameter Name="type" Browse="Public" />
+      </Method>
+      <Method Name="Serialize">
+        <Parameter Name="obj" DataContractSerializer="Required All" />
+      </Method>
+    </Type>
+
+    <Type Name="MyToolkit.Utilities.ReflectionExtensions">
+      <Method Name="Clone">
+        <Parameter Name="source" Dynamic="Required All" />
+        <Parameter Name="target" Dynamic="Required All" />
+      </Method>
+    </Type>
+
+    <Type Name="MyToolkit.Utilities.Xml">
+      <Method Name="Serialize">
+        <Parameter Name="obj" XmlSerializer="Required All" />
+      </Method>
+    </Type>
+  </Library>
+</Directives>

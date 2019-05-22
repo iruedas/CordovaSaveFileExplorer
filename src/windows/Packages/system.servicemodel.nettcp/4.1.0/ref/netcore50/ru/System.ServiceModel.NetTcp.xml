@@ -1,0 +1,265 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>System.ServiceModel.NetTcp</name>
+  </assembly>
+  <members>
+    <member name="T:System.ServiceModel.MessageSecurityOverTcp">
+      <summary>Настраивает безопасность на уровне сообщений для сообщения, отправленного с помощью транспорта TCP. </summary>
+    </member>
+    <member name="M:System.ServiceModel.MessageSecurityOverTcp.#ctor">
+      <summary>Инициализирует новый экземпляр класса <see cref="T:System.ServiceModel.MessageSecurityOverTcp" />.</summary>
+    </member>
+    <member name="P:System.ServiceModel.MessageSecurityOverTcp.ClientCredentialType">
+      <summary>Задает тип учетных данных клиента, который клиент использует для подтверждения своей подлинности службе на уровне SOAP. </summary>
+      <returns>Объект <see cref="T:System.ServiceModel.MessageCredentialType" />.Значение по умолчанию — <see cref="F:System.ServiceModel.MessageCredentialType.Windows" />.</returns>
+      <exception cref="T:System.ArgumentOutOfRangeException">Значение <see cref="P:System.ServiceModel.MessageSecurityOverTcp.ClientCredentialType" /> не является допустимым значением <see cref="T:System.ServiceModel.MessageCredentialType" />.</exception>
+    </member>
+    <member name="T:System.ServiceModel.NetTcpBinding">
+      <summary>Безопасная и надежная привязка, которая подходит для обмена данными между компьютерами.</summary>
+    </member>
+    <member name="M:System.ServiceModel.NetTcpBinding.#ctor">
+      <summary>Инициализирует новый экземпляр класса <see cref="T:System.ServiceModel.NetTcpBinding" />. </summary>
+    </member>
+    <member name="M:System.ServiceModel.NetTcpBinding.#ctor(System.ServiceModel.SecurityMode)">
+      <summary>Инициализирует новый экземпляр класса <see cref="T:System.ServiceModel.NetTcpBinding" /> с указанным используемый типом безопасности.</summary>
+      <param name="securityMode">Значение <see cref="T:System.ServiceModel.SecurityMode" />, указывающее тип безопасности, используемый с привязкой.</param>
+    </member>
+    <member name="M:System.ServiceModel.NetTcpBinding.#ctor(System.String)">
+      <summary>Инициализирует новый экземпляр класса <see cref="T:System.ServiceModel.NetTcpBinding" /> с указанным именем конфигурации.</summary>
+      <param name="configurationName">Имя конфигурации привязки объекта <see cref="T:System.ServiceModel.NetTcpBinding" />.</param>
+    </member>
+    <member name="M:System.ServiceModel.NetTcpBinding.CreateBindingElements">
+      <summary>Создает коллекцию с элементами привязки для привязки.</summary>
+      <returns>Интерфейс <see cref="T:System.Collections.Generic.ICollection`1" />, принадлежащий к типу <see cref="T:System.ServiceModel.Channels.BindingElement" /> и составляющий привязку.</returns>
+    </member>
+    <member name="P:System.ServiceModel.NetTcpBinding.EnvelopeVersion">
+      <summary>Возвращает версию протокола SOAP, используемого для сообщений, обрабатываемых этой привязкой. </summary>
+      <returns>Значение <see cref="T:System.ServiceModel.EnvelopeVersion" />, используемое с данной привязкой.Значение равно SOAP 1.2.</returns>
+    </member>
+    <member name="P:System.ServiceModel.NetTcpBinding.MaxBufferPoolSize">
+      <summary>Получает или задает максимальный допустимый размер (в байтах) буферного пула, в котором хранятся сообщения TCP, обработанные привязкой.</summary>
+      <returns>Максимальный размер буферного пула, в котором хранятся сообщения TCP, обработанные привязкой.Значение по умолчанию равно 524,288 байта.</returns>
+    </member>
+    <member name="P:System.ServiceModel.NetTcpBinding.MaxBufferSize">
+      <summary>Возвращает или задает значение, указывающее максимальный размер буфера, используемого для хранения сообщений в памяти (в байтах).</summary>
+      <returns>Максимальный размер буфера, используемого для хранения сообщений в памяти (в байтах).Значение по умолчанию равно 65,536 байта.</returns>
+    </member>
+    <member name="P:System.ServiceModel.NetTcpBinding.MaxReceivedMessageSize">
+      <summary>Получает или задает максимальный размер (в байтах) полученного сообщения, обрабатываемого привязкой.</summary>
+      <returns>Максимальный размер (в байтах) полученного сообщения, обрабатываемого привязкой.Значение по умолчанию равно 65,536 байта.</returns>
+    </member>
+    <member name="P:System.ServiceModel.NetTcpBinding.ReaderQuotas">
+      <summary>Возвращает или задает ограничения по сложности сообщений SOAP, которые могут обрабатываться конечными точками, настроенными с этой привязкой.</summary>
+      <returns>Объект <see cref="T:System.Xml.XmlDictionaryReaderQuotas" />, который задает ограничения по сложности для обмена сообщениями SOAP.Значения по умолчанию для этих ограничений приведены в следующем разделе «Примечания».</returns>
+    </member>
+    <member name="P:System.ServiceModel.NetTcpBinding.Scheme">
+      <summary>Возвращает схему универсального кода ресурса (URI) для транспорта.</summary>
+      <returns>Схема универсального кода ресурса (URI) для транспорта, в данном случае "net.tcp".</returns>
+    </member>
+    <member name="P:System.ServiceModel.NetTcpBinding.Security">
+      <summary>Возвращает объект, указывающий тип безопасности, который используется со службами, настроенными с этой привязкой.</summary>
+      <returns>Свойство <see cref="T:System.ServiceModel.NetTcpSecurity" />, содержащее типы безопасности, используемые с этой привязкой.Режимом безопасности по умолчанию для привязки NetTCPBinding является <see cref="F:System.ServiceModel.SecurityMode.Transport" />.</returns>
+    </member>
+    <member name="P:System.ServiceModel.NetTcpBinding.TransferMode">
+      <summary>Возвращает или задает значение, которое определяет, используется ли в службе, настроенной с помощью привязки, потоковый или буферизованный режим передачи сообщений (или оба режима).</summary>
+      <returns>Значение <see cref="T:System.ServiceModel.TransferMode" />, которое определяет, используется ли в службе, настроенной с помощью привязки, потоковый или буферизованный режим передачи сообщений (или оба режима).</returns>
+    </member>
+    <member name="T:System.ServiceModel.NetTcpSecurity">
+      <summary>Указывает типы безопасности транспортного уровня и уровня сообщений, используемые конечной точкой, настроенной с помощью <see cref="T:System.ServiceModel.NetTcpBinding" />.</summary>
+    </member>
+    <member name="M:System.ServiceModel.NetTcpSecurity.#ctor">
+      <summary>Инициализирует новый экземпляр класса <see cref="T:System.ServiceModel.NetTcpSecurity" />.</summary>
+    </member>
+    <member name="P:System.ServiceModel.NetTcpSecurity.Message">
+      <summary>Получает тип требований безопасности уровня сообщений для служб, настроенных с привязкой <see cref="T:System.ServiceModel.NetTcpBinding" />.</summary>
+      <returns>
+        <see cref="T:System.ServiceModel.MessageSecurityOverTcp" /> указывает тип требований безопасности уровня сообщений для конечной точки.</returns>
+    </member>
+    <member name="P:System.ServiceModel.NetTcpSecurity.Mode">
+      <summary>Возвращает или задает значение, определяющее, используется ли безопасность уровня сообщений и безопасность транспортного уровня конечной точкой, настроенной с параметром <see cref="T:System.ServiceModel.NetTcpBinding" />.</summary>
+      <returns>Значение <see cref="T:System.ServiceModel.SecurityMode" />, указывающее, используется ли конечной точкой безопасность транспортного уровня или безопасность уровня сообщений.Значение по умолчанию — <see cref="F:System.ServiceModel.SecurityMode.Transport" />.</returns>
+      <exception cref="T:System.ArgumentOutOfRangeException">Значение не определено.</exception>
+    </member>
+    <member name="P:System.ServiceModel.NetTcpSecurity.Transport">
+      <summary>Получает тип требований безопасности уровня сообщений для конечных точек, настроенных с привязкой <see cref="T:System.ServiceModel.NetTcpBinding" />.</summary>
+      <returns>
+        <see cref="T:System.ServiceModel.TcpTransportSecurity" /> указывает тип требований безопасности транспортного уровня для конечной точки.</returns>
+    </member>
+    <member name="T:System.ServiceModel.TcpClientCredentialType">
+      <summary>Перечисляет допустимые типы учетных данных для клиентов TCP.</summary>
+    </member>
+    <member name="F:System.ServiceModel.TcpClientCredentialType.Certificate">
+      <summary>Задает проверку подлинности клиента с использованием сертификата.</summary>
+    </member>
+    <member name="F:System.ServiceModel.TcpClientCredentialType.None">
+      <summary>Указывает анонимную проверку подлинности.</summary>
+    </member>
+    <member name="F:System.ServiceModel.TcpClientCredentialType.Windows">
+      <summary>Задает проверку подлинности клиента с использованием Windows.</summary>
+    </member>
+    <member name="T:System.ServiceModel.TcpTransportSecurity">
+      <summary>Предоставляет свойства, которые управляют параметрами проверки подлинности и уровнем защиты для транспорта TCP.</summary>
+    </member>
+    <member name="M:System.ServiceModel.TcpTransportSecurity.#ctor">
+      <summary>Инициализирует новый экземпляр класса <see cref="T:System.ServiceModel.TcpTransportSecurity" />.</summary>
+    </member>
+    <member name="P:System.ServiceModel.TcpTransportSecurity.ClientCredentialType">
+      <summary>Возвращает или задает тип учетных данных клиента, используемых для проверки подлинности.</summary>
+      <returns>Возвращает <see cref="T:System.ServiceModel.TcpClientCredentialType" />.</returns>
+    </member>
+    <member name="T:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement">
+      <summary>Абстрактный класс, дополняющий базовый класс <see cref="T:System.ServiceModel.Channels.TransportBindingElement" /> дополнительными свойствами, характерными для транспортов, ориентированных на подключение, таких как протокол TCP и именованные каналы.  </summary>
+    </member>
+    <member name="M:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement.CanBuildChannelFactory``1(System.ServiceModel.Channels.BindingContext)">
+      <summary>Определяет, можно ли создать фабрику каналов заданного типа.</summary>
+      <returns>Значение true, если можно создать фабрику каналов; в противном случае — значение false.</returns>
+      <param name="context">Контекст <see cref="T:System.ServiceModel.Channels.BindingContext" /> для канала.</param>
+      <typeparam name="TChannel">Тип проверяемого канала.</typeparam>
+      <exception cref="T:System.ArgumentNullException">Параметр <paramref name="context" /> имеет значение null.</exception>
+    </member>
+    <member name="P:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement.ConnectionBufferSize">
+      <summary>Возвращает или задает размер буфера, используемого для передачи фрагмента сериализованного сообщения от клиента серверу по сети.</summary>
+      <returns>Размер буфера подключения.Значение по умолчанию равно 8192 байта.</returns>
+      <exception cref="T:System.ArgumentOutOfRangeException">Значение меньше нуля.</exception>
+    </member>
+    <member name="M:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement.GetProperty``1(System.ServiceModel.Channels.BindingContext)">
+      <summary>Возвращает свойства из стека привязок, если они имеются.</summary>
+      <returns>Объект <paramref name="T" /> из стека привязок, если имеется.</returns>
+      <param name="context">Контекст привязки.</param>
+      <typeparam name="T">Тип свойства.</typeparam>
+    </member>
+    <member name="P:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement.MaxBufferSize">
+      <summary>Получает или задает максимальный размер используемого буфера.Для потоковых сообщений это значение не должно быть меньше максимального возможного размера заголовков сообщения, считываемых в режиме буферизации.</summary>
+      <returns>Максимальный объем памяти (в байтах), используемый для буферизации входящих сообщений.Значение по умолчанию равно 65,536 байта.</returns>
+      <exception cref="T:System.ArgumentOutOfRangeException">Значение меньше или равно нулю.</exception>
+    </member>
+    <member name="P:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement.TransferMode">
+      <summary>Возвращает или задает значение, указывающее, следует ли помещать сообщения в буфер или передавать их потоком с использованием транспорта, ориентированного на подключение.</summary>
+      <returns>Значение <see cref="T:System.ServiceModel.TransferMode" />, указывающее, какой режим передачи сообщений используется в канале (буферизированный или потоковый).Значение по умолчанию — <see cref="F:System.ServiceModel.TransferMode.Buffered" />.</returns>
+      <exception cref="T:System.ArgumentOutOfRangeException">Значение не является допустимым объектом <see cref="T:System.ServiceModel.TransferMode" />.</exception>
+    </member>
+    <member name="T:System.ServiceModel.Channels.SslStreamSecurityBindingElement">
+      <summary>Представляет пользовательский элемент привязки, который поддерживает безопасность канала с помощью потока SSL.</summary>
+    </member>
+    <member name="M:System.ServiceModel.Channels.SslStreamSecurityBindingElement.#ctor">
+      <summary>Инициализирует новый экземпляр класса <see cref="T:System.ServiceModel.Channels.SslStreamSecurityBindingElement" />. </summary>
+    </member>
+    <member name="M:System.ServiceModel.Channels.SslStreamSecurityBindingElement.BuildChannelFactory``1(System.ServiceModel.Channels.BindingContext)">
+      <summary>Создает фабрику каналов заданного типа.</summary>
+      <returns>Объект <see cref="T:System.serviceModel.Channels.IChannelFactory" />, представляющий фабрику каналов типа <paramref name="TChannel" />.</returns>
+      <param name="context">
+        <see cref="T:System.serviceModel.Channels.BindingContext" />.</param>
+      <typeparam name="TChannel">Тип фабрики каналов.</typeparam>
+      <exception cref="T:System.ArgumentNullException">Параметр <paramref name="context" /> имеет значение null.</exception>
+    </member>
+    <member name="M:System.ServiceModel.Channels.SslStreamSecurityBindingElement.CanBuildChannelFactory``1(System.ServiceModel.Channels.BindingContext)">
+      <summary>Возвращает значение, определяющее, можно ли создать фабрику каналов указанного типа.</summary>
+      <returns>Значение true, если можно создать фабрику каналов указанного типа; в противном случае — значение false.</returns>
+      <param name="context">
+        <see cref="T:System.ServiceModel.Channels.BindingContext" />.</param>
+      <typeparam name="TChannel">Тип фабрики каналов.</typeparam>
+      <exception cref="T:System.ArgumentNullException">Параметр <paramref name="context" /> имеет значение null.</exception>
+    </member>
+    <member name="M:System.ServiceModel.Channels.SslStreamSecurityBindingElement.Clone">
+      <summary>Создает новый экземпляр, являющийся копией текущего экземпляра.</summary>
+      <returns>Экземпляр <see cref="T:System.ServiceModel.Channels.SslStreamSecurityBindingElement" />, являющийся копией текущего экземпляра.</returns>
+    </member>
+    <member name="M:System.ServiceModel.Channels.SslStreamSecurityBindingElement.GetProperty``1(System.ServiceModel.Channels.BindingContext)">
+      <summary>Возвращает указанный объект из объекта <see cref="T:System.ServiceModel.Channels.BindingContext" />.</summary>
+      <returns>Объект типа <paramref name="T" /> из <see cref="T:System.ServiceModel.Channels.BindingContext" />, либо значение null, если объект не найден.</returns>
+      <param name="context">Объект <see cref="T:System.ServiceModel.Channels.BindingContext" />.</param>
+      <typeparam name="T">Тип получаемого объекта.</typeparam>
+    </member>
+    <member name="T:System.ServiceModel.Channels.TcpConnectionPoolSettings">
+      <summary>Представляет свойства, которые управляют поведением пула подключений TCP.</summary>
+    </member>
+    <member name="P:System.ServiceModel.Channels.TcpConnectionPoolSettings.GroupName">
+      <summary>Возвращает или задает имя группы пулов подключений на стороне клиента.</summary>
+      <returns>Имя группы пулов подключений на стороне клиента.По умолчанию используется имя "default".</returns>
+      <exception cref="T:System.ArgumentNullException">Значение равно null.</exception>
+    </member>
+    <member name="P:System.ServiceModel.Channels.TcpConnectionPoolSettings.IdleTimeout">
+      <summary>Возвращает или задает максимальный период неактивности подключения в пуле подключений до отключения.</summary>
+      <returns>Возвращает структуру <see cref="T:System.TimeSpan" />, которая показывает максимальный период неактивности подключения в пуле подключений до отключения.</returns>
+      <exception cref="T:System.ArgumentOutOfRangeException">Значение меньше нуля.</exception>
+    </member>
+    <member name="P:System.ServiceModel.Channels.TcpConnectionPoolSettings.LeaseTimeout">
+      <summary>Возвращает или задает промежуток времени до закрытия подключения в пуле подключений.</summary>
+      <returns>Возвращает структуру <see cref="T:System.TimeSpan" />, которая показывает промежуток времени, после которого кэшированное подключение TCP удаляется из пула подключений.</returns>
+      <exception cref="T:System.ArgumentOutOfRangeException">Значение не может быть меньше нуля.</exception>
+    </member>
+    <member name="P:System.ServiceModel.Channels.TcpConnectionPoolSettings.MaxOutboundConnectionsPerEndpoint">
+      <summary>Возвращает или задает максимальное число исходящих подключений для каждой конечной точки, которая кэшируется в пуле подключений.</summary>
+      <returns>Максимальное число разрешенных исходящих подключений для каждой конечной точки, которая кэшируется в пуле подключений.Значение по умолчанию — 10.</returns>
+      <exception cref="T:System.ArgumentOutOfRangeException">Значение меньше или равно нулю.</exception>
+    </member>
+    <member name="T:System.ServiceModel.Channels.TcpTransportBindingElement">
+      <summary>Представляет элемент привязки для транспорта TCP.</summary>
+    </member>
+    <member name="M:System.ServiceModel.Channels.TcpTransportBindingElement.#ctor">
+      <summary>Инициализирует новый экземпляр класса <see cref="T:System.ServiceModel.Channels.TcpTransportBindingElement" />. </summary>
+    </member>
+    <member name="M:System.ServiceModel.Channels.TcpTransportBindingElement.#ctor(System.ServiceModel.Channels.TcpTransportBindingElement)">
+      <summary>Инициализирует новый экземпляр класса <see cref="T:System.ServiceModel.Channels.TcpTransportBindingElement" />.</summary>
+      <param name="elementToBeCloned">Экземпляр класса <see cref="T:System.ServiceModel.Channels.TcpTransportBindingElement" />.</param>
+    </member>
+    <member name="M:System.ServiceModel.Channels.TcpTransportBindingElement.BuildChannelFactory``1(System.ServiceModel.Channels.BindingContext)">
+      <summary>Создает фабрику каналов, которая может служить для создания канала.</summary>
+      <returns>Возвращает фабрику каналов заданного типа.</returns>
+      <param name="context">Элементы объекта <see cref="T:System.ServiceModel.Channels.BindingContext" />, описывающие привязки, поведения, контракты и предоставляющие другие сведения, необходимые для создания фабрики каналов.</param>
+      <typeparam name="TChannel">Тип фабрики каналов.</typeparam>
+      <exception cref="T:System.ArgumentNullException">Аргумент <paramref name="context" /> не может иметь значение null.</exception>
+      <exception cref="T:System.ArgumentException">Передан недопустимый аргумент.</exception>
+    </member>
+    <member name="M:System.ServiceModel.Channels.TcpTransportBindingElement.Clone">
+      <summary>Создает копию текущего элемента привязки.</summary>
+      <returns>Возвращает копию текущего элемента привязки.</returns>
+    </member>
+    <member name="P:System.ServiceModel.Channels.TcpTransportBindingElement.ConnectionPoolSettings">
+      <summary>Возвращает коллекцию параметров пула подключений.</summary>
+      <returns>Объект <see cref="T:System.ServiceModel.Channels.TcpConnectionPoolSettings" />, содержащий различные свойства, связанные с пулами подключений.</returns>
+    </member>
+    <member name="M:System.ServiceModel.Channels.TcpTransportBindingElement.GetProperty``1(System.ServiceModel.Channels.BindingContext)">
+      <summary>Возвращает указанный объект из объекта <see cref="T:System.ServiceModel.Channels.BindingContext" />.</summary>
+      <returns>Указанный объект, возвращаемый из объекта <see cref="T:System.ServiceModel.Channels.BindingContext" />, или значение null, если объект не найден.</returns>
+      <param name="context">Объект <see cref="T:System.ServiceModel.Channels.BindingContext" />.</param>
+      <typeparam name="T">Возвращаемый объект.</typeparam>
+    </member>
+    <member name="P:System.ServiceModel.Channels.TcpTransportBindingElement.Scheme">
+      <summary>Возвращает схему универсального кода ресурса (URI) для транспорта.</summary>
+      <returns>Возвращает схему универсального кода ресурса (URI) для транспорта, в данном случае "net.tcp".</returns>
+    </member>
+    <member name="T:System.ServiceModel.Channels.WindowsStreamSecurityBindingElement">
+      <summary>Представляет элемент привязки, используемый для задания параметров безопасности потока Windows.</summary>
+    </member>
+    <member name="M:System.ServiceModel.Channels.WindowsStreamSecurityBindingElement.#ctor">
+      <summary>Инициализирует новый экземпляр класса <see cref="T:System.ServiceModel.Channels.WindowsStreamSecurityBindingElement" />.  </summary>
+    </member>
+    <member name="M:System.ServiceModel.Channels.WindowsStreamSecurityBindingElement.BuildChannelFactory``1(System.ServiceModel.Channels.BindingContext)">
+      <summary>Создает фабрику каналов, которая может служить для создания канала.</summary>
+      <returns>Возвращает фабрику каналов заданного типа.Данный метод добавляет этот экземпляр класса в <see cref="P:System.ServiceModel.Channels.BindingContext.BindingParameters" /> и делегирует в метод построения <see cref="M:System.ServiceModel.Channels.BindingContext.BuildInnerChannelFactory``1" />.</returns>
+      <param name="context">Элементы объекта <see cref="T:System.ServiceModel.Channels.BindingContext" />, описывающие привязки, поведения, контракты и предоставляющие другие сведения, необходимые для создания фабрики каналов.</param>
+      <typeparam name="TChannel">Тип фабрики каналов.</typeparam>
+      <exception cref="T:System.ArgumentNullException">Аргумент <paramref name="context" /> не может иметь значение null.</exception>
+    </member>
+    <member name="M:System.ServiceModel.Channels.WindowsStreamSecurityBindingElement.CanBuildChannelFactory``1(System.ServiceModel.Channels.BindingContext)">
+      <summary>Определяет, можно ли создать фабрику каналов заданного типа.</summary>
+      <returns>Значение true, если можно создать фабрику каналов; в противном случае — значение false.</returns>
+      <param name="context">Контекст привязки.</param>
+      <typeparam name="TChannel">Тип проверяемого канала.</typeparam>
+      <exception cref="T:System.ArgumentNullException">Параметр <paramref name="context" /> имеет значение null.</exception>
+    </member>
+    <member name="M:System.ServiceModel.Channels.WindowsStreamSecurityBindingElement.Clone">
+      <summary>Создает новый элемент привязки из этого экземпляра класса. </summary>
+      <returns>
+        <see cref="T:System.ServiceModel.Channels.BindingElement" />.</returns>
+    </member>
+    <member name="M:System.ServiceModel.Channels.WindowsStreamSecurityBindingElement.GetProperty``1(System.ServiceModel.Channels.BindingContext)">
+      <summary>Возвращает указанный объект из объекта <see cref="T:System.ServiceModel.Channels.BindingContext" />.</summary>
+      <returns>Указанный объект, возвращаемый из объекта <see cref="T:System.ServiceModel.Channels.BindingContext" />, или значение null, если объект не найден.</returns>
+      <param name="context">Объект <see cref="T:System.ServiceModel.Channels.BindingContext" />.</param>
+      <typeparam name="T">Возвращаемый объект.</typeparam>
+    </member>
+  </members>
+</doc>

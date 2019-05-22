@@ -1,0 +1,316 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>System.ServiceModel.Security</name>
+  </assembly>
+  <members>
+    <member name="T:System.ServiceModel.DnsEndpointIdentity">
+      <summary>Указывает идентификатор DNS сервера.</summary>
+    </member>
+    <member name="M:System.ServiceModel.DnsEndpointIdentity.#ctor(System.String)">
+      <summary>Инициализирует новый экземпляр класса на основании DNS-имени.</summary>
+      <param name="dnsName">DNS-имя.</param>
+      <exception cref="T:System.ArgumentNullException">Параметр <paramref name="dnsName" /> имеет значение null.</exception>
+      <exception cref="T:System.ArgumentException">Значение типа утверждения <paramref name="dnsName" /> отлично от <see cref="P:System.IdentityModel.Claims.ClaimTypes.Dns" />.</exception>
+    </member>
+    <member name="T:System.ServiceModel.MessageSecurityVersion">
+      <summary>Абстрактный класс-контейнер, содержащий сведения о версии компонентов безопасности, в случае, когда он реализован несколькими из своих статических свойств. </summary>
+    </member>
+    <member name="P:System.ServiceModel.MessageSecurityVersion.BasicSecurityProfileVersion">
+      <summary>Возвращает сведения о версии для основного профиля безопасности.</summary>
+      <returns>Объект <see cref="T:System.ServiceModel.Security.BasicSecurityProfileVersion" />.</returns>
+    </member>
+    <member name="P:System.ServiceModel.MessageSecurityVersion.SecureConversationVersion">
+      <summary>Возвращает версию WS-SecureConversation, соответствующую версии безопасности сообщения.</summary>
+      <returns>Объект <see cref="T:System.ServiceModel.Security.SecureConversationVersion" />, соответствующую версии безопасности сообщения.</returns>
+    </member>
+    <member name="P:System.ServiceModel.MessageSecurityVersion.SecurityPolicyVersion">
+      <summary>Возвращает версию WS-SecurityPolicy, соответствующую версии безопасности сообщения.</summary>
+      <returns>Объект <see cref="T:System.ServiceModel.Security.SecurityPolicyVersion" />, соответствующую версии безопасности сообщения.</returns>
+    </member>
+    <member name="P:System.ServiceModel.MessageSecurityVersion.SecurityVersion">
+      <summary>Возвращает версию WS-Security, соответствующую версии безопасности сообщения.</summary>
+      <returns>Объект <see cref="T:System.ServiceModel.Security.SecurityVersion" />, соответствующую версии безопасности сообщения.</returns>
+    </member>
+    <member name="P:System.ServiceModel.MessageSecurityVersion.TrustVersion">
+      <summary>Возвращает версию WS-Trust, соответствующую версии безопасности сообщения.</summary>
+      <returns>Объект <see cref="T:System.ServiceModel.Security.TrustVersion" />, соответствующую версии безопасности сообщения.</returns>
+    </member>
+    <member name="P:System.ServiceModel.MessageSecurityVersion.WSSecurity10WSTrustFebruary2005WSSecureConversationFebruary2005WSSecurityPolicy11BasicSecurityProfile10">
+      <summary>Возвращает версию безопасности сообщений, которая требует основной профиль безопасности версии 1.0, основанный на спецификациях безопасности WS-Security 1.0, WS-Trust 2005 от февраля 2005 г., WS-SecureConversation от февраля 2005 г. и WS-SecurityPolicy 1.1.</summary>
+      <returns>Объект <see cref="T:System.ServiceModel.MessageSecurityVersion" />, который требует основной профиль безопасности версии 1.0, основанный на спецификациях безопасности WS-Security 1.0, WS-Trust 2005 от февраля 2005 г., WS-SecureConversation от февраля 2005 г. и WS-SecurityPolicy 1.1.</returns>
+    </member>
+    <member name="P:System.ServiceModel.MessageSecurityVersion.WSSecurity11WSTrustFebruary2005WSSecureConversationFebruary2005WSSecurityPolicy11">
+      <summary>Возвращает версию безопасности сообщений, которая требует спецификации безопасности WS-Security 1.1, WS-Trust от февраля 2005 г., WS-SecureConversation от февраля 2005 г. и WS-SecurityPolicy 1.1.</summary>
+      <returns>Объект <see cref="T:System.ServiceModel.MessageSecurityVersion" />, который требует спецификации безопасности WS-Security 1.1, WS-Trust от февраля 2005 г., WS-SecureConversation от февраля 2005 г. и WS-SecurityPolicy 1.1.</returns>
+    </member>
+    <member name="P:System.ServiceModel.MessageSecurityVersion.WSSecurity11WSTrustFebruary2005WSSecureConversationFebruary2005WSSecurityPolicy11BasicSecurityProfile10">
+      <summary>Возвращает версию безопасности сообщений, которая требует основной профиль безопасности версии, основанный на спецификациях безопасности WS-Security 1.1, WS-Trust 2005 от февраля 2005 г., WS-SecureConversation от февраля 2005 г. и WS-SecurityPolicy 1.1.</summary>
+      <returns>Объект <see cref="T:System.ServiceModel.MessageSecurityVersion" />, который требует основной профиль безопасности, основанный на спецификациях безопасности WS-Security 1.1, WS-Trust 2005 от февраля 2005 г., WS-SecureConversation от февраля 2005 г. и WS-SecurityPolicy 1.1.</returns>
+    </member>
+    <member name="T:System.ServiceModel.SpnEndpointIdentity">
+      <summary>Представляет имя участника-службы (SPN) для удостоверения, когда в привязке используется протокол Kerberos.</summary>
+    </member>
+    <member name="M:System.ServiceModel.SpnEndpointIdentity.#ctor(System.String)">
+      <summary>Инициализирует новый экземпляр класса <see cref="T:System.ServiceModel.SpnEndpointIdentity" /> с заданным именем участника-службы.</summary>
+      <param name="spnName">SPN-адрес.</param>
+      <exception cref="T:System.ArgumentNullException">Параметр <paramref name="spnName" /> имеет значение null.</exception>
+    </member>
+    <member name="P:System.ServiceModel.SpnEndpointIdentity.SpnLookupTime">
+      <summary>Задает максимально допустимое время для поиска имени участника-службы.</summary>
+      <returns>Объект <see cref="T:System.TimeSpan" />.Значение по умолчанию — 1 минута.</returns>
+      <exception cref="T:System.ArgumentOutOfRangeException">Свойству задано значение меньше 0.</exception>
+    </member>
+    <member name="T:System.ServiceModel.UpnEndpointIdentity">
+      <summary>Представляет имя участника-пользователя (UPN) для удостоверения, используемое при использовании привязкой режима проверки подлинности SSPINegotiate.</summary>
+    </member>
+    <member name="M:System.ServiceModel.UpnEndpointIdentity.#ctor(System.String)">
+      <summary>Инициализирует новый экземпляр класса <see cref="T:System.ServiceModel.UpnEndpointIdentity" />. </summary>
+      <param name="upnName">UPN-имя.</param>
+      <exception cref="T:System.ArgumentNullException">Параметр <paramref name="upnName" /> имеет значение null.</exception>
+      <exception cref="T:System.ArgumentException">Значение типа утверждения <paramref name="upnName" /> отлично от <see cref="P:System.IdentityModel.Claims.ClaimTypes.Upn" />.</exception>
+    </member>
+    <member name="T:System.ServiceModel.Channels.LocalClientSecuritySettings">
+      <summary>Задает локальные параметры безопасности клиента.</summary>
+    </member>
+    <member name="M:System.ServiceModel.Channels.LocalClientSecuritySettings.#ctor">
+      <summary>Инициализирует новый экземпляр класса <see cref="T:System.ServiceModel.Channels.LocalClientSecuritySettings" />. </summary>
+    </member>
+    <member name="M:System.ServiceModel.Channels.LocalClientSecuritySettings.Clone">
+      <summary>Создает новый экземпляр этого класса, который является копией или точной копией текущего экземпляра.</summary>
+      <returns>Новый экземпляр <see cref="T:System.ServiceModel.Channels.LocalClientSecuritySettings" />.</returns>
+    </member>
+    <member name="P:System.ServiceModel.Channels.LocalClientSecuritySettings.MaxClockSkew">
+      <summary>Возвращает или задает максимальный допустимый разброс времени между системными часами взаимодействующих сторон. </summary>
+      <returns>Объект <see cref="T:System.TimeSpan" />, представляющий максимальный допустимый разброс времени между системными часами взаимодействующих сторон.По умолчанию используется значение 5 минут.</returns>
+      <exception cref="T:System.ArgumentOutOfRangeException">Для свойства (set) задано значение меньше 0.</exception>
+    </member>
+    <member name="P:System.ServiceModel.Channels.LocalClientSecuritySettings.ReplayWindow">
+      <summary>Возвращает или задает максимальное время действия числа nonce сообщения.</summary>
+      <returns>Объект <see cref="T:System.TimeSpan" />, представляющий максимальную продолжительность действия числа nonce сообщения.Значение по умолчанию — пять минут.</returns>
+      <exception cref="T:System.ArgumentOutOfRangeException">Для свойства (set) задано значение меньше 0.</exception>
+    </member>
+    <member name="P:System.ServiceModel.Channels.LocalClientSecuritySettings.TimestampValidityDuration">
+      <summary>Возвращает или задает максимальный промежуток времени, в течение которого сообщения, отправленные клиентом, остаются действительными.Если служба получает сообщение по истечении этого времени, она удаляет сообщение.</summary>
+      <returns>Объект <see cref="T:System.TimeSpan" />, представляющий максимальный промежуток времени, в течение которого сообщения, отправленные клиентом, остаются действительными.По умолчанию используется значение 5 минут.</returns>
+      <exception cref="T:System.ArgumentOutOfRangeException">Для свойства (set) задано значение  меньше 0.</exception>
+    </member>
+    <member name="T:System.ServiceModel.Channels.SecurityBindingElement">
+      <summary>Абстрактный класс, который (при реализации) представляет элемент привязки, поддерживающий канальную безопасность сообщений SOAP.</summary>
+    </member>
+    <member name="M:System.ServiceModel.Channels.SecurityBindingElement.BuildChannelFactory``1(System.ServiceModel.Channels.BindingContext)">
+      <summary>Создает фабрику каналов на основании параметров <see cref="T:System.ServiceModel.Channels.SecurityBindingElement" /> и переданного контекста привязок.Создаваемая фабрика каналов является фабрикой каналов безопасности сообщений протокола SOAP, в которой содержится ссылка на фабрику каналов, соответствующую контексту привязок (который включает фабрику каналов транспорта).</summary>
+      <returns>Фабрика каналов на основании параметров <see cref="T:System.ServiceModel.Channels.SecurityBindingElement" /> и переданного контекста привязок.</returns>
+      <param name="context">
+        <see cref="T:System.ServiceModel.Channels.BindingContext" />.</param>
+      <typeparam name="TChannel">Тип фабрики каналов.</typeparam>
+      <exception cref="T:System.ArgumentNullException">Параметр <paramref name="context" /> имеет значение null.</exception>
+      <exception cref="T:System.ArgumentException">Канал типа <paramref name="TChannel" /> не поддерживается.</exception>
+    </member>
+    <member name="M:System.ServiceModel.Channels.SecurityBindingElement.BuildChannelFactoryCore``1(System.ServiceModel.Channels.BindingContext)">
+      <summary>При реализации создает фабрику каналов заданного типа.</summary>
+      <returns>Фабрика каналов заданного типа.</returns>
+      <param name="context">
+        <see cref="T:System.ServiceModel.Channels.BindingContext" />.</param>
+      <typeparam name="TChannel">Тип фабрики каналов.</typeparam>
+      <exception cref="T:System.ArgumentNullException">Параметр <paramref name="context" /> имеет значение null.</exception>
+      <exception cref="T:System.ArgumentException">Канал типа <paramref name="TChannel" /> не поддерживается.</exception>
+    </member>
+    <member name="M:System.ServiceModel.Channels.SecurityBindingElement.CanBuildChannelFactory``1(System.ServiceModel.Channels.BindingContext)">
+      <summary>Определяет, можно ли создать фабрику каналов заданного типа. </summary>
+      <returns>Значение true, если можно создать фабрику каналов указанного типа; в противном случае — значение false.</returns>
+      <param name="context">
+        <see cref="T:System.ServiceModel.Channels.BindingContext" />.</param>
+      <typeparam name="TChannel">Тип фабрики каналов.</typeparam>
+      <exception cref="T:System.ArgumentNullException">Параметр <paramref name="context" /> имеет значение null.</exception>
+    </member>
+    <member name="M:System.ServiceModel.Channels.SecurityBindingElement.CreateSecureConversationBindingElement(System.ServiceModel.Channels.SecurityBindingElement)">
+      <summary>Создает симметричный элемент привязки безопасности, настроенный на установку защищенного взаимодействия между клиентом и службой.Маркер контекста безопасности, выпущенный после подтверждения безопасного обмена данными, служит для защиты сообщений.Элемент привязки безопасности начальной загрузки указывает, как организуется защита сообщений подтверждения безопасного обмена данными.</summary>
+      <returns>Объект <see cref="T:System.ServiceModel.Channels.SecurityBindingElement" />.</returns>
+      <param name="bootstrapSecurity">
+        <see cref="T:System.ServiceModel.Channels.SecurityBindingElement" />, содержащий спецификацию способа защиты сообщений подтверждения безопасного диалога.</param>
+      <exception cref="T:System.ArgumentNullException">Параметр <paramref name="bootstrapSecurity" /> имеет значение null.</exception>
+    </member>
+    <member name="M:System.ServiceModel.Channels.SecurityBindingElement.CreateUserNameOverTransportBindingElement">
+      <summary>Создает симметричный элемент привязки безопасности, настроенный на проверку подлинности клиента на основании имени пользователя и пароля, переданных как часть сообщения SOAP.Элементу привязки требуется транспорт для обеспечения проверки подлинности сервера и защиты сообщений (например, протокол HTTPS).</summary>
+      <returns>Объект <see cref="T:System.ServiceModel.Channels.TransportSecurityBindingElement" />.</returns>
+    </member>
+    <member name="P:System.ServiceModel.Channels.SecurityBindingElement.EndpointSupportingTokenParameters">
+      <summary>Возвращает конечную точку, которая поддерживает параметры маркера.</summary>
+      <returns>Объект <see cref="T:System.ServiceModel.Security.Tokens.SupportingTokenParameters" />, представляющий конечную точку, которая поддерживает параметры токена.</returns>
+    </member>
+    <member name="M:System.ServiceModel.Channels.SecurityBindingElement.GetProperty``1(System.ServiceModel.Channels.BindingContext)">
+      <summary>Возвращает указанный объект с использованием указанного объекта <see cref="T:System.ServiceModel.Channels.BindingContext" />.</summary>
+      <returns>Указанный объект, возвращаемый из объекта <see cref="T:System.ServiceModel.Channels.BindingContext" />, или значение null, если объект не найден.</returns>
+      <param name="context">
+        <see cref="T:System.ServiceModel.Channels.BindingContext" />.</param>
+      <typeparam name="T">Возвращаемое свойство.</typeparam>
+    </member>
+    <member name="P:System.ServiceModel.Channels.SecurityBindingElement.IncludeTimestamp">
+      <summary>Возвращает или задает значение, которое указывает, будут ли отметки времени включаться в каждое сообщение. </summary>
+      <returns>Значение true, если отметки времени включаются в каждое сообщение; в противном случае — значение false.Значение по умолчанию — true.</returns>
+    </member>
+    <member name="P:System.ServiceModel.Channels.SecurityBindingElement.LocalClientSettings">
+      <summary>Возвращает свойства привязки, связанные с локальными параметрами безопасности клиента.</summary>
+      <returns>
+        <see cref="T:System.ServiceModel.Channels.LocalClientSecuritySettings" />, представляющий свойства привязки, связанные с локальными параметрами безопасности клиента.</returns>
+    </member>
+    <member name="P:System.ServiceModel.Channels.SecurityBindingElement.MessageSecurityVersion">
+      <summary>Возвращает или задает версию системы безопасности для защиты сообщения.</summary>
+      <returns>Объект <see cref="T:System.ServiceModel.MessageSecurityVersion" />, представляющий версию безопасности по умолчанию.</returns>
+      <exception cref="T:System.ArgumentNullException">set со значением null.</exception>
+    </member>
+    <member name="P:System.ServiceModel.Channels.SecurityBindingElement.SecurityHeaderLayout">
+      <summary>Возвращает или задает порядок элементов в заголовке безопасности для данной привязки.</summary>
+      <returns>
+        <see cref="T:System.ServiceModel.Channels.SecurityHeaderLayout" />, представляющий порядок элементов в заголовке безопасности для данной привязки.Значение по умолчанию — <see cref="F:System.ServiceModel.Channels.SecurityHeaderLayout.Strict" />.</returns>
+      <exception cref="T:System.ArgumentOutOfRangeException">Значение не является допустимым значением <see cref="T:System.ServiceModel.Channels.SecurityHeaderLayout" />.</exception>
+    </member>
+    <member name="M:System.ServiceModel.Channels.SecurityBindingElement.ToString">
+      <summary>Возвращает описание этого класса.</summary>
+      <returns>Описание текущего экземпляра <see cref="T:System.ServiceModel.Channels.SecurityBindingElement" />.</returns>
+    </member>
+    <member name="T:System.ServiceModel.Channels.SecurityHeaderLayout">
+      <summary>Описывает структуру заголовка безопасности.</summary>
+    </member>
+    <member name="F:System.ServiceModel.Channels.SecurityHeaderLayout.Lax">
+      <summary>Элементы добавляются в заголовок безопасности в любом порядке, отвечающем требованиям безопасности сообщений WSS: SOAP.</summary>
+    </member>
+    <member name="F:System.ServiceModel.Channels.SecurityHeaderLayout.Strict">
+      <summary>Элементы добавляются в заголовок безопасности в соответствии с общим принципом «объявление перед использованием».</summary>
+    </member>
+    <member name="T:System.ServiceModel.Channels.TransportSecurityBindingElement">
+      <summary>Представляет элемент пользовательской привязки, поддерживающий безопасность в смешанном режиме (например, оптимизированная безопасность сообщений, передаваемых по безопасному транспорту).</summary>
+    </member>
+    <member name="M:System.ServiceModel.Channels.TransportSecurityBindingElement.#ctor">
+      <summary>Создает экземпляр класса <see cref="T:System.ServiceModel.Channels.TransportSecurityBindingElement" />.</summary>
+    </member>
+    <member name="M:System.ServiceModel.Channels.TransportSecurityBindingElement.Clone">
+      <summary>Создает новый объект <see cref="T:System.ServiceModel.Channels.BindingElement" />, инициализированный из текущего класса. </summary>
+      <returns>Объект <see cref="T:System.ServiceModel.Channels.BindingElement" /> со значениями свойств, равными значениям свойств текущего экземпляра.</returns>
+    </member>
+    <member name="M:System.ServiceModel.Channels.TransportSecurityBindingElement.GetProperty``1(System.ServiceModel.Channels.BindingContext)">
+      <summary>Возвращает свойство из указанного объекта <see cref="T:System.ServiceModel.Channels.BindingContext" />.</summary>
+      <returns>Свойство указанного объекта <see cref="T:System.ServiceModel.Channels.BindingContext" /> или значение null, если объект не найден.</returns>
+      <param name="context">Объект <see cref="T:System.ServiceModel.Channels.BindingContext" />.</param>
+      <typeparam name="T">Возвращаемое свойство.</typeparam>
+    </member>
+    <member name="T:System.ServiceModel.Security.BasicSecurityProfileVersion">
+      <summary>Предоставляет версию сообщения, соответствующую спецификации основного профиля безопасности.</summary>
+    </member>
+    <member name="P:System.ServiceModel.Security.BasicSecurityProfileVersion.BasicSecurityProfile10">
+      <summary>Предоставляет версию сообщения, соответствующую спецификации основного профиля безопасности.</summary>
+      <returns>Класс, в котором реализован метод ToString, возвращающий версию в текстовом виде.</returns>
+    </member>
+    <member name="T:System.ServiceModel.Security.SecureConversationVersion">
+      <summary>Содержит набор поддерживаемых версий WS-SecureConversation.Этот класс является абстрактным.</summary>
+    </member>
+    <member name="P:System.ServiceModel.Security.SecureConversationVersion.Default">
+      <summary>Получает версию по умолчанию.</summary>
+      <returns>Версия по умолчанию.</returns>
+    </member>
+    <member name="P:System.ServiceModel.Security.SecureConversationVersion.Namespace">
+      <summary>Получает пространство имен для данной версии WS-SecureConversation.</summary>
+      <returns>Пространство имен для данной версии WS-SecureConversation.</returns>
+    </member>
+    <member name="P:System.ServiceModel.Security.SecureConversationVersion.Prefix">
+      <summary>Получает префикс для версии WS-SecureConversation.</summary>
+      <returns>Префикс для версии WS-SecureConversation.</returns>
+    </member>
+    <member name="P:System.ServiceModel.Security.SecureConversationVersion.WSSecureConversationFeb2005">
+      <summary>Возвращает WS-SecureConversation версии за февраль 2005 г.</summary>
+      <returns>Версия WS-SecureConversation за февраль 2005 г.</returns>
+    </member>
+    <member name="T:System.ServiceModel.Security.SecurityPolicyVersion">
+      <summary>Содержит набор поддерживаемых версий WS-SecurityPolicy.Этот класс является абстрактным.</summary>
+    </member>
+    <member name="P:System.ServiceModel.Security.SecurityPolicyVersion.Namespace">
+      <summary>Получает пространство имен для данной версии WS-SecurityPolicy.</summary>
+      <returns>Пространство имен для данной версии WS-SecurityPolicy.</returns>
+    </member>
+    <member name="P:System.ServiceModel.Security.SecurityPolicyVersion.Prefix">
+      <summary>Получает префикс.</summary>
+      <returns>Префикс.</returns>
+    </member>
+    <member name="P:System.ServiceModel.Security.SecurityPolicyVersion.WSSecurityPolicy11">
+      <summary>Получает WS-SecurityPolicy версии 1.1.</summary>
+      <returns>WS-SecurityPolicy версии 1.1.</returns>
+    </member>
+    <member name="T:System.ServiceModel.Security.SecurityVersion">
+      <summary>Содержит набор поддерживаемых версий WS-Security.Этот класс является абстрактным.</summary>
+    </member>
+    <member name="P:System.ServiceModel.Security.SecurityVersion.WSSecurity10">
+      <summary>Получает WS-Security версии 1.0.</summary>
+      <returns>WS-Security версии 1.0.</returns>
+    </member>
+    <member name="P:System.ServiceModel.Security.SecurityVersion.WSSecurity11">
+      <summary>Получает WS-Security версии 1.1.</summary>
+      <returns>WS-Security версии 1.1.</returns>
+    </member>
+    <member name="T:System.ServiceModel.Security.TrustVersion">
+      <summary>Содержит набор поддерживаемых версий WS-Trust.Этот класс является абстрактным.</summary>
+    </member>
+    <member name="P:System.ServiceModel.Security.TrustVersion.Default">
+      <summary>Получает версию по умолчанию.</summary>
+      <returns>Версия по умолчанию.</returns>
+    </member>
+    <member name="P:System.ServiceModel.Security.TrustVersion.Namespace">
+      <summary>Получает пространство имен для данной версии доверия.</summary>
+      <returns>Пространство имен для данной версии доверия.</returns>
+    </member>
+    <member name="P:System.ServiceModel.Security.TrustVersion.Prefix">
+      <summary>Получает префикс.</summary>
+      <returns>Префикс.</returns>
+    </member>
+    <member name="P:System.ServiceModel.Security.TrustVersion.WSTrustFeb2005">
+      <summary>Возвращает WS-Trust версии за февраль 2005 г.</summary>
+      <returns>Версия WS-Trust за февраль 2005 г.</returns>
+    </member>
+    <member name="T:System.ServiceModel.Security.Tokens.SecureConversationSecurityTokenParameters">
+      <summary>Представляет параметры маркера безопасности безопасного диалога.</summary>
+    </member>
+    <member name="M:System.ServiceModel.Security.Tokens.SecureConversationSecurityTokenParameters.#ctor">
+      <summary>Инициализирует новый экземпляр класса <see cref="T:System.ServiceModel.Security.Tokens.SecureConversationSecurityTokenParameters" />.</summary>
+    </member>
+    <member name="M:System.ServiceModel.Security.Tokens.SecureConversationSecurityTokenParameters.#ctor(System.ServiceModel.Channels.SecurityBindingElement)">
+      <summary>Инициализирует новый экземпляр класса <see cref="T:System.ServiceModel.Security.Tokens.SecureConversationSecurityTokenParameters" /> на основе свойств заданного <see cref="T:System.ServiceModel.Channels.SecurityBindingElement" />.</summary>
+      <param name="bootstrapSecurityBindingElement">Элемент привязки безопасности начальной загрузки.</param>
+    </member>
+    <member name="P:System.ServiceModel.Security.Tokens.SecureConversationSecurityTokenParameters.BootstrapSecurityBindingElement">
+      <summary>Получает или задает элемент привязки безопасности начальной загрузки.</summary>
+      <returns>Элемент привязки безопасности начальной загрузки.</returns>
+    </member>
+    <member name="T:System.ServiceModel.Security.Tokens.SecurityTokenParameters">
+      <summary>Указывает класс abstract, который при реализации представляет собой параметры токена безопасности.</summary>
+    </member>
+    <member name="M:System.ServiceModel.Security.Tokens.SecurityTokenParameters.Clone">
+      <summary>Создает еще один экземпляр данного экземпляра класса.</summary>
+      <returns>Копия экземпляра <see cref="T:System.ServiceModel.Security.Tokens.SecurityTokenParameters" />.</returns>
+      <exception cref="T:System.InvalidOperationException">Не удалось клонировать данный экземпляр класса.</exception>
+    </member>
+    <member name="T:System.ServiceModel.Security.Tokens.SupportingTokenParameters">
+      <summary>Представляет параметры для поддержки маркеров безопасности, требуемых для элемента привязки безопасности.</summary>
+    </member>
+    <member name="M:System.ServiceModel.Security.Tokens.SupportingTokenParameters.#ctor">
+      <summary>Инициализирует новый экземпляр класса <see cref="T:System.ServiceModel.Security.Tokens.SupportingTokenParameters" />.</summary>
+    </member>
+    <member name="M:System.ServiceModel.Security.Tokens.SupportingTokenParameters.Clone">
+      <summary>Создает еще один экземпляр данного экземпляра класса.</summary>
+      <returns>Объект <see cref="T:System.ServiceModel.Security.Tokens.SupportingTokenParameters" />.</returns>
+    </member>
+    <member name="P:System.ServiceModel.Security.Tokens.SupportingTokenParameters.Endorsing">
+      <summary>Получает коллекцию параметров маркера безопасности для подтверждающих поддерживающих маркеров, требуемых элементом привязки безопасности.</summary>
+      <returns>Коллекция объектов класса <see cref="T:System.ServiceModel.Security.Tokens.SecurityTokenParameters" />.</returns>
+    </member>
+    <member name="P:System.ServiceModel.Security.Tokens.SupportingTokenParameters.SignedEncrypted">
+      <summary>Получает коллекцию параметров маркера безопасности для подписанных и шифрованных поддерживающих маркеров, требуемых элементом привязки безопасности.</summary>
+      <returns>Коллекция объектов класса <see cref="T:System.ServiceModel.Security.Tokens.SecurityTokenParameters" />.</returns>
+    </member>
+    <member name="T:System.ServiceModel.Security.Tokens.UserNameSecurityTokenParameters">
+      <summary>Представляет параметры для маркера безопасности имени пользователя.</summary>
+    </member>
+    <member name="M:System.ServiceModel.Security.Tokens.UserNameSecurityTokenParameters.#ctor">
+      <summary>Инициализирует новый экземпляр класса <see cref="T:System.ServiceModel.Security.Tokens.UserNameSecurityTokenParameters" />.</summary>
+    </member>
+  </members>
+</doc>

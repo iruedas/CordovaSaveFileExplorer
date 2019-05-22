@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>System.ServiceModel.Duplex</name>
+  </assembly>
+  <members>
+    <member name="T:System.ServiceModel.CallbackBehaviorAttribute">
+      <summary>設定在用戶端應用程式中的回呼服務實作。</summary>
+    </member>
+    <member name="M:System.ServiceModel.CallbackBehaviorAttribute.#ctor">
+      <summary>初始化 <see cref="T:System.ServiceModel.CallbackBehaviorAttribute" /> 類別的新執行個體。</summary>
+    </member>
+    <member name="P:System.ServiceModel.CallbackBehaviorAttribute.AutomaticSessionShutdown">
+      <summary>指定是否要在服務關閉雙工工作階段時自動關閉工作階段。</summary>
+      <returns>如果雙工回呼物件會在服務關閉雙工工作階段時自動關閉工作階段，則為 true，否則為 false。預設為 true。</returns>
+    </member>
+    <member name="M:System.ServiceModel.CallbackBehaviorAttribute.System#ServiceModel#Description#IEndpointBehavior#AddBindingParameters(System.ServiceModel.Description.ServiceEndpoint,System.ServiceModel.Channels.BindingParameterCollection)">
+      <summary>設定繫結項目以支援回呼行為。</summary>
+      <param name="serviceEndpoint">回呼物件的端點。</param>
+      <param name="parameters">所設定之繫結參數的集合。</param>
+    </member>
+    <member name="M:System.ServiceModel.CallbackBehaviorAttribute.System#ServiceModel#Description#IEndpointBehavior#ApplyClientBehavior(System.ServiceModel.Description.ServiceEndpoint,System.ServiceModel.Dispatcher.ClientRuntime)">
+      <summary>設定用戶端執行階段以支援回呼物件。</summary>
+      <param name="serviceEndpoint">由此屬性設定的端點。</param>
+      <param name="clientRuntime">此屬性設定的用戶端執行階段物件。</param>
+    </member>
+    <member name="M:System.ServiceModel.CallbackBehaviorAttribute.System#ServiceModel#Description#IEndpointBehavior#ApplyDispatchBehavior(System.ServiceModel.Description.ServiceEndpoint,System.ServiceModel.Dispatcher.EndpointDispatcher)">
+      <summary>實作 <see cref="M:System.ServiceModel.Description.IEndpointBehavior.ApplyDispatchBehavior(System.ServiceModel.Description.ServiceEndpoint,System.ServiceModel.Dispatcher.EndpointDispatcher)" /> 方法。這個實作沒有任何作用。</summary>
+      <param name="serviceEndpoint">要修改的端點。</param>
+      <param name="endpointDispatcher">此方法修改的端點發送器。</param>
+    </member>
+    <member name="M:System.ServiceModel.CallbackBehaviorAttribute.System#ServiceModel#Description#IEndpointBehavior#Validate(System.ServiceModel.Description.ServiceEndpoint)">
+      <summary>在建置執行階段之前驗證端點描述。</summary>
+      <param name="serviceEndpoint">要驗證的端點。</param>
+    </member>
+    <member name="P:System.ServiceModel.CallbackBehaviorAttribute.UseSynchronizationContext">
+      <summary>取得或設定值，這個值會指定是否使用目前的同步處理內容來選擇執行的執行緒。</summary>
+      <returns>如果所有對服務的呼叫都必須在 <see cref="T:System.Threading.SynchronizationContext" /> 指定的執行緒上執行，則為 true，否則為 false。預設值是 true。</returns>
+    </member>
+    <member name="T:System.ServiceModel.DuplexChannelFactory`1">
+      <summary>提供各種建立與管理不同型別之雙工通道的方式，這些型別可供用戶端用來傳送與接收在服務端點之間往返的訊息。</summary>
+      <typeparam name="TChannel">由通道處理站產生的通道型別。</typeparam>
+    </member>
+    <member name="M:System.ServiceModel.DuplexChannelFactory`1.#ctor(System.ServiceModel.InstanceContext,System.ServiceModel.Channels.Binding)">
+      <summary>以可實作回呼合約與指定繫結的內容來初始化 <see cref="T:System.ServiceModel.DuplexChannelFactory`1" /> 類別的新執行個體。</summary>
+      <param name="callbackInstance">用戶端用於接聽連線服務之訊息的 <see cref="T:System.ServiceModel.InstanceContext" />。</param>
+      <param name="binding">用於將處理站所產生之通道連接到服務的 <see cref="T:System.ServiceModel.Channels.Binding" />。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="callbackInstance" /> 或 <paramref name="binding" /> 是 null。</exception>
+    </member>
+    <member name="M:System.ServiceModel.DuplexChannelFactory`1.#ctor(System.ServiceModel.InstanceContext,System.ServiceModel.Channels.Binding,System.ServiceModel.EndpointAddress)">
+      <summary>以可實作回呼合約與指定繫結及端點位址的物件來初始化 <see cref="T:System.ServiceModel.DuplexChannelFactory`1" /> 類別的新執行個體。</summary>
+      <param name="callbackInstance">用戶端用於接聽連線服務之訊息的 <see cref="T:System.ServiceModel.InstanceContext" />。</param>
+      <param name="binding">用於將處理站所產生之通道連接到服務的 <see cref="T:System.ServiceModel.Channels.Binding" />。</param>
+      <param name="remoteAddress">提供服務位置的 <see cref="T:System.ServiceModel.EndpointAddress" />。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="callbackInstance" />、<paramref name="binding" /> 或 <paramref name="remoteAddress" /> 為 null。</exception>
+    </member>
+    <member name="M:System.ServiceModel.DuplexChannelFactory`1.#ctor(System.ServiceModel.InstanceContext,System.ServiceModel.Channels.Binding,System.String)">
+      <summary>使用指定的執行個體內容、繫結與遠端位址，初始化 <see cref="T:System.ServiceModel.DuplexChannelFactory`1" /> 類別的新執行個體。</summary>
+      <param name="callbackInstance">用戶端用於接聽連線服務之訊息的 <see cref="T:System.ServiceModel.InstanceContext" />。</param>
+      <param name="binding">用於將處理站所產生之通道連接到服務的 <see cref="T:System.ServiceModel.Channels.Binding" />。</param>
+      <param name="remoteAddress">提供服務位置的遠端位址。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="callbackInstance" />、<paramref name="binding" /> 或 <paramref name="remoteAddress" /> 為 null。</exception>
+    </member>
+    <member name="M:System.ServiceModel.DuplexChannelFactory`1.#ctor(System.ServiceModel.InstanceContext,System.String)">
+      <summary>以可實作回呼合約與指定組態的物件來初始化 <see cref="T:System.ServiceModel.DuplexChannelFactory`1" /> 類別的新執行個體。</summary>
+      <param name="callbackInstance">用戶端用於接聽連線服務之訊息的 <see cref="T:System.ServiceModel.InstanceContext" />。</param>
+      <param name="endpointConfigurationName">用於端點組態的名稱。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="callbackInstance" /> 或 <paramref name="endpointConfigurationName" /> 是 null。</exception>
+    </member>
+    <member name="M:System.ServiceModel.DuplexChannelFactory`1.#ctor(System.ServiceModel.InstanceContext,System.String,System.ServiceModel.EndpointAddress)">
+      <summary>以可實作回呼合約與指定組態及端點位址的物件來初始化 <see cref="T:System.ServiceModel.DuplexChannelFactory`1" /> 類別的新執行個體。</summary>
+      <param name="callbackInstance">用戶端用於接聽連線服務之訊息的 <see cref="T:System.ServiceModel.InstanceContext" />。</param>
+      <param name="endpointConfigurationName">用於端點組態的名稱。</param>
+      <param name="remoteAddress">提供服務位置的 <see cref="T:System.ServiceModel.EndpointAddress" />。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="callbackInstance" />、<paramref name="endpointConfigurationName" /> 或 <paramref name="remoteAddress" /> 為 null。</exception>
+    </member>
+    <member name="M:System.ServiceModel.DuplexChannelFactory`1.CreateChannel(System.ServiceModel.EndpointAddress,System.Uri)">
+      <summary>在服務與用戶端的回呼執行個體之間建立雙工通道。</summary>
+      <returns>用戶端與服務之間 <paramref name="TChannel" /> 型別的雙工通道 (處理站的泛型參數)。</returns>
+      <param name="address">提供服務位置的 <see cref="T:System.ServiceModel.EndpointAddress" />。</param>
+      <param name="via">包含訊息傳送之目標傳輸位址的 <see cref="T:System.Uri" />。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="address" /> 為 null。</exception>
+    </member>
+    <member name="M:System.ServiceModel.DuplexChannelFactory`1.CreateChannel(System.ServiceModel.InstanceContext)">
+      <summary>在服務與用戶端的回呼執行個體之間建立雙工通道。</summary>
+      <returns>用戶端與服務之間 <paramref name="TChannel" /> 型別的雙工通道 (處理站的泛型參數)。</returns>
+      <param name="callbackInstance">用戶端用於接聽連線服務之訊息的 <see cref="T:System.ServiceModel.InstanceContext" />。</param>
+      <exception cref="T:System.InvalidOperationException">
+        <paramref name="callbackInstance" /> 或 <paramref name="callbackInstance" />.UserObject 為 null。</exception>
+    </member>
+    <member name="M:System.ServiceModel.DuplexChannelFactory`1.CreateChannel(System.ServiceModel.InstanceContext,System.ServiceModel.EndpointAddress)">
+      <summary>在服務與用戶端的回呼執行個體之間建立雙工通道。</summary>
+      <returns>用戶端與服務之間 <paramref name="TChannel" /> 型別的雙工通道 (處理站的泛型參數)。</returns>
+      <param name="callbackInstance">用戶端用於接聽連線服務之訊息的 <see cref="T:System.ServiceModel.InstanceContext" />。</param>
+      <param name="address">提供服務位置的 <see cref="T:System.ServiceModel.EndpointAddress" />。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="address" /> 為 null。</exception>
+      <exception cref="T:System.InvalidOperationException">
+        <paramref name="callbackInstance" /> 或 <paramref name="callbackInstance" />.UserObject 為 null。</exception>
+    </member>
+    <member name="M:System.ServiceModel.DuplexChannelFactory`1.CreateChannel(System.ServiceModel.InstanceContext,System.ServiceModel.EndpointAddress,System.Uri)">
+      <summary>在服務與用戶端的回呼執行個體之間建立雙工通道。</summary>
+      <returns>用戶端與服務之間 <paramref name="TChannel" /> 型別的通道 (處理站的泛型參數)。</returns>
+      <param name="callbackInstance">用戶端用於接聽連線服務之訊息的 <see cref="T:System.ServiceModel.InstanceContext" />。</param>
+      <param name="address">提供服務位置的 <see cref="T:System.ServiceModel.EndpointAddress" />。</param>
+      <param name="via">包含訊息傳送之目標傳輸位址的 <see cref="T:System.Uri" />。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="address" /> 為 null。</exception>
+      <exception cref="T:System.InvalidOperationException">
+        <paramref name="callbackInstance" /> 或 <paramref name="callbackInstance" />.UserObject 為 null。</exception>
+    </member>
+    <member name="T:System.ServiceModel.DuplexClientBase`1">
+      <summary>用於建立雙工服務通道並將該通道與回呼物件相關聯。</summary>
+      <typeparam name="TChannel">要建立的通道類型。</typeparam>
+    </member>
+    <member name="M:System.ServiceModel.DuplexClientBase`1.#ctor(System.ServiceModel.InstanceContext)">
+      <summary>使用指定的回呼物件來初始化 <see cref="T:System.ServiceModel.DuplexClientBase`1" /> 類別的新執行個體。</summary>
+      <param name="callbackInstance">將回呼物件與服務通道建立關聯的 <see cref="T:System.ServiceModel.InstanceContext" /> 物件。</param>
+      <exception cref="T:System.ArgumentNullException">回呼執行個體為 null。</exception>
+    </member>
+    <member name="M:System.ServiceModel.DuplexClientBase`1.#ctor(System.ServiceModel.InstanceContext,System.ServiceModel.Channels.Binding,System.ServiceModel.EndpointAddress)">
+      <summary>使用指定的回呼物件、繫結以及服務端點位址來初始化 <see cref="T:System.ServiceModel.DuplexClientBase`1" /> 類別的新執行個體。</summary>
+      <param name="callbackInstance">用來建立執行個體內容的物件，可將回呼物件與服務通道建立關聯。</param>
+      <param name="binding">用來呼叫服務的繫結。</param>
+      <param name="remoteAddress">要使用的服務端點位址。</param>
+    </member>
+    <member name="M:System.ServiceModel.DuplexClientBase`1.#ctor(System.ServiceModel.InstanceContext,System.String)">
+      <summary>使用指定的回呼物件與組態名稱，初始化 <see cref="T:System.ServiceModel.DuplexClientBase`1" /> 類別的新執行個體。</summary>
+      <param name="callbackInstance">用來建立執行個體內容的物件，可將回呼物件與服務通道建立關聯。</param>
+      <param name="endpointConfigurationName">應用程式組態檔中用戶端端點資訊的名稱。</param>
+      <exception cref="T:System.ArgumentNullException">回呼執行個體為 null。</exception>
+      <exception cref="T:System.ArgumentNullException">組態名稱為 null。</exception>
+    </member>
+    <member name="M:System.ServiceModel.DuplexClientBase`1.#ctor(System.ServiceModel.InstanceContext,System.String,System.ServiceModel.EndpointAddress)">
+      <summary>使用指定的回呼物件、組態名稱以及服務端點位址，初始化 <see cref="T:System.ServiceModel.DuplexClientBase`1" /> 類別的新執行個體。</summary>
+      <param name="callbackInstance">用來建立執行個體內容的物件，可將回呼物件與服務通道建立關聯。</param>
+      <param name="endpointConfigurationName">應用程式組態檔中用戶端端點資訊的名稱。</param>
+      <param name="remoteAddress">要使用之服務端點的位址。</param>
+      <exception cref="T:System.ArgumentNullException">回呼執行個體為 null。</exception>
+      <exception cref="T:System.ArgumentNullException">組態名稱為 null。</exception>
+      <exception cref="T:System.ArgumentNullException">位址為 null。</exception>
+    </member>
+    <member name="M:System.ServiceModel.DuplexClientBase`1.#ctor(System.ServiceModel.InstanceContext,System.String,System.String)">
+      <summary>使用指定的回呼物件、組態名稱以及服務端點位址，初始化 <see cref="T:System.ServiceModel.DuplexClientBase`1" /> 類別的新執行個體。</summary>
+      <param name="callbackInstance">用來建立執行個體內容的物件，可將回呼物件與服務通道建立關聯。</param>
+      <param name="endpointConfigurationName">應用程式組態檔中用戶端端點資訊的名稱。</param>
+      <param name="remoteAddress">要使用之服務端點的位址。</param>
+      <exception cref="T:System.ArgumentNullException">回呼執行個體為 null。</exception>
+      <exception cref="T:System.ArgumentNullException">組態名稱為 null。</exception>
+      <exception cref="T:System.ArgumentNullException">位址為 null。</exception>
+    </member>
+    <member name="T:System.ServiceModel.InstanceContext">
+      <summary>表示服務執行個體的內容資訊。</summary>
+    </member>
+    <member name="M:System.ServiceModel.InstanceContext.#ctor(System.Object)">
+      <summary>為實作服務執行個體的指定物件，初始化 <see cref="T:System.ServiceModel.InstanceContext" /> 類別的新執行個體。</summary>
+      <param name="implementation">實作服務執行個體的物件。</param>
+    </member>
+    <member name="M:System.ServiceModel.InstanceContext.GetServiceInstance(System.ServiceModel.Channels.Message)">
+      <summary>傳回執行個體內容的服務執行個體，以回應傳入訊息。</summary>
+      <returns>代表服務執行個體的物件。</returns>
+      <param name="message">觸發服務物件之建立的傳入訊息。</param>
+      <exception cref="T:System.InvalidOperationException">此服務執行個體處於建立或開啟狀態，或尚未初始化。</exception>
+      <exception cref="T:System.ServiceModel.CommunicationObjectAbortedException">服務執行個體已中止。</exception>
+      <exception cref="T:System.ObjectDisposedException">此服務執行個體已關閉，無法在這些狀態下修改。</exception>
+      <exception cref="T:System.ServiceModel.CommunicationObjectFaultedException">此服務執行個體發生錯誤，無法在這些狀態下修改。</exception>
+    </member>
+    <member name="P:System.ServiceModel.InstanceContext.SynchronizationContext">
+      <summary>取得或設定目前執行個體內容的同步處理內容，用來進行執行緒同步處理。</summary>
+      <returns>用來進行目前執行個體內容之執行緒同步處理的 <see cref="T:System.Threading.SynchronizationContext" />。</returns>
+      <exception cref="T:System.InvalidOperationException">通訊物件已開啟或正在關閉，無法在這些狀態下修改。</exception>
+      <exception cref="T:System.ServiceModel.CommunicationObjectAbortedException">通訊物件已中止，無法在這些狀態下修改。</exception>
+      <exception cref="T:System.ObjectDisposedException">通訊物件已關閉，無法在這些狀態下修改。</exception>
+      <exception cref="T:System.ServiceModel.CommunicationObjectFaultedException">通訊物件發生錯誤，無法在這些狀態下修改。</exception>
+    </member>
+    <member name="P:System.ServiceModel.InstanceContext.System#ServiceModel#IExtensibleObject{T}#Extensions">
+      <summary>表示擴充物件的集合。</summary>
+      <returns>傳回 <see cref="T:System.ServiceModel.IExtensionCollection`1" />。</returns>
+    </member>
+  </members>
+</doc>

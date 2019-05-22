@@ -1,0 +1,190 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>System.ServiceModel.Duplex</name>
+  </assembly>
+  <members>
+    <member name="T:System.ServiceModel.CallbackBehaviorAttribute">
+      <summary>クライアント アプリケーションでのコールバック サービス実装を構成します。</summary>
+    </member>
+    <member name="M:System.ServiceModel.CallbackBehaviorAttribute.#ctor">
+      <summary>
+        <see cref="T:System.ServiceModel.CallbackBehaviorAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+    </member>
+    <member name="P:System.ServiceModel.CallbackBehaviorAttribute.AutomaticSessionShutdown">
+      <summary>サービスが双方向セッションを閉じたときに、セッションを自動的に閉じるかどうかを指定します。</summary>
+      <returns>サービスが双方向セッションを閉じたときに、双方向コールバック オブジェクトが自動的にセッションを閉じる場合は true、それ以外の場合は false。既定値は、true です。</returns>
+    </member>
+    <member name="M:System.ServiceModel.CallbackBehaviorAttribute.System#ServiceModel#Description#IEndpointBehavior#AddBindingParameters(System.ServiceModel.Description.ServiceEndpoint,System.ServiceModel.Channels.BindingParameterCollection)">
+      <summary>バインド要素を、コールバック動作をサポートするように構成します。</summary>
+      <param name="serviceEndpoint">コールバック オブジェクトのエンドポイント。</param>
+      <param name="parameters">構成されるバインド パラメーターのコレクション。</param>
+    </member>
+    <member name="M:System.ServiceModel.CallbackBehaviorAttribute.System#ServiceModel#Description#IEndpointBehavior#ApplyClientBehavior(System.ServiceModel.Description.ServiceEndpoint,System.ServiceModel.Dispatcher.ClientRuntime)">
+      <summary>クライアント ランタイムを、コールバック オブジェクトをサポートするように構成します。</summary>
+      <param name="serviceEndpoint">属性によって構成されるエンドポイント。</param>
+      <param name="clientRuntime">属性が構成するクライアント ランタイム オブジェクト。</param>
+    </member>
+    <member name="M:System.ServiceModel.CallbackBehaviorAttribute.System#ServiceModel#Description#IEndpointBehavior#ApplyDispatchBehavior(System.ServiceModel.Description.ServiceEndpoint,System.ServiceModel.Dispatcher.EndpointDispatcher)">
+      <summary>
+        <see cref="M:System.ServiceModel.Description.IEndpointBehavior.ApplyDispatchBehavior(System.ServiceModel.Description.ServiceEndpoint,System.ServiceModel.Dispatcher.EndpointDispatcher)" /> メソッドの実装。この実装は、効果がありません。</summary>
+      <param name="serviceEndpoint">変更対象のエンドポイント。</param>
+      <param name="endpointDispatcher">メソッドが変更するエンドポイント ディスパッチャー。</param>
+    </member>
+    <member name="M:System.ServiceModel.CallbackBehaviorAttribute.System#ServiceModel#Description#IEndpointBehavior#Validate(System.ServiceModel.Description.ServiceEndpoint)">
+      <summary>ランタイムを構築する前に、エンドポイントの説明を検証します。</summary>
+      <param name="serviceEndpoint">検証されるエンドポイント。</param>
+    </member>
+    <member name="P:System.ServiceModel.CallbackBehaviorAttribute.UseSynchronizationContext">
+      <summary>現在の同期コンテキストを使用して実行スレッドを選択するかどうかを指定する値を取得または設定します。</summary>
+      <returns>サービスのすべての呼び出しが、<see cref="T:System.Threading.SynchronizationContext" /> で指定されたスレッドで実行される必要がある場合は true、それ以外の場合は false。既定値は true です。</returns>
+    </member>
+    <member name="T:System.ServiceModel.DuplexChannelFactory`1">
+      <summary>クライアントがサービス エンドポイントとの間でメッセージを送受信するために使用する、さまざまな種類の双方向チャネルを作成したり、管理したりする手段を提供します。</summary>
+      <typeparam name="TChannel">チャネル ファクトリにより作成されたチャネルの型。</typeparam>
+    </member>
+    <member name="M:System.ServiceModel.DuplexChannelFactory`1.#ctor(System.ServiceModel.InstanceContext,System.ServiceModel.Channels.Binding)">
+      <summary>コールバック コントラクトを実装するコンテキストと指定したバインドを使用して、<see cref="T:System.ServiceModel.DuplexChannelFactory`1" /> クラスの新しいインスタンスを初期化します。</summary>
+      <param name="callbackInstance">接続サービスからのメッセージをリッスンするためにクライアントが使用する <see cref="T:System.ServiceModel.InstanceContext" />。</param>
+      <param name="binding">ファクトリにより作成されたチャネルを通じてサービスに接続するために使用される <see cref="T:System.ServiceModel.Channels.Binding" />。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="callbackInstance" /> または <paramref name="binding" /> が null です。</exception>
+    </member>
+    <member name="M:System.ServiceModel.DuplexChannelFactory`1.#ctor(System.ServiceModel.InstanceContext,System.ServiceModel.Channels.Binding,System.ServiceModel.EndpointAddress)">
+      <summary>コールバック コントラクトを実装するオブジェクトと、指定したバインドおよびエンドポイント アドレスを使用して、<see cref="T:System.ServiceModel.DuplexChannelFactory`1" /> クラスの新しいインスタンスを初期化します。</summary>
+      <param name="callbackInstance">接続サービスからのメッセージをリッスンするためにクライアントが使用する <see cref="T:System.ServiceModel.InstanceContext" />。</param>
+      <param name="binding">ファクトリにより作成されたチャネルを通じてサービスに接続するために使用される <see cref="T:System.ServiceModel.Channels.Binding" />。</param>
+      <param name="remoteAddress">サービスの場所を提供する <see cref="T:System.ServiceModel.EndpointAddress" />。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="callbackInstance" />、<paramref name="binding" />、または <paramref name="remoteAddress" /> が null です。</exception>
+    </member>
+    <member name="M:System.ServiceModel.DuplexChannelFactory`1.#ctor(System.ServiceModel.InstanceContext,System.ServiceModel.Channels.Binding,System.String)">
+      <summary>指定したインスタンス コンテキスト、バインド、およびリモート アドレスを使用して、<see cref="T:System.ServiceModel.DuplexChannelFactory`1" /> クラスの新しいインスタンスを初期化します。</summary>
+      <param name="callbackInstance">接続サービスからのメッセージをリッスンするためにクライアントが使用する <see cref="T:System.ServiceModel.InstanceContext" />。</param>
+      <param name="binding">ファクトリにより作成されたチャネルを通じてサービスに接続するために使用される <see cref="T:System.ServiceModel.Channels.Binding" />。</param>
+      <param name="remoteAddress">サービスの場所を提供するリモート アドレス。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="callbackInstance" />、<paramref name="binding" />、または <paramref name="remoteAddress" /> が null です。</exception>
+    </member>
+    <member name="M:System.ServiceModel.DuplexChannelFactory`1.#ctor(System.ServiceModel.InstanceContext,System.String)">
+      <summary>コールバック コントラクトを実装するオブジェクトと指定した構成を使用して、<see cref="T:System.ServiceModel.DuplexChannelFactory`1" /> クラスの新しいインスタンスを初期化します。</summary>
+      <param name="callbackInstance">接続サービスからのメッセージをリッスンするためにクライアントが使用する <see cref="T:System.ServiceModel.InstanceContext" />。</param>
+      <param name="endpointConfigurationName">エンドポイント構成で使用される名前。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="callbackInstance" /> または <paramref name="endpointConfigurationName" /> が null です。</exception>
+    </member>
+    <member name="M:System.ServiceModel.DuplexChannelFactory`1.#ctor(System.ServiceModel.InstanceContext,System.String,System.ServiceModel.EndpointAddress)">
+      <summary>コールバック コントラクトを実装するオブジェクトと、指定した構成およびエンドポイント アドレスを使用して、<see cref="T:System.ServiceModel.DuplexChannelFactory`1" /> クラスの新しいインスタンスを初期化します。</summary>
+      <param name="callbackInstance">接続サービスからのメッセージをリッスンするためにクライアントが使用する <see cref="T:System.ServiceModel.InstanceContext" />。</param>
+      <param name="endpointConfigurationName">エンドポイント構成で使用される名前。</param>
+      <param name="remoteAddress">サービスの場所を提供する <see cref="T:System.ServiceModel.EndpointAddress" />。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="callbackInstance" />、<paramref name="endpointConfigurationName" />、または <paramref name="remoteAddress" /> が null です。</exception>
+    </member>
+    <member name="M:System.ServiceModel.DuplexChannelFactory`1.CreateChannel(System.ServiceModel.EndpointAddress,System.Uri)">
+      <summary>サービスと、クライアント上のコールバック インスタンスとの間の双方向チャネルを作成します。</summary>
+      <returns>クライアントとサービス間のファクトリに対するジェネリック パラメーターである <paramref name="TChannel" /> 型の双方向チャネル。</returns>
+      <param name="address">サービスの場所を提供する <see cref="T:System.ServiceModel.EndpointAddress" />。</param>
+      <param name="via">メッセージの送信先のトランスポート アドレスを格納している <see cref="T:System.Uri" />。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="address" /> は null なので、</exception>
+    </member>
+    <member name="M:System.ServiceModel.DuplexChannelFactory`1.CreateChannel(System.ServiceModel.InstanceContext)">
+      <summary>サービスと、クライアント上のコールバック インスタンスとの間の双方向チャネルを作成します。</summary>
+      <returns>クライアントとサービス間のファクトリに対するジェネリック パラメーターである <paramref name="TChannel" /> 型の双方向チャネル。</returns>
+      <param name="callbackInstance">接続サービスからのメッセージをリッスンするためにクライアントが使用する <see cref="T:System.ServiceModel.InstanceContext" />。</param>
+      <exception cref="T:System.InvalidOperationException">
+        <paramref name="callbackInstance" /> または<paramref name="callbackInstance" />.UserObject が null です。</exception>
+    </member>
+    <member name="M:System.ServiceModel.DuplexChannelFactory`1.CreateChannel(System.ServiceModel.InstanceContext,System.ServiceModel.EndpointAddress)">
+      <summary>サービスと、クライアント上のコールバック インスタンスとの間の双方向チャネルを作成します。</summary>
+      <returns>クライアントとサービス間のファクトリに対するジェネリック パラメーターである <paramref name="TChannel" /> 型の双方向チャネル。</returns>
+      <param name="callbackInstance">接続サービスからのメッセージをリッスンするためにクライアントが使用する <see cref="T:System.ServiceModel.InstanceContext" />。</param>
+      <param name="address">サービスの場所を提供する <see cref="T:System.ServiceModel.EndpointAddress" />。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="address" /> は null なので、</exception>
+      <exception cref="T:System.InvalidOperationException">
+        <paramref name="callbackInstance" /> または<paramref name="callbackInstance" />.UserObject が null です。</exception>
+    </member>
+    <member name="M:System.ServiceModel.DuplexChannelFactory`1.CreateChannel(System.ServiceModel.InstanceContext,System.ServiceModel.EndpointAddress,System.Uri)">
+      <summary>サービスと、クライアント上のコールバック インスタンスとの間の双方向チャネルを作成します。</summary>
+      <returns>クライアントとサービス間のファクトリに対するジェネリック パラメーターである <paramref name="TChannel" /> 型のチャネル。</returns>
+      <param name="callbackInstance">接続サービスからのメッセージをリッスンするためにクライアントが使用する <see cref="T:System.ServiceModel.InstanceContext" />。</param>
+      <param name="address">サービスの場所を提供する <see cref="T:System.ServiceModel.EndpointAddress" />。</param>
+      <param name="via">メッセージの送信先のトランスポート アドレスを格納している <see cref="T:System.Uri" />。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="address" /> は null なので、</exception>
+      <exception cref="T:System.InvalidOperationException">
+        <paramref name="callbackInstance" /> または<paramref name="callbackInstance" />.UserObject が null です。</exception>
+    </member>
+    <member name="T:System.ServiceModel.DuplexClientBase`1">
+      <summary>双方向サービスへのチャネルを作成し、そのチャネルをコールバック オブジェクトに関連付けるために使用されます。</summary>
+      <typeparam name="TChannel">作成されるチャネルの種類。</typeparam>
+    </member>
+    <member name="M:System.ServiceModel.DuplexClientBase`1.#ctor(System.ServiceModel.InstanceContext)">
+      <summary>指定したコールバック オブジェクトを使用して <see cref="T:System.ServiceModel.DuplexClientBase`1" /> クラスの新しいインスタンスを初期化します。</summary>
+      <param name="callbackInstance">サービスへのチャネルにコールバック オブジェクトを関連付ける <see cref="T:System.ServiceModel.InstanceContext" /> オブジェクト。</param>
+      <exception cref="T:System.ArgumentNullException">コールバック インスタンスが null です。</exception>
+    </member>
+    <member name="M:System.ServiceModel.DuplexClientBase`1.#ctor(System.ServiceModel.InstanceContext,System.ServiceModel.Channels.Binding,System.ServiceModel.EndpointAddress)">
+      <summary>指定したコールバック オブジェクト、バインド、およびサービス エンドポイント アドレスを使用して、<see cref="T:System.ServiceModel.DuplexClientBase`1" /> クラスの新しいインスタンスを初期化します。</summary>
+      <param name="callbackInstance">コールバック オブジェクトをサービスへのチャネルに関連付けるインスタンス コンテキストを作成するために使用されるオブジェクト。</param>
+      <param name="binding">サービスを呼び出すバインド。</param>
+      <param name="remoteAddress">使用するサービス エンドポイント アドレス。</param>
+    </member>
+    <member name="M:System.ServiceModel.DuplexClientBase`1.#ctor(System.ServiceModel.InstanceContext,System.String)">
+      <summary>指定したコールバック オブジェクトと構成名を使用して <see cref="T:System.ServiceModel.DuplexClientBase`1" /> クラスの新しいインスタンスを初期化します。</summary>
+      <param name="callbackInstance">コールバック オブジェクトをサービスへのチャネルに関連付けるインスタンス コンテキストを作成するために使用されるオブジェクト。</param>
+      <param name="endpointConfigurationName">アプリケーション構成ファイル内のクライアント エンドポイント情報の名前。</param>
+      <exception cref="T:System.ArgumentNullException">コールバック インスタンスが null です。</exception>
+      <exception cref="T:System.ArgumentNullException">構成名が null です。</exception>
+    </member>
+    <member name="M:System.ServiceModel.DuplexClientBase`1.#ctor(System.ServiceModel.InstanceContext,System.String,System.ServiceModel.EndpointAddress)">
+      <summary>指定したコールバック オブジェクト、構成名、およびサービス エンドポイント アドレスを使用して、<see cref="T:System.ServiceModel.DuplexClientBase`1" /> クラスの新しいインスタンスを初期化します。</summary>
+      <param name="callbackInstance">コールバック オブジェクトをサービスへのチャネルに関連付けるインスタンス コンテキストを作成するために使用されるオブジェクト。</param>
+      <param name="endpointConfigurationName">アプリケーション構成ファイル内のクライアント エンドポイント情報の名前。</param>
+      <param name="remoteAddress">使用するサービス エンドポイントのアドレス。</param>
+      <exception cref="T:System.ArgumentNullException">コールバック インスタンスが null です。</exception>
+      <exception cref="T:System.ArgumentNullException">構成名が null です。</exception>
+      <exception cref="T:System.ArgumentNullException">アドレスが null です。</exception>
+    </member>
+    <member name="M:System.ServiceModel.DuplexClientBase`1.#ctor(System.ServiceModel.InstanceContext,System.String,System.String)">
+      <summary>指定したコールバック オブジェクト、構成名、およびサービス エンドポイント アドレスを使用して、<see cref="T:System.ServiceModel.DuplexClientBase`1" /> クラスの新しいインスタンスを初期化します。</summary>
+      <param name="callbackInstance">コールバック オブジェクトをサービスへのチャネルに関連付けるインスタンス コンテキストを作成するために使用されるオブジェクト。</param>
+      <param name="endpointConfigurationName">アプリケーション構成ファイル内のクライアント エンドポイント情報の名前。</param>
+      <param name="remoteAddress">使用するサービス エンドポイントのアドレス。</param>
+      <exception cref="T:System.ArgumentNullException">コールバック インスタンスが null です。</exception>
+      <exception cref="T:System.ArgumentNullException">構成名が null です。</exception>
+      <exception cref="T:System.ArgumentNullException">アドレスが null です。</exception>
+    </member>
+    <member name="T:System.ServiceModel.InstanceContext">
+      <summary>サービス インスタンスに関するコンテキスト情報を表します。</summary>
+    </member>
+    <member name="M:System.ServiceModel.InstanceContext.#ctor(System.Object)">
+      <summary>サービス インスタンスを実装する、指定したオブジェクトの <see cref="T:System.ServiceModel.InstanceContext" /> クラスの新しいインスタンスを初期化します。</summary>
+      <param name="implementation">サービス インスタンスを実装するオブジェクト。</param>
+    </member>
+    <member name="M:System.ServiceModel.InstanceContext.GetServiceInstance(System.ServiceModel.Channels.Message)">
+      <summary>受信メッセージに応答して、インスタンス コンテキストのサービスのインスタンスを返します。</summary>
+      <returns>サービス インスタンスを表すオブジェクト。</returns>
+      <param name="message">サービス オブジェクトの作成をトリガーした受信メッセージ。</param>
+      <exception cref="T:System.InvalidOperationException">サービス インスタンスが created または opening 状態であるか、または初期化されていません。</exception>
+      <exception cref="T:System.ServiceModel.CommunicationObjectAbortedException">サービス インスタンスは中止されています。</exception>
+      <exception cref="T:System.ObjectDisposedException">サービス インスタンスは既に閉じています。この状態では変更できません。</exception>
+      <exception cref="T:System.ServiceModel.CommunicationObjectFaultedException">サービス インスタンスは違反しているので、この状態では変更できません。</exception>
+    </member>
+    <member name="P:System.ServiceModel.InstanceContext.SynchronizationContext">
+      <summary>現在のインスタンス コンテキストとのスレッドの同期化で使用されるコンテキストを取得または設定します。</summary>
+      <returns>現在のインスタンス コンテキストとのスレッドの同期化で使用される <see cref="T:System.Threading.SynchronizationContext" />。</returns>
+      <exception cref="T:System.InvalidOperationException">通信オブジェクトが opened または closing 状態です。この状態では変更できません。</exception>
+      <exception cref="T:System.ServiceModel.CommunicationObjectAbortedException">通信オブジェクトは既に中止されています。この状態では変更できません。</exception>
+      <exception cref="T:System.ObjectDisposedException">通信オブジェクトは既に閉じています。この状態では変更できません。</exception>
+      <exception cref="T:System.ServiceModel.CommunicationObjectFaultedException">通信オブジェクトが faulted 状態にあります。この状態では変更できません。</exception>
+    </member>
+    <member name="P:System.ServiceModel.InstanceContext.System#ServiceModel#IExtensibleObject{T}#Extensions">
+      <summary>拡張オブジェクトのコレクション。</summary>
+      <returns>
+        <see cref="T:System.ServiceModel.IExtensionCollection`1" /> を返します。</returns>
+    </member>
+  </members>
+</doc>

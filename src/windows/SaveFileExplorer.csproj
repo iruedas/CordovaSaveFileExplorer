@@ -105,11 +105,17 @@
   </PropertyGroup>
   <PropertyGroup>
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
+    <RestorePackagesPath>$(SolutionDir)Packages</RestorePackagesPath>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="BusinessEntities\Response.cs" />
     <Compile Include="FileExplorer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="nuget.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">

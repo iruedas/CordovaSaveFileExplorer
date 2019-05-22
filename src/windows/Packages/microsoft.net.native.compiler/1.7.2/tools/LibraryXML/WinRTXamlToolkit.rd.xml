@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Directives xmlns="http://schemas.microsoft.com/netfx/2013/01/metadata">
+  <Library Name="*WinRTXamlToolkit*">
+    <Type Name="WinRTXamlToolkit.Interactivity.Behavior{T}">
+      <GenericParameter Name="T" Browse="Public" />
+    </Type>
+    <Type Name="Windows.UI.Colors" Dynamic="Required All" />
+    <Type Name="WinRTXamlToolkit.Tools.TypeExtensions">
+      <Method Name="IsNullable">
+        <TypeParameter Name="type" Browse="Public" />
+      </Method>
+    </Type>
+    <Type Name="WinRTXamlToolkit.Controls.AlternativeFrame">
+      <Method Name="Navigate">
+        <TypeParameter Name="sourcePageType" Browse="Public" />
+      </Method>
+      <Method Name="Preload">
+        <TypeParameter Name="sourcePageType" Browse="Public" />
+      </Method>
+      <Method Name="UnloadPreloaded">
+        <TypeParameter Name="sourcePageType" Browse="Public" />
+      </Method>
+    </Type>
+  </Library>
+</Directives>

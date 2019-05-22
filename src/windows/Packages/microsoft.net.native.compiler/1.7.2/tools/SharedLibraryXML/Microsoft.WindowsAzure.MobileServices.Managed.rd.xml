@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Directives xmlns="http://schemas.microsoft.com/netfx/2013/01/metadata">
+  <Library Name="*Microsoft.WindowsAzure.MobileServices.Managed*">
+    <Namespace Name="Microsoft.WindowsAzure.MobileServices">
+      <Type Name="TypeExtensions">
+        <Method Name="FindInstanceMethod">
+          <TypeParameter Name="type" Browse="Required All" />
+        </Method>
+        <Method Name="FindInstanceProperty">
+          <TypeParameter Name="type" Browse="Required All" />
+        </Method>
+        <Method Name="FindStaticMethod">
+          <TypeParameter Name="type" Browse="Required All" />
+        </Method>
+        <Method Name="GetBaseTypesAndSelf">
+          <TypeParameter Name="type" Browse="Required All" />
+        </Method>
+        <Method Name="GetFields">
+          <TypeParameter Name="type" Browse="Required All" />
+        </Method>
+        <Method Name="GetProperties">
+          <TypeParameter Name="type" Browse="Required All" />
+        </Method>
+        <Method Name="GetUnderlyingType">
+          <TypeParameter Name="type" Browse="Required All" />
+        </Method>
+        <Method Name="IsAssignableTo{T}">
+          <GenericParameter Name="T" Browse="Public" />
+          <TypeParameter Name="type" Browse="Public" />
+        </Method>
+      </Type>
+      <Type Name="SerializableType">
+        <Method Name="Get">
+          <TypeParameter Name="type" Serialize="Required All" />
+        </Method>
+      </Type>
+      <Type Name="MobileServiceTableSerializer">
+        <Method Name="Deserialize">
+          <Parameter Name="instance" Serialize="Required All" />
+        </Method>
+      </Type>
+      <Type Name="MobileServiceTable{T}">
+        <GenericParameter Name="T" Serialize="Required All" />
+      </Type>
+      <Type Name="MobileServiceTableQuery{T}">
+        <GenericParameter Name="T" Serialize="Required All" />
+      </Type>
+      <Type Name="MobileServiceCollectionView{T}">
+        <GenericParameter Name="T" Serialize="Required All" />
+      </Type>
+      <Type Name="IMobileServiceTable{T}">
+        <GenericParameter Name="T" Serialize="Required All" />
+      </Type>
+    </Namespace>
+  </Library>
+</Directives>

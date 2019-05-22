@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Directives xmlns="http://schemas.microsoft.com/netfx/2013/01/metadata">
+  <Library Name="*Microsoft.Practices.ServiceLocation*">
+    <Type Name="Microsoft.Practices.ServiceLocation.ServiceLocatorImplBase">
+      <Method Name="GetAllInstances">
+        <TypeParameter Name="serviceType" Dynamic="Required All" />
+      </Method>
+      <Method Name="GetAllInstances{TService}">
+        <GenericParameter Name="TService" Dynamic="Required All" />
+      </Method>
+      <Method Name="GetInstance">
+        <TypeParameter Name="serviceType" Dynamic="Required All" />
+      </Method>
+      <Method Name="GetInstance{TService}">
+        <GenericParameter Name="TService" Dynamic="Required All" />
+      </Method>
+      <Method Name="GetService">
+        <TypeParameter Name="serviceType" Dynamic="Required All" />
+      </Method>
+    </Type>
+  </Library>
+</Directives>

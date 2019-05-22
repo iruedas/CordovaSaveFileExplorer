@@ -1,0 +1,287 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>System.ServiceModel.NetTcp</name>
+  </assembly>
+  <members>
+    <member name="T:System.ServiceModel.MessageSecurityOverTcp">
+      <summary>為使用 TCP 傳輸傳送的訊息設定訊息層級安全性。</summary>
+    </member>
+    <member name="M:System.ServiceModel.MessageSecurityOverTcp.#ctor">
+      <summary>初始化 <see cref="T:System.ServiceModel.MessageSecurityOverTcp" /> 類別的新執行個體。</summary>
+    </member>
+    <member name="P:System.ServiceModel.MessageSecurityOverTcp.ClientCredentialType">
+      <summary>指定用戶端用來向 SOAP 層級的服務驗證自身的用戶端認證類型。</summary>
+      <returns>
+        <see cref="T:System.ServiceModel.MessageCredentialType" />。預設為 <see cref="F:System.ServiceModel.MessageCredentialType.Windows" />。</returns>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <see cref="P:System.ServiceModel.MessageSecurityOverTcp.ClientCredentialType" /> 的值不是有效的 <see cref="T:System.ServiceModel.MessageCredentialType" />。</exception>
+    </member>
+    <member name="T:System.ServiceModel.NetTcpBinding">
+      <summary>一個適用於跨電腦通訊的安全、可靠的繫結。</summary>
+    </member>
+    <member name="M:System.ServiceModel.NetTcpBinding.#ctor">
+      <summary>初始化 <see cref="T:System.ServiceModel.NetTcpBinding" /> 類別的新執行個體。</summary>
+    </member>
+    <member name="M:System.ServiceModel.NetTcpBinding.#ctor(System.ServiceModel.SecurityMode)">
+      <summary>使用指定的安全性類型，初始化 <see cref="T:System.ServiceModel.NetTcpBinding" /> 類別的新執行個體。</summary>
+      <param name="securityMode">
+        <see cref="T:System.ServiceModel.SecurityMode" /> 值，指定搭配此繫結使用的安全性類型。</param>
+    </member>
+    <member name="M:System.ServiceModel.NetTcpBinding.#ctor(System.String)">
+      <summary>使用指定的組態名稱，初始化 <see cref="T:System.ServiceModel.NetTcpBinding" /> 類別的新執行個體。</summary>
+      <param name="configurationName">
+        <see cref="T:System.ServiceModel.NetTcpBinding" /> 的繫結組態名稱。</param>
+    </member>
+    <member name="M:System.ServiceModel.NetTcpBinding.CreateBindingElements">
+      <summary>建立含有繫結之繫結項目的集合。</summary>
+      <returns>組成繫結且型別為 <see cref="T:System.ServiceModel.Channels.BindingElement" /> 的 <see cref="T:System.Collections.Generic.ICollection`1" />。</returns>
+    </member>
+    <member name="P:System.ServiceModel.NetTcpBinding.EnvelopeVersion">
+      <summary>取得 SOAP 的版本，用於由此繫結處理的訊息。</summary>
+      <returns>搭配此繫結使用之 <see cref="T:System.ServiceModel.EnvelopeVersion" /> 的值。該值為 SOAP 1.2。</returns>
+    </member>
+    <member name="P:System.ServiceModel.NetTcpBinding.MaxBufferPoolSize">
+      <summary>取得或設定儲存繫結所處理之 TCP 訊息的可用緩衝集區大小上限 (以位元組為單位)。</summary>
+      <returns>儲存繫結所處理之 TCP 訊息的可用緩衝集區大小上限。預設值為 524,288 個位元組。</returns>
+    </member>
+    <member name="P:System.ServiceModel.NetTcpBinding.MaxBufferSize">
+      <summary>取得或設定值，這個值會指定記憶體中用來儲存訊息的緩衝區大小上限(以位元組為單位)。</summary>
+      <returns>記憶體中用於儲存訊息的緩衝區大小上限 (以位元組為單位)。預設值為 65,536 個位元組。</returns>
+    </member>
+    <member name="P:System.ServiceModel.NetTcpBinding.MaxReceivedMessageSize">
+      <summary>取得或設定由繫結處理之接收訊息的大小上限 (以位元組為單位)。</summary>
+      <returns>由繫結處理之接收訊息的大小上限，以位元組為單位。預設值為 65,536 個位元組。</returns>
+    </member>
+    <member name="P:System.ServiceModel.NetTcpBinding.ReaderQuotas">
+      <summary>取得或設定 SOAP 訊息複雜性的條件約束，而這些條件約束可由以此繫結所設定的端點處理。</summary>
+      <returns>
+        <see cref="T:System.Xml.XmlDictionaryReaderQuotas" />，指定已交換之 SOAP 訊息的複雜度條件約束。接下來的＜備註＞一節提供了這些條件約束的預設值。</returns>
+    </member>
+    <member name="P:System.ServiceModel.NetTcpBinding.Scheme">
+      <summary>傳回用於傳輸的 URI 配置。</summary>
+      <returns>用於傳輸的 URI 配置，即 "net.tcp"。</returns>
+    </member>
+    <member name="P:System.ServiceModel.NetTcpBinding.Security">
+      <summary>取得物件，指定與此繫結所設定之服務共用的安全性類型。</summary>
+      <returns>包含與此繫結共用之安全性類型的 <see cref="T:System.ServiceModel.NetTcpSecurity" />。NetTCPBinding 的預設安全性模式為 <see cref="F:System.ServiceModel.SecurityMode.Transport" />。</returns>
+    </member>
+    <member name="P:System.ServiceModel.NetTcpBinding.TransferMode">
+      <summary>取得或設定值，這個值會指出以繫結設定的服務使用訊息傳輸的資料流處理模式或緩衝處理模式 (或兩者)。</summary>
+      <returns>
+        <see cref="T:System.ServiceModel.TransferMode" /> 值，指出以繫結設定的服務使用訊息傳輸的資料流處理模式或緩衝處理模式 (或兩者)。</returns>
+    </member>
+    <member name="T:System.ServiceModel.NetTcpSecurity">
+      <summary>指定以 <see cref="T:System.ServiceModel.NetTcpBinding" /> 設定之端點所用的傳輸層級與訊息層級安全性型別。</summary>
+    </member>
+    <member name="M:System.ServiceModel.NetTcpSecurity.#ctor">
+      <summary>初始化 <see cref="T:System.ServiceModel.NetTcpSecurity" /> 類別的新執行個體。</summary>
+    </member>
+    <member name="P:System.ServiceModel.NetTcpSecurity.Message">
+      <summary>取得以 <see cref="T:System.ServiceModel.NetTcpBinding" /> 設定之服務的訊息層級安全性需求的型別。</summary>
+      <returns>
+        <see cref="T:System.ServiceModel.MessageSecurityOverTcp" />，代表端點的訊息層級安全性需求的型別。</returns>
+    </member>
+    <member name="P:System.ServiceModel.NetTcpSecurity.Mode">
+      <summary>取得或設定以 <see cref="T:System.ServiceModel.NetTcpBinding" /> 設定的端點是否使用訊息層級安全性與傳輸層級安全性。</summary>
+      <returns>
+        <see cref="T:System.ServiceModel.SecurityMode" /> 的值，這個值表示端點是否使用訊息層級安全性與傳輸層級安全性。預設值是 <see cref="F:System.ServiceModel.SecurityMode.Transport" />。</returns>
+      <exception cref="T:System.ArgumentOutOfRangeException">未定義此值。</exception>
+    </member>
+    <member name="P:System.ServiceModel.NetTcpSecurity.Transport">
+      <summary>取得以 <see cref="T:System.ServiceModel.NetTcpBinding" /> 設定之端點的訊息層級安全性需求的型別。</summary>
+      <returns>
+        <see cref="T:System.ServiceModel.TcpTransportSecurity" />，代表端點的傳輸層級安全性需求的型別。</returns>
+    </member>
+    <member name="T:System.ServiceModel.TcpClientCredentialType">
+      <summary>列舉 TCP 用戶端的有效認證型別。</summary>
+    </member>
+    <member name="F:System.ServiceModel.TcpClientCredentialType.Certificate">
+      <summary>使用憑證指定用戶端驗證。</summary>
+    </member>
+    <member name="F:System.ServiceModel.TcpClientCredentialType.None">
+      <summary>指定匿名驗證。</summary>
+    </member>
+    <member name="F:System.ServiceModel.TcpClientCredentialType.Windows">
+      <summary>使用 Windows 指定用戶端驗證。</summary>
+    </member>
+    <member name="T:System.ServiceModel.TcpTransportSecurity">
+      <summary>為 TCP 傳輸提供控制驗證參數及保護層級的屬性。</summary>
+    </member>
+    <member name="M:System.ServiceModel.TcpTransportSecurity.#ctor">
+      <summary>初始化 <see cref="T:System.ServiceModel.TcpTransportSecurity" /> 類別的新執行個體。</summary>
+    </member>
+    <member name="P:System.ServiceModel.TcpTransportSecurity.ClientCredentialType">
+      <summary>取得或設定用於驗證的用戶端認證類型。</summary>
+      <returns>傳回 <see cref="T:System.ServiceModel.TcpClientCredentialType" />。</returns>
+    </member>
+    <member name="T:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement">
+      <summary>使用連線導向傳輸 (例如 TCP 和具名管道) 常用的額外屬性，補充基底 <see cref="T:System.ServiceModel.Channels.TransportBindingElement" /> 的抽象類別。</summary>
+    </member>
+    <member name="M:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement.CanBuildChannelFactory``1(System.ServiceModel.Channels.BindingContext)">
+      <summary>判斷是否可以建置指定型別的通道處理站。</summary>
+      <returns>如果能建置通道處理站，則為 true，否則為 false。</returns>
+      <param name="context">通道的 <see cref="T:System.ServiceModel.Channels.BindingContext" />。</param>
+      <typeparam name="TChannel">要檢查的通道型別。</typeparam>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="context" /> 為 null。</exception>
+    </member>
+    <member name="P:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement.ConnectionBufferSize">
+      <summary>取得或設定用來在用戶端或服務的網路上，傳輸已序列化訊息區塊 (Chunk) 的緩衝區大小。</summary>
+      <returns>連線緩衝區的大小。預設值為 8192 位元組。</returns>
+      <exception cref="T:System.ArgumentOutOfRangeException">值小於 0。</exception>
+    </member>
+    <member name="M:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement.GetProperty``1(System.ServiceModel.Channels.BindingContext)">
+      <summary>從繫結堆疊取得屬性，如果有的話。</summary>
+      <returns>來自繫結堆疊的 <paramref name="T" /> 物件，如果有的話。</returns>
+      <param name="context">繫結內容。</param>
+      <typeparam name="T">屬性的型別。</typeparam>
+    </member>
+    <member name="P:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement.MaxBufferSize">
+      <summary>取得或設定要使用的緩衝區之最大值。對於已進行資料流處理的訊息，這個值至少應為訊息標頭的最大可能大小 (可在緩衝模式中讀取)。</summary>
+      <returns>記憶體中用於緩衝傳入訊息的位元組數目上限。預設值為 65,536 個位元組。</returns>
+      <exception cref="T:System.ArgumentOutOfRangeException">這個值小於或等於零。</exception>
+    </member>
+    <member name="P:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement.TransferMode">
+      <summary>取得或設定值，這個值表示訊息是否使用連線導向傳輸進行緩衝或資料流處理。</summary>
+      <returns>
+        <see cref="T:System.ServiceModel.TransferMode" /> 值，表示通道是否使用訊息傳輸的資料流或緩衝模式。預設為 <see cref="F:System.ServiceModel.TransferMode.Buffered" />。</returns>
+      <exception cref="T:System.ArgumentOutOfRangeException">該值不是有效的 <see cref="T:System.ServiceModel.TransferMode" />。</exception>
+    </member>
+    <member name="T:System.ServiceModel.Channels.SslStreamSecurityBindingElement">
+      <summary>表示以 SSL 資料流支援通道安全性的自訂繫結項目。</summary>
+    </member>
+    <member name="M:System.ServiceModel.Channels.SslStreamSecurityBindingElement.#ctor">
+      <summary>初始化 <see cref="T:System.ServiceModel.Channels.SslStreamSecurityBindingElement" /> 類別的新執行個體。</summary>
+    </member>
+    <member name="M:System.ServiceModel.Channels.SslStreamSecurityBindingElement.BuildChannelFactory``1(System.ServiceModel.Channels.BindingContext)">
+      <summary>建立指定型別的通道處理站。</summary>
+      <returns>
+        <see cref="T:System.serviceModel.Channels.IChannelFactory" /> 物件，表示 <paramref name="TChannel" /> 型別的通道處理站。</returns>
+      <param name="context">
+        <see cref="T:System.serviceModel.Channels.BindingContext" />。</param>
+      <typeparam name="TChannel">通道處理站的型別。</typeparam>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="context" /> 為 null。</exception>
+    </member>
+    <member name="M:System.ServiceModel.Channels.SslStreamSecurityBindingElement.CanBuildChannelFactory``1(System.ServiceModel.Channels.BindingContext)">
+      <summary>取得值，這個值表示是否能建置指定型別的通道處理站。</summary>
+      <returns>如果能建置指定型別的通道處理站，則為 true，否則為 false。</returns>
+      <param name="context">
+        <see cref="T:System.ServiceModel.Channels.BindingContext" />。</param>
+      <typeparam name="TChannel">通道處理站的型別。</typeparam>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="context" /> 為 null。</exception>
+    </member>
+    <member name="M:System.ServiceModel.Channels.SslStreamSecurityBindingElement.Clone">
+      <summary>建立新的執行個體，這個執行個體是目前執行個體的複本。</summary>
+      <returns>目前執行個體之複本的 <see cref="T:System.ServiceModel.Channels.SslStreamSecurityBindingElement" /> 執行個體。</returns>
+    </member>
+    <member name="M:System.ServiceModel.Channels.SslStreamSecurityBindingElement.GetProperty``1(System.ServiceModel.Channels.BindingContext)">
+      <summary>從 <see cref="T:System.ServiceModel.Channels.BindingContext" /> 中取得指定的物件。</summary>
+      <returns>來自 <see cref="T:System.ServiceModel.Channels.BindingContext" />、型別為 <paramref name="T" /> 的物件，如果找不到物件則為 null。</returns>
+      <param name="context">
+        <see cref="T:System.ServiceModel.Channels.BindingContext" />。</param>
+      <typeparam name="T">要取得之物件的類型。</typeparam>
+    </member>
+    <member name="T:System.ServiceModel.Channels.TcpConnectionPoolSettings">
+      <summary>表示可控制 TCP 連線集區之行為的屬性。</summary>
+    </member>
+    <member name="P:System.ServiceModel.Channels.TcpConnectionPoolSettings.GroupName">
+      <summary>取得或設定用戶端上此連線集區群組的群組名稱。</summary>
+      <returns>用戶端上此連線集區群組的群組名稱。預設名稱為 "default"。</returns>
+      <exception cref="T:System.ArgumentNullException">值為 null。</exception>
+    </member>
+    <member name="P:System.ServiceModel.Channels.TcpConnectionPoolSettings.IdleTimeout">
+      <summary>取得或設定在中斷連線之前，連線在連線集區中可處於閒置狀態的最大時間。</summary>
+      <returns>傳回 <see cref="T:System.TimeSpan" /> 結構，此結構表示中斷連線之前，連線在連線集區中可處於閒置狀態的最大時間。</returns>
+      <exception cref="T:System.ArgumentOutOfRangeException">值小於 0。</exception>
+    </member>
+    <member name="P:System.ServiceModel.Channels.TcpConnectionPoolSettings.LeaseTimeout">
+      <summary>取得或設定關閉連線集區中的連線之前的時間範圍。</summary>
+      <returns>傳回 <see cref="T:System.TimeSpan" /> 結構，此結構表示從連線集區中清除快取 TCP 連線之前的時間範圍。</returns>
+      <exception cref="T:System.ArgumentOutOfRangeException">這個值不能小於零。</exception>
+    </member>
+    <member name="P:System.ServiceModel.Channels.TcpConnectionPoolSettings.MaxOutboundConnectionsPerEndpoint">
+      <summary>取得或設定在連線集區內快取之每一個端點的傳出連線數目上限。</summary>
+      <returns>在連線集區內快取之每一個端點所允許的傳出連線數目上限。預設值為 10。</returns>
+      <exception cref="T:System.ArgumentOutOfRangeException">這個值小於或等於零。</exception>
+    </member>
+    <member name="T:System.ServiceModel.Channels.TcpTransportBindingElement">
+      <summary>表示 TCP 傳輸的繫結項目。</summary>
+    </member>
+    <member name="M:System.ServiceModel.Channels.TcpTransportBindingElement.#ctor">
+      <summary>初始化 <see cref="T:System.ServiceModel.Channels.TcpTransportBindingElement" /> 類別的新執行個體。</summary>
+    </member>
+    <member name="M:System.ServiceModel.Channels.TcpTransportBindingElement.#ctor(System.ServiceModel.Channels.TcpTransportBindingElement)">
+      <summary>初始化 <see cref="T:System.ServiceModel.Channels.TcpTransportBindingElement" /> 類別的新執行個體。</summary>
+      <param name="elementToBeCloned">
+        <see cref="T:System.ServiceModel.Channels.TcpTransportBindingElement" /> 類別的執行個體。</param>
+    </member>
+    <member name="M:System.ServiceModel.Channels.TcpTransportBindingElement.BuildChannelFactory``1(System.ServiceModel.Channels.BindingContext)">
+      <summary>建立可用來建立通道的通道處理站。</summary>
+      <returns>傳回指定型別的通道處理站。</returns>
+      <param name="context">
+        <see cref="T:System.ServiceModel.Channels.BindingContext" /> 成員，用來描述建立通道處理站時所需的繫結、行為、合約及其他資訊。</param>
+      <typeparam name="TChannel">通道處理站的型別。</typeparam>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="context" /> 不可以是 null。</exception>
+      <exception cref="T:System.ArgumentException">傳遞了無效的引數。</exception>
+    </member>
+    <member name="M:System.ServiceModel.Channels.TcpTransportBindingElement.Clone">
+      <summary>建立目前繫結項目的複本。</summary>
+      <returns>傳回目前繫結項目的複本。</returns>
+    </member>
+    <member name="P:System.ServiceModel.Channels.TcpTransportBindingElement.ConnectionPoolSettings">
+      <summary>取得連線集區設定的集合。</summary>
+      <returns>
+        <see cref="T:System.ServiceModel.Channels.TcpConnectionPoolSettings" /> 物件，其中包含與連線集區相關的各種屬性。</returns>
+    </member>
+    <member name="M:System.ServiceModel.Channels.TcpTransportBindingElement.GetProperty``1(System.ServiceModel.Channels.BindingContext)">
+      <summary>從 <see cref="T:System.ServiceModel.Channels.BindingContext" /> 中取得指定的物件。</summary>
+      <returns>來自 <see cref="T:System.ServiceModel.Channels.BindingContext" />的特定物件，如果找不到物件，則為 null。</returns>
+      <param name="context">
+        <see cref="T:System.ServiceModel.Channels.BindingContext" />。</param>
+      <typeparam name="T">要取得的物件。</typeparam>
+    </member>
+    <member name="P:System.ServiceModel.Channels.TcpTransportBindingElement.Scheme">
+      <summary>傳回用於傳輸的 URI 配置。</summary>
+      <returns>傳回用於傳輸的 URI 配置，即 "net.tcp"。</returns>
+    </member>
+    <member name="T:System.ServiceModel.Channels.WindowsStreamSecurityBindingElement">
+      <summary>表示用來指定 Windows 資料流安全性設定的繫結項目。</summary>
+    </member>
+    <member name="M:System.ServiceModel.Channels.WindowsStreamSecurityBindingElement.#ctor">
+      <summary>初始化 <see cref="T:System.ServiceModel.Channels.WindowsStreamSecurityBindingElement" /> 類別的新執行個體。</summary>
+    </member>
+    <member name="M:System.ServiceModel.Channels.WindowsStreamSecurityBindingElement.BuildChannelFactory``1(System.ServiceModel.Channels.BindingContext)">
+      <summary>建立可用來建立通道的通道處理站。</summary>
+      <returns>傳回指定型別的通道處理站。這個方法會將此類別執行個體新增至 <see cref="P:System.ServiceModel.Channels.BindingContext.BindingParameters" />，並委派至建置方法 <see cref="M:System.ServiceModel.Channels.BindingContext.BuildInnerChannelFactory``1" />。</returns>
+      <param name="context">
+        <see cref="T:System.ServiceModel.Channels.BindingContext" /> 成員，用來描述建立通道處理站時所需的繫結、行為、合約及其他資訊。</param>
+      <typeparam name="TChannel">通道處理站的型別。</typeparam>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="context" /> 不可以是 null。</exception>
+    </member>
+    <member name="M:System.ServiceModel.Channels.WindowsStreamSecurityBindingElement.CanBuildChannelFactory``1(System.ServiceModel.Channels.BindingContext)">
+      <summary>判斷是否可以建置指定型別的通道處理站。</summary>
+      <returns>如果能建置通道處理站，則為 true，否則為 false。</returns>
+      <param name="context">繫結內容。</param>
+      <typeparam name="TChannel">要檢查的通道型別。</typeparam>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="context" /> 為 null。</exception>
+    </member>
+    <member name="M:System.ServiceModel.Channels.WindowsStreamSecurityBindingElement.Clone">
+      <summary>建立這個類別執行個體的新繫結項目。</summary>
+      <returns>
+        <see cref="T:System.ServiceModel.Channels.BindingElement" />.</returns>
+    </member>
+    <member name="M:System.ServiceModel.Channels.WindowsStreamSecurityBindingElement.GetProperty``1(System.ServiceModel.Channels.BindingContext)">
+      <summary>從 <see cref="T:System.ServiceModel.Channels.BindingContext" /> 中取得指定的物件。</summary>
+      <returns>來自 <see cref="T:System.ServiceModel.Channels.BindingContext" /> 的指定物件，如果找不到該物件，則為 null。</returns>
+      <param name="context">
+        <see cref="T:System.ServiceModel.Channels.BindingContext" />。</param>
+      <typeparam name="T">要取得的物件。</typeparam>
+    </member>
+  </members>
+</doc>

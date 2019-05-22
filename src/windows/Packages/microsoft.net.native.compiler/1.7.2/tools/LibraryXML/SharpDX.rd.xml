@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Directives xmlns="http://schemas.microsoft.com/netfx/2013/01/metadata">
+  <Library Name="*SharpDX*">
+    <Assembly Name="SharpDX">
+      
+      <Type Name="SharpDX.Serialization.BinarySerializer">
+        <Method Name="RegisterDynamic{T}">
+          <GenericParameter Name="T" Serialize="Required All"/>
+        </Method>
+        <Method Name="RegisterDynamicArray{T}">
+          <GenericParameter Name="T" Serialize="Required All"/>
+        </Method>
+      </Type>
+
+      <Type Name="SharpDX.ResultDescriptor">
+        <Method Name="RegisterProvider">
+          <TypeParameter Name="descriptorsProviderType" Dynamic="Required All"/>
+        </Method>
+      </Type>
+
+      <Type Name="SharpDX.ShadowAttribute">
+        <Method Name=".ctor">
+          <TypeParameter Name="typeOfTheAssociatedShadow" Browse="Required All" Activate="Required All"/>
+        </Method>
+        <Method Name="Get">
+          <TypeParameter Name="type" Browse="Required All"/>
+        </Method>
+      </Type>
+
+      <Type Name="SharpDX.ComObject">
+        <Subtypes Browse="Public" />
+        <Method Name="QueryInterface{T}">
+          <GenericParameter Name="T" Browse="All"/>
+        </Method>
+        <Method Name="QueryInterfaceUnsafe{T}">
+          <GenericParameter Name="T" Browse="All"/>
+        </Method>
+        <Method Name="QueryInterfaceOrNull{T}">
+          <GenericParameter Name="T" Browse="All"/>
+        </Method>
+      </Type>
+
+      <Type Name="SharpDX.CppObject">
+        <Method Name="FromPointer{T}">
+          <GenericParameter Name="T" Activate="Required All"/>
+        </Method>
+        <Method Name="FromPointerUnsafe{T}">
+          <GenericParameter Name="T" Activate="Required All"/>
+        </Method>
+      </Type>
+
+      <Type Name="SharpDX.CppObjectShadow">
+        <Method Name="ToIntPtr{TCallback}">
+          <GenericParameter Name="TCallback" Dynamic="Required All"/>
+        </Method>
+      </Type>
+
+      <Type Name="SharpDX.Utilities">
+        <Method Name="GetGuidFromType">
+          <TypeParameter Name="type" Browse="All"/>
+        </Method>
+        <Method Name="IsEnum">
+          <TypeParameter Name="typeToTest" Browse="Public"/>
+        </Method>
+        <Method Name="IsValueType">
+          <TypeParameter Name="typeToTest" Browse="Public"/>
+        </Method>
+        <Method Name="IsAssignableFrom">
+          <TypeParameter Name="toType" Browse="Public"/>
+          <TypeParameter Name="fromType" Browse="Public"/>
+        </Method>
+        <Method Name="GetMethod">
+          <TypeParameter Name="type" Browse="All"/>
+        </Method>
+      </Type>
+
+      <Type Name="SharpDX.Win32.Variant">
+        <Method Name="set_Variant">
+          <Parameter Name="value" Browse="Public" />
+        </Method>
+      </Type>
+
+      <Type Name="SharpDX.CppObjectVtbl">
+        <Method Name="AddMethod">
+          <Parameter Name="method" MarshalDelegate="Required All" />
+        </Method>
+      </Type>
+
+      <Type Name="SharpDX.ShadowContainer">
+        <Method Name="Find">
+          <TypeParameter Name="type" Browse="Public" />
+        </Method>
+      </Type>
+    </Assembly>
+  </Library>
+</Directives>

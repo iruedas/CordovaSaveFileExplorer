@@ -1,0 +1,300 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>System.ServiceModel.NetTcp</name>
+  </assembly>
+  <members>
+    <member name="T:System.ServiceModel.MessageSecurityOverTcp">
+      <summary>TCP 전송을 사용하여 보낸 메시지의 메시지 수준 보안을 구성합니다. </summary>
+    </member>
+    <member name="M:System.ServiceModel.MessageSecurityOverTcp.#ctor">
+      <summary>
+        <see cref="T:System.ServiceModel.MessageSecurityOverTcp" /> 클래스의 새 인스턴스를 초기화합니다.</summary>
+    </member>
+    <member name="P:System.ServiceModel.MessageSecurityOverTcp.ClientCredentialType">
+      <summary>클라이언트를 SOAP 수준의 서비스로 인증하기 위해 클라이언트에서 사용하는 클라이언트 자격 증명 형식을 지정합니다. </summary>
+      <returns>
+        <see cref="T:System.ServiceModel.MessageCredentialType" />기본값은 <see cref="F:System.ServiceModel.MessageCredentialType.Windows" />입니다.</returns>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <see cref="P:System.ServiceModel.MessageSecurityOverTcp.ClientCredentialType" />의 값이 올바른 <see cref="T:System.ServiceModel.MessageCredentialType" />이 아닌 경우</exception>
+    </member>
+    <member name="T:System.ServiceModel.NetTcpBinding">
+      <summary>시스템 간 통신에 적합하고 신뢰할 수 있으며 보안 설정된 바인딩입니다.</summary>
+    </member>
+    <member name="M:System.ServiceModel.NetTcpBinding.#ctor">
+      <summary>
+        <see cref="T:System.ServiceModel.NetTcpBinding" /> 클래스의 새 인스턴스를 초기화합니다. </summary>
+    </member>
+    <member name="M:System.ServiceModel.NetTcpBinding.#ctor(System.ServiceModel.SecurityMode)">
+      <summary>사용되는 보안 형식을 지정하여 <see cref="T:System.ServiceModel.NetTcpBinding" /> 클래스의 새 인스턴스를 초기화합니다.</summary>
+      <param name="securityMode">바인딩과 함께 사용되는 보안 형식을 지정하는 <see cref="T:System.ServiceModel.SecurityMode" /> 값입니다.</param>
+    </member>
+    <member name="M:System.ServiceModel.NetTcpBinding.#ctor(System.String)">
+      <summary>지정된 구성 이름을 사용하여 <see cref="T:System.ServiceModel.NetTcpBinding" /> 클래스의 새 인스턴스를 초기화합니다.</summary>
+      <param name="configurationName">
+        <see cref="T:System.ServiceModel.NetTcpBinding" />의 바인딩 구성 이름입니다.</param>
+    </member>
+    <member name="M:System.ServiceModel.NetTcpBinding.CreateBindingElements">
+      <summary>바인딩에 대한 바인딩 요소가 있는 컬렉션을 만듭니다.</summary>
+      <returns>바인딩을 만드는 <see cref="T:System.ServiceModel.Channels.BindingElement" /> 형식의 <see cref="T:System.Collections.Generic.ICollection`1" />입니다.</returns>
+    </member>
+    <member name="P:System.ServiceModel.NetTcpBinding.EnvelopeVersion">
+      <summary>이 바인딩에서 처리한 메시지에 사용되는 SOAP 버전을 가져옵니다. </summary>
+      <returns>이 바인딩에 사용된 <see cref="T:System.ServiceModel.EnvelopeVersion" /> 값입니다.값은 SOAP 1.2입니다.</returns>
+    </member>
+    <member name="P:System.ServiceModel.NetTcpBinding.MaxBufferPoolSize">
+      <summary>바인딩에서 처리하는 TCP 메시지를 저장하는 버퍼 풀에 허용되는 최대 크기(바이트)를 가져오거나 설정합니다.</summary>
+      <returns>바인딩에서 처리하는 TCP 메시지를 저장하는 버퍼 풀에 허용되는 최대 크기입니다.기본값은 524,288바이트입니다.</returns>
+    </member>
+    <member name="P:System.ServiceModel.NetTcpBinding.MaxBufferSize">
+      <summary>메모리에 메시지를 저장할 때 사용되는 버퍼의 최대 크기(바이트)를 지정하는 값을 가져오거나 설정합니다.</summary>
+      <returns>메모리에 메시지를 저장할 때 사용되는 버퍼의 최대 크기(바이트)입니다.기본값은 65,536바이트입니다.</returns>
+    </member>
+    <member name="P:System.ServiceModel.NetTcpBinding.MaxReceivedMessageSize">
+      <summary>이 바인딩에서 처리하는 받은 메시지의 최대 크기(바이트)를 가져오거나 설정합니다.</summary>
+      <returns>바인딩에서 처리하는 받은 메시지의 최대 크기(바이트)입니다.기본값은 65,536바이트입니다.</returns>
+    </member>
+    <member name="P:System.ServiceModel.NetTcpBinding.ReaderQuotas">
+      <summary>이 바인딩으로 구성된 끝점에서 처리할 수 있는 SOAP 메시지의 복잡성에 대한 제약 조건을 가져오거나 설정합니다.</summary>
+      <returns>교환된 SOAP 메시지에 대한 복잡성 제약 조건을 지정하는 <see cref="T:System.Xml.XmlDictionaryReaderQuotas" />입니다.이러한 제약 조건의 기본값은 다음 설명 부분에 나와 있습니다.</returns>
+    </member>
+    <member name="P:System.ServiceModel.NetTcpBinding.Scheme">
+      <summary>전송을 위한 URI 체계를 반환합니다.</summary>
+      <returns>전송을 위한 URI 체계인 "net.tcp"입니다.</returns>
+    </member>
+    <member name="P:System.ServiceModel.NetTcpBinding.Security">
+      <summary>이 바인딩으로 구성된 서비스에서 사용하는 보안 형식을 지정하는 개체를 가져옵니다.</summary>
+      <returns>이 바인딩과 함께 사용되는 보안 형식을 포함하는 <see cref="T:System.ServiceModel.NetTcpSecurity" />입니다.NetTCPBinding의 기본 보안 모드는 <see cref="F:System.ServiceModel.SecurityMode.Transport" />입니다.</returns>
+    </member>
+    <member name="P:System.ServiceModel.NetTcpBinding.TransferMode">
+      <summary>바인딩으로 구성된 서비스에서 메시지 전송에 스트리밍 모드를 사용할지, 버퍼링 모드를 사용할지 또는 둘 다를 사용할지를 지정하는 값을 가져오거나 설정합니다.</summary>
+      <returns>바인딩으로 구성된 서비스에서 메시지 전송에 스트리밍 모드를 사용할지, 버퍼링 모드를 사용할지 또는 둘 다를 사용할지를 지정하는 <see cref="T:System.ServiceModel.TransferMode" /> 값입니다.</returns>
+    </member>
+    <member name="T:System.ServiceModel.NetTcpSecurity">
+      <summary>
+        <see cref="T:System.ServiceModel.NetTcpBinding" />으로 구성된 끝점이 사용하는 전송 수준 및 메시지 수준 보안 형식을 지정합니다.</summary>
+    </member>
+    <member name="M:System.ServiceModel.NetTcpSecurity.#ctor">
+      <summary>
+        <see cref="T:System.ServiceModel.NetTcpSecurity" /> 클래스의 새 인스턴스를 초기화합니다.</summary>
+    </member>
+    <member name="P:System.ServiceModel.NetTcpSecurity.Message">
+      <summary>
+        <see cref="T:System.ServiceModel.NetTcpBinding" />으로 구성된 서비스의 메시지 수준 보안 요구 사항 형식을 가져옵니다.</summary>
+      <returns>끝점의 메시지 수준 보안 요구 사항 형식을 나타내는 <see cref="T:System.ServiceModel.MessageSecurityOverTcp" />입니다.</returns>
+    </member>
+    <member name="P:System.ServiceModel.NetTcpSecurity.Mode">
+      <summary>
+        <see cref="T:System.ServiceModel.NetTcpBinding" />으로 구성된 끝점에서 메시지 수준 보안을 사용하는지 아니면 전송 수준 보안을 사용하는지를 가져오거나 설정합니다.</summary>
+      <returns>끝점에서 메시지 수준 보안을 사용하는지 아니면 전송 수준 보안을 사용하는지를 나타내는 <see cref="T:System.ServiceModel.SecurityMode" /> 값입니다.기본값은 <see cref="F:System.ServiceModel.SecurityMode.Transport" />입니다.</returns>
+      <exception cref="T:System.ArgumentOutOfRangeException">값이 정의되지 않은 경우</exception>
+    </member>
+    <member name="P:System.ServiceModel.NetTcpSecurity.Transport">
+      <summary>
+        <see cref="T:System.ServiceModel.NetTcpBinding" />으로 구성된 끝점의 메시지 수준 보안 요구 사항 형식을 가져옵니다.</summary>
+      <returns>끝점의 전송 수준 보안 요구 사항 형식을 나타내는 <see cref="T:System.ServiceModel.TcpTransportSecurity" />입니다.</returns>
+    </member>
+    <member name="T:System.ServiceModel.TcpClientCredentialType">
+      <summary>TCP 클라이언트에 대한 유효한 자격 증명 형식을 열거합니다.</summary>
+    </member>
+    <member name="F:System.ServiceModel.TcpClientCredentialType.Certificate">
+      <summary>인증서를 사용하여 클라이언트 인증을 지정합니다.</summary>
+    </member>
+    <member name="F:System.ServiceModel.TcpClientCredentialType.None">
+      <summary>익명 인증을 지정합니다.</summary>
+    </member>
+    <member name="F:System.ServiceModel.TcpClientCredentialType.Windows">
+      <summary>Windows를 사용하여 클라이언트 인증을 지정합니다.</summary>
+    </member>
+    <member name="T:System.ServiceModel.TcpTransportSecurity">
+      <summary>인증 매개 변수 및 TCP 전송의 보호 수준을 제어하는 속성을 제공합니다.</summary>
+    </member>
+    <member name="M:System.ServiceModel.TcpTransportSecurity.#ctor">
+      <summary>
+        <see cref="T:System.ServiceModel.TcpTransportSecurity" /> 클래스의 새 인스턴스를 초기화합니다.</summary>
+    </member>
+    <member name="P:System.ServiceModel.TcpTransportSecurity.ClientCredentialType">
+      <summary>인증에 사용되는 클라이언트 자격 증명 형식을 가져오거나 설정합니다.</summary>
+      <returns>
+        <see cref="T:System.ServiceModel.TcpClientCredentialType" />를 반환합니다.</returns>
+    </member>
+    <member name="T:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement">
+      <summary>TCP 및 명명된 파이프와 같은 연결 지향 전송의 공통 속성을 사용하여 기본 <see cref="T:System.ServiceModel.Channels.TransportBindingElement" />를 보완하는 추상 클래스입니다.  </summary>
+    </member>
+    <member name="M:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement.CanBuildChannelFactory``1(System.ServiceModel.Channels.BindingContext)">
+      <summary>지정된 형식의 채널 팩터리를 생성할 수 있는지 여부를 결정합니다.</summary>
+      <returns>채널 팩터리를 생성할 수 있으면 true이고, 그렇지 않으면 false입니다.</returns>
+      <param name="context">채널의 <see cref="T:System.ServiceModel.Channels.BindingContext" />입니다.</param>
+      <typeparam name="TChannel">확인할 채널의 형식입니다.</typeparam>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="context" />가 null입니다.</exception>
+    </member>
+    <member name="P:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement.ConnectionBufferSize">
+      <summary>통신 중에 클라이언트나 서비스로부터 serialize된 메시지 청크를 전송할 때 사용되는 버퍼의 크기를 가져오거나 설정합니다.</summary>
+      <returns>연결 버퍼의 크기입니다.기본값은 8192바이트입니다.</returns>
+      <exception cref="T:System.ArgumentOutOfRangeException">값이 0보다 작은 경우</exception>
+    </member>
+    <member name="M:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement.GetProperty``1(System.ServiceModel.Channels.BindingContext)">
+      <summary>바인딩 스택에 속성이 있는 경우 가져옵니다.</summary>
+      <returns>바인딩 스택의 <paramref name="T" /> 개체(있는 경우)입니다.</returns>
+      <param name="context">바인딩 컨텍스트입니다.</param>
+      <typeparam name="T">속성의 형식입니다.</typeparam>
+    </member>
+    <member name="P:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement.MaxBufferSize">
+      <summary>사용할 버퍼의 최대 크기를 가져오거나 설정합니다.스트리밍된 메시지의 경우 이 값은 버퍼링된 모드에서 읽어오는 메시지 헤더의 최대 예상 크기 이상이어야 합니다.</summary>
+      <returns>메모리에서 들어오는 메시지를 버퍼링하는 데 사용되는 최대 바이트 수입니다.기본값은 65,536바이트입니다.</returns>
+      <exception cref="T:System.ArgumentOutOfRangeException">값이 0보다 작거나 같은 경우</exception>
+    </member>
+    <member name="P:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement.TransferMode">
+      <summary>메시지가 연결 지향 전송을 사용하여 버퍼링되는지 아니면 스트리밍되는지를 나타내는 값을 가져오거나 설정합니다.</summary>
+      <returns>채널에서 메시지 전송에 스트리밍 모드를 사용할지 아니면 버퍼링 모드를 사용할지를 나타내는 <see cref="T:System.ServiceModel.TransferMode" /> 값입니다.기본값은 <see cref="F:System.ServiceModel.TransferMode.Buffered" />입니다.</returns>
+      <exception cref="T:System.ArgumentOutOfRangeException">값이 올바른 <see cref="T:System.ServiceModel.TransferMode" />가 아닌 경우</exception>
+    </member>
+    <member name="T:System.ServiceModel.Channels.SslStreamSecurityBindingElement">
+      <summary>SSL 스트림을 사용하여 채널 보안을 지원하는 사용자 지정 바인딩 요소를 나타냅니다.</summary>
+    </member>
+    <member name="M:System.ServiceModel.Channels.SslStreamSecurityBindingElement.#ctor">
+      <summary>
+        <see cref="T:System.ServiceModel.Channels.SslStreamSecurityBindingElement" /> 클래스의 새 인스턴스를 초기화합니다. </summary>
+    </member>
+    <member name="M:System.ServiceModel.Channels.SslStreamSecurityBindingElement.BuildChannelFactory``1(System.ServiceModel.Channels.BindingContext)">
+      <summary>지정된 형식의 채널 팩터리를 만듭니다.</summary>
+      <returns>형식 <paramref name="TChannel" />의 채널 팩터리를 나타내는 <see cref="T:System.serviceModel.Channels.IChannelFactory" /> 개체입니다.</returns>
+      <param name="context">
+        <see cref="T:System.serviceModel.Channels.BindingContext" />
+      </param>
+      <typeparam name="TChannel">채널 팩터리의 형식입니다.</typeparam>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="context" />가 null입니다.</exception>
+    </member>
+    <member name="M:System.ServiceModel.Channels.SslStreamSecurityBindingElement.CanBuildChannelFactory``1(System.ServiceModel.Channels.BindingContext)">
+      <summary>지정된 형식의 채널 팩터리를 생성할 수 있는지 여부를 나타내는 값을 가져옵니다.</summary>
+      <returns>지정된 형식의 채널 팩터리를 생성할 수 있으면 true이고, 그렇지 않으면 false입니다.</returns>
+      <param name="context">
+        <see cref="T:System.ServiceModel.Channels.BindingContext" />
+      </param>
+      <typeparam name="TChannel">채널 팩터리의 형식입니다.</typeparam>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="context" />가 null입니다.</exception>
+    </member>
+    <member name="M:System.ServiceModel.Channels.SslStreamSecurityBindingElement.Clone">
+      <summary>현재 인스턴스의 복사본인 새 인스턴스를 만듭니다.</summary>
+      <returns>현재 인스턴스의 복사본인 <see cref="T:System.ServiceModel.Channels.SslStreamSecurityBindingElement" /> 인스턴스입니다.</returns>
+    </member>
+    <member name="M:System.ServiceModel.Channels.SslStreamSecurityBindingElement.GetProperty``1(System.ServiceModel.Channels.BindingContext)">
+      <summary>
+        <see cref="T:System.ServiceModel.Channels.BindingContext" />에서 지정된 개체를 가져옵니다.</summary>
+      <returns>
+        <see cref="T:System.ServiceModel.Channels.BindingContext" />의 <paramref name="T" /> 형식 개체이거나 개체가 없는 경우 null입니다.</returns>
+      <param name="context">
+        <see cref="T:System.ServiceModel.Channels.BindingContext" />
+      </param>
+      <typeparam name="T">가져올 개체의 형식입니다.</typeparam>
+    </member>
+    <member name="T:System.ServiceModel.Channels.TcpConnectionPoolSettings">
+      <summary>TCP 연결 풀의 동작을 제어하는 속성을 나타냅니다.</summary>
+    </member>
+    <member name="P:System.ServiceModel.Channels.TcpConnectionPoolSettings.GroupName">
+      <summary>클라이언트에 있는 연결 풀 그룹의 그룹 이름을 가져오거나 설정합니다.</summary>
+      <returns>클라이언트에 있는 연결 풀 그룹의 그룹 이름입니다.기본 이름은 "default"입니다.</returns>
+      <exception cref="T:System.ArgumentNullException">값이 null인 경우</exception>
+    </member>
+    <member name="P:System.ServiceModel.Channels.TcpConnectionPoolSettings.IdleTimeout">
+      <summary>연결이 끊어지기 전에 연결 풀에서 연결이 유휴 상태를 유지할 수 있는 최대 시간을 가져오거나 설정합니다.</summary>
+      <returns>연결이 끊어지기 전에 연결 풀에서 연결이 유휴 상태를 유지할 수 있는 최대 시간을 나타내는 <see cref="T:System.TimeSpan" /> 구조체를 반환합니다.</returns>
+      <exception cref="T:System.ArgumentOutOfRangeException">값이 0보다 작은 경우</exception>
+    </member>
+    <member name="P:System.ServiceModel.Channels.TcpConnectionPoolSettings.LeaseTimeout">
+      <summary>연결 풀에서 연결이 종료되는 시간 범위를 가져오거나 설정합니다.</summary>
+      <returns>캐시된 TCP 연결이 연결 풀에서 지워지는 시간 범위를 나타내는 <see cref="T:System.TimeSpan" /> 구조체를 반환합니다.</returns>
+      <exception cref="T:System.ArgumentOutOfRangeException">값이 0보다 작을 수 없는 경우</exception>
+    </member>
+    <member name="P:System.ServiceModel.Channels.TcpConnectionPoolSettings.MaxOutboundConnectionsPerEndpoint">
+      <summary>연결 풀에 캐시되는 각 끝점에 대한 아웃바운드 연결의 최대 수를 가져오거나 설정합니다.</summary>
+      <returns>연결 풀에 캐시되는 각 끝점에 대해 허용된 아웃바운드 연결의 최대 수입니다.기본값은 1.0입니다.</returns>
+      <exception cref="T:System.ArgumentOutOfRangeException">값이 0보다 작거나 같은 경우</exception>
+    </member>
+    <member name="T:System.ServiceModel.Channels.TcpTransportBindingElement">
+      <summary>TCP 전송을 위한 바인딩 요소를 나타냅니다.</summary>
+    </member>
+    <member name="M:System.ServiceModel.Channels.TcpTransportBindingElement.#ctor">
+      <summary>
+        <see cref="T:System.ServiceModel.Channels.TcpTransportBindingElement" /> 클래스의 새 인스턴스를 초기화합니다. </summary>
+    </member>
+    <member name="M:System.ServiceModel.Channels.TcpTransportBindingElement.#ctor(System.ServiceModel.Channels.TcpTransportBindingElement)">
+      <summary>
+        <see cref="T:System.ServiceModel.Channels.TcpTransportBindingElement" /> 클래스의 새 인스턴스를 초기화합니다.</summary>
+      <param name="elementToBeCloned">
+        <see cref="T:System.ServiceModel.Channels.TcpTransportBindingElement" /> 클래스의 인스턴스입니다.</param>
+    </member>
+    <member name="M:System.ServiceModel.Channels.TcpTransportBindingElement.BuildChannelFactory``1(System.ServiceModel.Channels.BindingContext)">
+      <summary>채널을 만드는 데 사용할 수 있는 채널 팩터리를 만듭니다.</summary>
+      <returns>지정된 형식의 채널 팩터리를 반환합니다.</returns>
+      <param name="context">채널 팩터리를 만드는 데 필요한 바인딩, 동작, 계약, 기타 정보를 설명하는 <see cref="T:System.ServiceModel.Channels.BindingContext" /> 멤버입니다.</param>
+      <typeparam name="TChannel">채널 팩터리의 형식입니다.</typeparam>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="context" />가 null인 경우</exception>
+      <exception cref="T:System.ArgumentException">잘못된 인수가 전달된 경우</exception>
+    </member>
+    <member name="M:System.ServiceModel.Channels.TcpTransportBindingElement.Clone">
+      <summary>현재 바인딩 요소의 복사본을 만듭니다.</summary>
+      <returns>현재 바인딩 요소의 복사본을 반환합니다.</returns>
+    </member>
+    <member name="P:System.ServiceModel.Channels.TcpTransportBindingElement.ConnectionPoolSettings">
+      <summary>연결 풀 설정의 컬렉션을 가져옵니다.</summary>
+      <returns>연결 풀과 관련된 다양한 속성을 포함하는 <see cref="T:System.ServiceModel.Channels.TcpConnectionPoolSettings" /> 개체입니다.</returns>
+    </member>
+    <member name="M:System.ServiceModel.Channels.TcpTransportBindingElement.GetProperty``1(System.ServiceModel.Channels.BindingContext)">
+      <summary>
+        <see cref="T:System.ServiceModel.Channels.BindingContext" />에서 지정된 개체를 가져옵니다.</summary>
+      <returns>
+        <see cref="T:System.ServiceModel.Channels.BindingContext" />에서 지정된 개체이거나, 개체를 찾을 수 없는 경우에는 null입니다.</returns>
+      <param name="context">
+        <see cref="T:System.ServiceModel.Channels.BindingContext" />
+      </param>
+      <typeparam name="T">가져올 개체입니다.</typeparam>
+    </member>
+    <member name="P:System.ServiceModel.Channels.TcpTransportBindingElement.Scheme">
+      <summary>전송을 위한 URI 체계를 반환합니다.</summary>
+      <returns>전송을 위한 URI 체계인 "net.tcp"를 반환합니다.</returns>
+    </member>
+    <member name="T:System.ServiceModel.Channels.WindowsStreamSecurityBindingElement">
+      <summary>Windows 스트림 보안 설정을 지정하는 데 사용되는 바인딩 요소를 나타냅니다.</summary>
+    </member>
+    <member name="M:System.ServiceModel.Channels.WindowsStreamSecurityBindingElement.#ctor">
+      <summary>
+        <see cref="T:System.ServiceModel.Channels.WindowsStreamSecurityBindingElement" /> 클래스의 새 인스턴스를 초기화합니다.  </summary>
+    </member>
+    <member name="M:System.ServiceModel.Channels.WindowsStreamSecurityBindingElement.BuildChannelFactory``1(System.ServiceModel.Channels.BindingContext)">
+      <summary>채널을 만드는 데 사용할 수 있는 채널 팩터리를 만듭니다.</summary>
+      <returns>지정된 형식의 채널 팩터리를 반환합니다.이 메서드는 이 클래스 인스턴스를 <see cref="P:System.ServiceModel.Channels.BindingContext.BindingParameters" />에 추가하고 <see cref="M:System.ServiceModel.Channels.BindingContext.BuildInnerChannelFactory``1" /> 빌드 메서드에 위임합니다.</returns>
+      <param name="context">채널 팩터리를 만드는 데 필요한 바인딩, 동작, 계약, 기타 정보를 설명하는 <see cref="T:System.ServiceModel.Channels.BindingContext" /> 멤버입니다.</param>
+      <typeparam name="TChannel">채널 팩터리의 형식입니다.</typeparam>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="context" />가 null인 경우</exception>
+    </member>
+    <member name="M:System.ServiceModel.Channels.WindowsStreamSecurityBindingElement.CanBuildChannelFactory``1(System.ServiceModel.Channels.BindingContext)">
+      <summary>지정된 형식의 채널 팩터리를 생성할 수 있는지 여부를 결정합니다.</summary>
+      <returns>채널 팩터리를 생성할 수 있으면 true이고, 그렇지 않으면 false입니다.</returns>
+      <param name="context">바인딩 컨텍스트입니다.</param>
+      <typeparam name="TChannel">확인할 채널의 형식입니다.</typeparam>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="context" />가 null입니다.</exception>
+    </member>
+    <member name="M:System.ServiceModel.Channels.WindowsStreamSecurityBindingElement.Clone">
+      <summary>클래스의 이 인스턴스로부터 새 바인딩 요소를 만듭니다. </summary>
+      <returns>
+        <see cref="T:System.ServiceModel.Channels.BindingElement" />.</returns>
+    </member>
+    <member name="M:System.ServiceModel.Channels.WindowsStreamSecurityBindingElement.GetProperty``1(System.ServiceModel.Channels.BindingContext)">
+      <summary>
+        <see cref="T:System.ServiceModel.Channels.BindingContext" />에서 지정된 개체를 가져옵니다.</summary>
+      <returns>
+        <see cref="T:System.ServiceModel.Channels.BindingContext" />에서 지정된 개체입니다. 개체가 없는 경우에는 null입니다.</returns>
+      <param name="context">
+        <see cref="T:System.ServiceModel.Channels.BindingContext" />
+      </param>
+      <typeparam name="T">가져올 개체입니다.</typeparam>
+    </member>
+  </members>
+</doc>

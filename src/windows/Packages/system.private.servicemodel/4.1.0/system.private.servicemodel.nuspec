@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata minClientVersion="2.12">
+    <id>System.Private.ServiceModel</id>
+    <version>4.1.0</version>
+    <title>System.Private.ServiceModel</title>
+    <authors>Microsoft</authors>
+    <owners>microsoft,dotnetframework</owners>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <licenseUrl>http://go.microsoft.com/fwlink/?LinkId=329770</licenseUrl>
+    <iconUrl>http://go.microsoft.com/fwlink/?LinkID=288859</iconUrl>
+    <description>Internal implementation package not meant for direct consumption.  Please do not reference directly.  Provides implementation of System.ServiceModel packages. 
+TFS ID: 1612576, GitHub SHA: https://github.com/dotnet/corefx/tree/f47c814b003d17da52940739e227f04e52b10279 
+When using NuGet 3.x this package requires at least version 3.4.</description>
+    <copyright>© Microsoft Corporation.  All rights reserved.</copyright>
+    <serviceable>true</serviceable>
+    <dependencies>
+      <group targetFramework=".NETCore5.0">
+        <dependency id="Microsoft.NETCore.Platforms" version="1.0.1" />
+        <dependency id="System.Collections" version="4.0.11" />
+        <dependency id="System.Collections.Concurrent" version="4.0.12" />
+        <dependency id="System.Collections.NonGeneric" version="4.0.1" />
+        <dependency id="System.Collections.Specialized" version="4.0.1" />
+        <dependency id="System.ComponentModel.EventBasedAsync" version="4.0.11" />
+        <dependency id="System.Diagnostics.Debug" version="4.0.11" />
+        <dependency id="System.Diagnostics.Tracing" version="4.1.0" />
+        <dependency id="System.Globalization" version="4.0.11" />
+        <dependency id="System.IO" version="4.1.0" />
+        <dependency id="System.IO.Compression" version="4.1.0" />
+        <dependency id="System.Linq" version="4.1.0" />
+        <dependency id="System.Linq.Expressions" version="4.1.0" />
+        <dependency id="System.Linq.Queryable" version="4.0.1" />
+        <dependency id="System.Net.Http" version="4.1.0" />
+        <dependency id="System.Net.Primitives" version="4.0.11" />
+        <dependency id="System.Net.WebHeaderCollection" version="4.0.1" />
+        <dependency id="System.Net.WebSockets" version="4.0.0" />
+        <dependency id="System.Net.WebSockets.Client" version="4.0.0" />
+        <dependency id="System.ObjectModel" version="4.0.12" />
+        <dependency id="System.Reflection" version="4.1.0" />
+        <dependency id="System.Reflection.DispatchProxy" version="4.0.1" />
+        <dependency id="System.Reflection.Extensions" version="4.0.1" />
+        <dependency id="System.Reflection.Primitives" version="4.0.1" />
+        <dependency id="System.Reflection.TypeExtensions" version="4.1.0" />
+        <dependency id="System.Resources.ResourceManager" version="4.0.1" />
+        <dependency id="System.Runtime" version="4.1.0" />
+        <dependency id="System.Runtime.Extensions" version="4.1.0" />
+        <dependency id="System.Runtime.InteropServices" version="4.1.0" />
+        <dependency id="System.Runtime.Serialization.Primitives" version="4.1.1" />
+        <dependency id="System.Runtime.Serialization.Xml" version="4.1.1" />
+        <dependency id="System.Runtime.WindowsRuntime" version="4.0.11" />
+        <dependency id="System.Security.Claims" version="4.0.1" />
+        <dependency id="System.Security.Cryptography.Algorithms" version="4.2.0" />
+        <dependency id="System.Security.Cryptography.Encoding" version="4.0.0" />
+        <dependency id="System.Security.Cryptography.Primitives" version="4.0.0" />
+        <dependency id="System.Security.Cryptography.X509Certificates" version="4.1.0" />
+        <dependency id="System.Security.Principal" version="4.0.1" />
+        <dependency id="System.Text.Encoding" version="4.0.11" />
+        <dependency id="System.Text.Encoding.Extensions" version="4.0.11" />
+        <dependency id="System.Threading" version="4.0.11" />
+        <dependency id="System.Threading.Tasks" version="4.0.11" />
+        <dependency id="System.Threading.Timer" version="4.0.1" />
+        <dependency id="System.Xml.ReaderWriter" version="4.0.11" />
+        <dependency id="System.Xml.XmlDocument" version="4.0.1" />
+        <dependency id="System.Xml.XmlSerializer" version="4.0.11" />
+      </group>
+      <group targetFramework=".NETStandard1.3">
+        <dependency id="Microsoft.NETCore.Platforms" version="1.0.1" />
+        <dependency id="System.Collections" version="4.0.11" />
+        <dependency id="System.Collections.Concurrent" version="4.0.12" />
+        <dependency id="System.Collections.NonGeneric" version="4.0.1" />
+        <dependency id="System.Collections.Specialized" version="4.0.1" />
+        <dependency id="System.ComponentModel.EventBasedAsync" version="4.0.11" />
+        <dependency id="System.Diagnostics.Debug" version="4.0.11" />
+        <dependency id="System.Diagnostics.Tracing" version="4.1.0" />
+        <dependency id="System.Globalization" version="4.0.11" />
+        <dependency id="System.IO" version="4.1.0" />
+        <dependency id="System.IO.Compression" version="4.1.0" />
+        <dependency id="System.Linq" version="4.1.0" />
+        <dependency id="System.Linq.Expressions" version="4.1.0" />
+        <dependency id="System.Linq.Queryable" version="4.0.1" />
+        <dependency id="System.Net.Http" version="4.1.0" />
+        <dependency id="System.Net.NameResolution" version="4.0.0" />
+        <dependency id="System.Net.Primitives" version="4.0.11" />
+        <dependency id="System.Net.Security" version="4.0.0" />
+        <dependency id="System.Net.Sockets" version="4.1.0" />
+        <dependency id="System.Net.WebHeaderCollection" version="4.0.1" />
+        <dependency id="System.Net.WebSockets" version="4.0.0" />
+        <dependency id="System.Net.WebSockets.Client" version="4.0.0" />
+        <dependency id="System.ObjectModel" version="4.0.12" />
+        <dependency id="System.Reflection" version="4.1.0" />
+        <dependency id="System.Reflection.DispatchProxy" version="4.0.1" />
+        <dependency id="System.Reflection.Extensions" version="4.0.1" />
+        <dependency id="System.Reflection.Primitives" version="4.0.1" />
+        <dependency id="System.Reflection.TypeExtensions" version="4.1.0" />
+        <dependency id="System.Resources.ResourceManager" version="4.0.1" />
+        <dependency id="System.Runtime" version="4.1.0" />
+        <dependency id="System.Runtime.Extensions" version="4.1.0" />
+        <dependency id="System.Runtime.Handles" version="4.0.1" />
+        <dependency id="System.Runtime.InteropServices.RuntimeInformation" version="4.0.0" />
+        <dependency id="System.Runtime.Serialization.Primitives" version="4.1.1" />
+        <dependency id="System.Runtime.Serialization.Xml" version="4.1.1" />
+        <dependency id="System.Security.Claims" version="4.0.1" />
+        <dependency id="System.Security.Cryptography.Algorithms" version="4.2.0" />
+        <dependency id="System.Security.Cryptography.Encoding" version="4.0.0" />
+        <dependency id="System.Security.Cryptography.Primitives" version="4.0.0" />
+        <dependency id="System.Security.Cryptography.X509Certificates" version="4.1.0" />
+        <dependency id="System.Security.Principal" version="4.0.1" />
+        <dependency id="System.Security.Principal.Windows" version="4.0.0" />
+        <dependency id="System.Text.Encoding" version="4.0.11" />
+        <dependency id="System.Text.Encoding.Extensions" version="4.0.11" />
+        <dependency id="System.Threading" version="4.0.11" />
+        <dependency id="System.Threading.Tasks" version="4.0.11" />
+        <dependency id="System.Threading.Timer" version="4.0.1" />
+        <dependency id="System.Xml.ReaderWriter" version="4.0.11" />
+        <dependency id="System.Xml.XmlDocument" version="4.0.1" />
+        <dependency id="System.Xml.XmlSerializer" version="4.0.11" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>

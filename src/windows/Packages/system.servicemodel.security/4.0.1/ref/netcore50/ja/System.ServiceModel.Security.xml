@@ -1,0 +1,343 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>System.ServiceModel.Security</name>
+  </assembly>
+  <members>
+    <member name="T:System.ServiceModel.DnsEndpointIdentity">
+      <summary>サーバーの DNS ID を指定します。</summary>
+    </member>
+    <member name="M:System.ServiceModel.DnsEndpointIdentity.#ctor(System.String)">
+      <summary>このクラスの新しいインスタンスを DNS 名から初期化します。</summary>
+      <param name="dnsName">DNS 名。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="dnsName" /> は null なので、</exception>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="dnsName" /> のクレームの種類が <see cref="P:System.IdentityModel.Claims.ClaimTypes.Dns" /> ではありません。</exception>
+    </member>
+    <member name="T:System.ServiceModel.MessageSecurityVersion">
+      <summary>さまざまな静的プロパティを使用して実装するときに、セキュリティ コンポーネントのバージョン情報を格納する抽象コンテナー クラスです。</summary>
+    </member>
+    <member name="P:System.ServiceModel.MessageSecurityVersion.BasicSecurityProfileVersion">
+      <summary>基本セキュリティ プロファイルのバージョン情報を取得します。</summary>
+      <returns>
+        <see cref="T:System.ServiceModel.Security.BasicSecurityProfileVersion" /> オブジェクト。</returns>
+    </member>
+    <member name="P:System.ServiceModel.MessageSecurityVersion.SecureConversationVersion">
+      <summary>メッセージ セキュリティのバージョンに対応する WS-SecureConversation バージョンを取得します。</summary>
+      <returns>メッセージ セキュリティ バージョンに対応する <see cref="T:System.ServiceModel.Security.SecureConversationVersion" /> オブジェクト。</returns>
+    </member>
+    <member name="P:System.ServiceModel.MessageSecurityVersion.SecurityPolicyVersion">
+      <summary>メッセージ セキュリティのバージョンに対応する WS-SecurityPolicy バージョンを取得します。</summary>
+      <returns>メッセージ セキュリティ バージョンに対応する <see cref="T:System.ServiceModel.Security.SecurityPolicyVersion" /> オブジェクト。</returns>
+    </member>
+    <member name="P:System.ServiceModel.MessageSecurityVersion.SecurityVersion">
+      <summary>メッセージ セキュリティのバージョンに対応する WS-Security バージョンを取得します。</summary>
+      <returns>メッセージ セキュリティ バージョンに対応する <see cref="T:System.ServiceModel.Security.SecurityVersion" /> オブジェクト。</returns>
+    </member>
+    <member name="P:System.ServiceModel.MessageSecurityVersion.TrustVersion">
+      <summary>メッセージ セキュリティのバージョンに対応する WS-Trust バージョンを取得します。</summary>
+      <returns>メッセージ セキュリティ バージョンに対応する <see cref="T:System.ServiceModel.Security.TrustVersion" /> オブジェクト。</returns>
+    </member>
+    <member name="P:System.ServiceModel.MessageSecurityVersion.WSSecurity10WSTrustFebruary2005WSSecureConversationFebruary2005WSSecurityPolicy11BasicSecurityProfile10">
+      <summary>WS-Security 1.0、WS-Trust (2005 年 2 月版)、WS-SecureConversation (2005 年 2 月版)、および WS-SecurityPolicy 1.1 の各セキュリティ仕様に基づく Basic Security Profile 1.0 を必要とするメッセージ セキュリティ バージョンを取得します。</summary>
+      <returns>WS-Security 1.0、WS-Trust (2005 年 2 月版)、WS-SecureConversation (2005 年 2 月版)、および WS-SecurityPolicy 1.1 の各セキュリティ仕様に基づく Basic Security Profile 1.0 を必要とする <see cref="T:System.ServiceModel.MessageSecurityVersion" /> オブジェクト。</returns>
+    </member>
+    <member name="P:System.ServiceModel.MessageSecurityVersion.WSSecurity11WSTrustFebruary2005WSSecureConversationFebruary2005WSSecurityPolicy11">
+      <summary>WS-Security 1.1、WS-Trust (2005 年 2 月版)、WS-SecureConversation (2005 年 2 月版)、および WS-SecurityPolicy 1.1 の各セキュリティ仕様を必要とするメッセージ セキュリティ バージョンを取得します。</summary>
+      <returns>WS-Security 1.1、WS-Trust (2005 年 2 月版)、WS-SecureConversation (2005 年 2 月版)、および WS-SecurityPolicy 1.1 の各セキュリティ仕様を必要とする <see cref="T:System.ServiceModel.MessageSecurityVersion" /> オブジェクト。</returns>
+    </member>
+    <member name="P:System.ServiceModel.MessageSecurityVersion.WSSecurity11WSTrustFebruary2005WSSecureConversationFebruary2005WSSecurityPolicy11BasicSecurityProfile10">
+      <summary>WS-Security 1.1、WS-Trust (2005 年 2 月版)、WS-SecureConversation (2005 年 2 月版)、および WS-SecurityPolicy 1.1 の各セキュリティ仕様に基づく基本セキュリティ プロファイルを必要とするメッセージ セキュリティ バージョンを取得します。</summary>
+      <returns>WS-Security 1.1、WS-Trust (2005 年 2 月版)、WS-SecureConversation (2005 年 2 月版)、および WS-SecurityPolicy 1.1 の各セキュリティ仕様に基づく Basic Security Profile を必要とする <see cref="T:System.ServiceModel.MessageSecurityVersion" /> オブジェクト。</returns>
+    </member>
+    <member name="T:System.ServiceModel.SpnEndpointIdentity">
+      <summary>バインドで Kerberos を使用する場合に、ID 用のサービス プリンシパル名 (SPN) を表します。</summary>
+    </member>
+    <member name="M:System.ServiceModel.SpnEndpointIdentity.#ctor(System.String)">
+      <summary>指定したサービス プリンシパル名 (SPN) を使用して、<see cref="T:System.ServiceModel.SpnEndpointIdentity" /> 新しいインスタンスを初期化します。</summary>
+      <param name="spnName">SPN。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="spnName" /> は null なので、</exception>
+    </member>
+    <member name="P:System.ServiceModel.SpnEndpointIdentity.SpnLookupTime">
+      <summary>サービス プリンシパル名 (SPN) を検索できる最長時間を指定します。</summary>
+      <returns>
+        <see cref="T:System.TimeSpan" />既定値は 1 分です。</returns>
+      <exception cref="T:System.ArgumentOutOfRangeException">設定値が 0 未満です。</exception>
+    </member>
+    <member name="T:System.ServiceModel.UpnEndpointIdentity">
+      <summary>バインドで SSPINegotiate 認証モードを利用するときに使用される ID のユーザー プリンシパル名 (UPN) を表します。</summary>
+    </member>
+    <member name="M:System.ServiceModel.UpnEndpointIdentity.#ctor(System.String)">
+      <summary>
+        <see cref="T:System.ServiceModel.UpnEndpointIdentity" /> クラスの新しいインスタンスを初期化します。</summary>
+      <param name="upnName">UPN 名。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="upnName" /> は null なので、</exception>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="upnName" /> のクレームの種類が <see cref="P:System.IdentityModel.Claims.ClaimTypes.Upn" /> ではありません。</exception>
+    </member>
+    <member name="T:System.ServiceModel.Channels.LocalClientSecuritySettings">
+      <summary>ローカル クライアント セキュリティの設定を指定します。</summary>
+    </member>
+    <member name="M:System.ServiceModel.Channels.LocalClientSecuritySettings.#ctor">
+      <summary>
+        <see cref="T:System.ServiceModel.Channels.LocalClientSecuritySettings" /> クラスの新しいインスタンスを初期化します。</summary>
+    </member>
+    <member name="M:System.ServiceModel.Channels.LocalClientSecuritySettings.Clone">
+      <summary>このクラスの新しいインスタンスを作成します。これは、現在のインスタンスのコピーまたは複製です。</summary>
+      <returns>
+        <see cref="T:System.ServiceModel.Channels.LocalClientSecuritySettings" /> の新しいインスタンス。</returns>
+    </member>
+    <member name="P:System.ServiceModel.Channels.LocalClientSecuritySettings.MaxClockSkew">
+      <summary>通信している双方のシステム クロックに対して許容される時刻の最大のずれを取得または設定します。</summary>
+      <returns>通信している双方のシステム クロックの許容される最大のずれを表す <see cref="T:System.TimeSpan" />。既定値は 5 分です。</returns>
+      <exception cref="T:System.ArgumentOutOfRangeException">プロパティが 0 未満の値に設定されています。</exception>
+    </member>
+    <member name="P:System.ServiceModel.Channels.LocalClientSecuritySettings.ReplayWindow">
+      <summary>メッセージの nonce が有効である最長期間を取得または設定します。</summary>
+      <returns>メッセージの nonce の最長有効期間を表す <see cref="T:System.TimeSpan" />。既定値は 5 分です。</returns>
+      <exception cref="T:System.ArgumentOutOfRangeException">プロパティが 0 未満の値に設定されています。</exception>
+    </member>
+    <member name="P:System.ServiceModel.Channels.LocalClientSecuritySettings.TimestampValidityDuration">
+      <summary>クライアントがメッセージを送信するときに、メッセージが有効である最大期間を取得または設定します。この期間が過ぎた後でサーバーがメッセージを受信した場合、サーバーはメッセージを破棄する必要があります。</summary>
+      <returns>クライアントがメッセージを送信するときに、メッセージが有効である最大期間を表す <see cref="T:System.TimeSpan" />。既定値は 5 分です。</returns>
+      <exception cref="T:System.ArgumentOutOfRangeException">プロパティが 0 未満の値に set されています。</exception>
+    </member>
+    <member name="T:System.ServiceModel.Channels.SecurityBindingElement">
+      <summary>チャネルの SOAP メッセージ セキュリティをサポートするバインド要素を表す抽象クラス (実装される場合)。</summary>
+    </member>
+    <member name="M:System.ServiceModel.Channels.SecurityBindingElement.BuildChannelFactory``1(System.ServiceModel.Channels.BindingContext)">
+      <summary>渡される <see cref="T:System.ServiceModel.Channels.SecurityBindingElement" /> の設定とバインド コンテキストに基づいて、チャネル ファクトリを作成します。作成されるチャネル ファクトリは SOAP メッセージ セキュリティ チャネル ファクトリで、内部的にバインド コンテキスト (トランスポート チャネル ファクトリを格納する) に対応するチャネル ファクトリへの参照を保持します。</summary>
+      <returns>渡された <see cref="T:System.ServiceModel.Channels.SecurityBindingElement" /> 設定とバインド コンテキストに基づくチャネル ファクトリ。</returns>
+      <param name="context">
+        <see cref="T:System.ServiceModel.Channels.BindingContext" />。</param>
+      <typeparam name="TChannel">チャネル ファクトリの種類。</typeparam>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="context" /> は null なので、</exception>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="TChannel" /> 型のチャネルはサポートされません。</exception>
+    </member>
+    <member name="M:System.ServiceModel.Channels.SecurityBindingElement.BuildChannelFactoryCore``1(System.ServiceModel.Channels.BindingContext)">
+      <summary>実装されると、指定した種類のチャネル ファクトリを作成します。</summary>
+      <returns>指定した種類のチャネル ファクトリ。</returns>
+      <param name="context">
+        <see cref="T:System.ServiceModel.Channels.BindingContext" />。</param>
+      <typeparam name="TChannel">チャネル ファクトリの種類。</typeparam>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="context" /> は null なので、</exception>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="TChannel" /> 型のチャネルはサポートされません。</exception>
+    </member>
+    <member name="M:System.ServiceModel.Channels.SecurityBindingElement.CanBuildChannelFactory``1(System.ServiceModel.Channels.BindingContext)">
+      <summary>指定した種類のチャネル ファクトリを作成できるかどうかを判断します。</summary>
+      <returns>指定した型のチャネル ファクトリを作成できる場合は true。それ以外の場合は false。</returns>
+      <param name="context">
+        <see cref="T:System.ServiceModel.Channels.BindingContext" />。</param>
+      <typeparam name="TChannel">チャネル ファクトリの種類。</typeparam>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="context" /> は null なので、</exception>
+    </member>
+    <member name="M:System.ServiceModel.Channels.SecurityBindingElement.CreateSecureConversationBindingElement(System.ServiceModel.Channels.SecurityBindingElement)">
+      <summary>対称セキュリティ バインド要素を作成し、クライアントとサービスの間にセキュリティで保護された通信を確立するように構成します。セキュリティで保護された通信のハンドシェイクの最後に発行されるセキュリティ コンテキスト トークンを使用して、メッセージをセキュリティで保護します。ブートストラップ セキュリティ バインド要素は、セキュリティで保護された通信のハンドシェイク メッセージをセキュリティで保護する方法を指定します。</summary>
+      <returns>
+        <see cref="T:System.ServiceModel.Channels.SecurityBindingElement" /> オブジェクト。</returns>
+      <param name="bootstrapSecurity">セキュリティで保護されたメッセージ交換ハンドシェイク メッセージの保護方法の仕様を含む <see cref="T:System.ServiceModel.Channels.SecurityBindingElement" />。</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="bootstrapSecurity" /> は null なので、</exception>
+    </member>
+    <member name="M:System.ServiceModel.Channels.SecurityBindingElement.CreateUserNameOverTransportBindingElement">
+      <summary>セキュリティ バインド要素を作成し、SOAP メッセージの一部として送信されるユーザー名とパスワードに基づくクライアント認証を行うように構成します。このバインド要素では、トランスポートはサーバー認証だけでなく、メッセージ保護 (たとえば HTTPS) も提供する必要があります。</summary>
+      <returns>
+        <see cref="T:System.ServiceModel.Channels.TransportSecurityBindingElement" /> オブジェクト。</returns>
+    </member>
+    <member name="P:System.ServiceModel.Channels.SecurityBindingElement.EndpointSupportingTokenParameters">
+      <summary>トークン パラメーターをサポートするエンドポイントを取得します。</summary>
+      <returns>トークン パラメーターをサポートするエンドポイントを表す <see cref="T:System.ServiceModel.Security.Tokens.SupportingTokenParameters" /> オブジェクト。</returns>
+    </member>
+    <member name="M:System.ServiceModel.Channels.SecurityBindingElement.GetProperty``1(System.ServiceModel.Channels.BindingContext)">
+      <summary>指定した <see cref="T:System.ServiceModel.Channels.BindingContext" /> を使用して、指定したオブジェクトを取得します。</summary>
+      <returns>
+        <see cref="T:System.ServiceModel.Channels.BindingContext" /> から取得した指定オブジェクト。オブジェクトが見つからない場合は null。</returns>
+      <param name="context">
+        <see cref="T:System.ServiceModel.Channels.BindingContext" />。</param>
+      <typeparam name="T">取得するプロパティ。</typeparam>
+    </member>
+    <member name="P:System.ServiceModel.Channels.SecurityBindingElement.IncludeTimestamp">
+      <summary>各メッセージにタイム スタンプが含まれるかどうかを示す値を取得または設定します。</summary>
+      <returns>各メッセージにタイム スタンプが含まれる場合は true、それ以外の場合は false。既定値は、true です。</returns>
+    </member>
+    <member name="P:System.ServiceModel.Channels.SecurityBindingElement.LocalClientSettings">
+      <summary>クライアントが使用するローカル セキュリティ設定に固有のバインド プロパティを取得します。</summary>
+      <returns>クライアントが使用するローカル セキュリティ設定に固有のバインド プロパティを表す <see cref="T:System.ServiceModel.Channels.LocalClientSecuritySettings" />。</returns>
+    </member>
+    <member name="P:System.ServiceModel.Channels.SecurityBindingElement.MessageSecurityVersion">
+      <summary>メッセージ セキュリティのバージョンを取得または設定します。</summary>
+      <returns>メッセージ セキュリティ バージョンを表す <see cref="T:System.ServiceModel.MessageSecurityVersion" /> オブジェクト。</returns>
+      <exception cref="T:System.ArgumentNullException">null 値を持つ set。</exception>
+    </member>
+    <member name="P:System.ServiceModel.Channels.SecurityBindingElement.SecurityHeaderLayout">
+      <summary>このバインドのセキュリティ ヘッダー内の要素の順序を取得または設定します。</summary>
+      <returns>このバインドのセキュリティ ヘッダー内の要素の順序を表す <see cref="T:System.ServiceModel.Channels.SecurityHeaderLayout" />。既定値は、<see cref="F:System.ServiceModel.Channels.SecurityHeaderLayout.Strict" /> です。</returns>
+      <exception cref="T:System.ArgumentOutOfRangeException">値が有効な <see cref="T:System.ServiceModel.Channels.SecurityHeaderLayout" /> 値ではありません。</exception>
+    </member>
+    <member name="M:System.ServiceModel.Channels.SecurityBindingElement.ToString">
+      <summary>このクラスの説明を返します。</summary>
+      <returns>現在の <see cref="T:System.ServiceModel.Channels.SecurityBindingElement" /> インスタンスの説明。</returns>
+    </member>
+    <member name="T:System.ServiceModel.Channels.SecurityHeaderLayout">
+      <summary>セキュリティ ヘッダーのレイアウトを記述します。</summary>
+    </member>
+    <member name="F:System.ServiceModel.Channels.SecurityHeaderLayout.Lax">
+      <summary>項目は、WSS: SOAP メッセージ セキュリティに準じた任意の順序でセキュリティ ヘッダーに追加されます。</summary>
+    </member>
+    <member name="F:System.ServiceModel.Channels.SecurityHeaderLayout.Strict">
+      <summary>"使用前に宣言する" という一般的な方針に従って、項目がセキュリティ ヘッダーに追加されます。</summary>
+    </member>
+    <member name="T:System.ServiceModel.Channels.TransportSecurityBindingElement">
+      <summary>混合モード セキュリティ (セキュリティで保護されたトランスポートを使用する最適化されたメッセージ セキュリティなど) をサポートするカスタム バインド要素を表します。</summary>
+    </member>
+    <member name="M:System.ServiceModel.Channels.TransportSecurityBindingElement.#ctor">
+      <summary>
+        <see cref="T:System.ServiceModel.Channels.TransportSecurityBindingElement" /> クラスのインスタンスを作成します。</summary>
+    </member>
+    <member name="M:System.ServiceModel.Channels.TransportSecurityBindingElement.Clone">
+      <summary>新しい <see cref="T:System.ServiceModel.Channels.BindingElement" /> オブジェクトを作成し、現在のクラスを使用して初期化します。</summary>
+      <returns>現在のインスタンスと同じプロパティ値が設定された <see cref="T:System.ServiceModel.Channels.BindingElement" /> オブジェクト。</returns>
+    </member>
+    <member name="M:System.ServiceModel.Channels.TransportSecurityBindingElement.GetProperty``1(System.ServiceModel.Channels.BindingContext)">
+      <summary>指定した <see cref="T:System.ServiceModel.Channels.BindingContext" /> からプロパティを取得します。</summary>
+      <returns>指定した <see cref="T:System.ServiceModel.Channels.BindingContext" /> のプロパティ。オブジェクトが見つからない場合は null。</returns>
+      <param name="context">
+        <see cref="T:System.ServiceModel.Channels.BindingContext" />
+      </param>
+      <typeparam name="T">取得するプロパティ。</typeparam>
+    </member>
+    <member name="T:System.ServiceModel.Security.BasicSecurityProfileVersion">
+      <summary>基本セキュリティ プロファイル仕様に対応するメッセージ バージョンを提供します。</summary>
+    </member>
+    <member name="P:System.ServiceModel.Security.BasicSecurityProfileVersion.BasicSecurityProfile10">
+      <summary>基本セキュリティ プロファイル仕様に対応するメッセージ バージョンを提供します。</summary>
+      <returns>バージョンをテキスト形式で返す ToString メソッドを持つクラス。</returns>
+    </member>
+    <member name="T:System.ServiceModel.Security.SecureConversationVersion">
+      <summary>サポートされる WS-SecureConversation のバージョンのセットが含まれます。これは抽象クラスです。</summary>
+    </member>
+    <member name="P:System.ServiceModel.Security.SecureConversationVersion.Default">
+      <summary>既定のバージョンを取得します。</summary>
+      <returns>既定のバージョン。</returns>
+    </member>
+    <member name="P:System.ServiceModel.Security.SecureConversationVersion.Namespace">
+      <summary>この WS-SecureConversation バージョンの名前空間を取得します。</summary>
+      <returns>この WS-SecureConversation バージョンの名前空間。</returns>
+    </member>
+    <member name="P:System.ServiceModel.Security.SecureConversationVersion.Prefix">
+      <summary>WS-SecureConversation バージョンのプレフィックスを取得します。</summary>
+      <returns>WS-SecureConversation バージョンのプレフィックス。</returns>
+    </member>
+    <member name="P:System.ServiceModel.Security.SecureConversationVersion.WSSecureConversationFeb2005">
+      <summary>WS-SecureConversation の 2005 年 2 月バージョンを取得します。</summary>
+      <returns>WS-SecureConversation の 2005 年 2 月バージョン。</returns>
+    </member>
+    <member name="T:System.ServiceModel.Security.SecurityPolicyVersion">
+      <summary>サポートされる WS-SecurityPolicy のバージョンのセットが含まれます。これは抽象クラスです。</summary>
+    </member>
+    <member name="P:System.ServiceModel.Security.SecurityPolicyVersion.Namespace">
+      <summary>この WS-SecurityPolicy バージョンの名前空間を取得します。</summary>
+      <returns>この WS-SecurityPolicy バージョンの名前空間。</returns>
+    </member>
+    <member name="P:System.ServiceModel.Security.SecurityPolicyVersion.Prefix">
+      <summary>プレフィックスを取得します。</summary>
+      <returns>プレフィックス。</returns>
+    </member>
+    <member name="P:System.ServiceModel.Security.SecurityPolicyVersion.WSSecurityPolicy11">
+      <summary>WS-SecurityPolicy のバージョン 1.1 を取得します。</summary>
+      <returns>WS-SecurityPolicy のバージョン 1.1。</returns>
+    </member>
+    <member name="T:System.ServiceModel.Security.SecurityVersion">
+      <summary>サポートされる WS-Security のバージョンのセットが含まれます。これは抽象クラスです。</summary>
+    </member>
+    <member name="P:System.ServiceModel.Security.SecurityVersion.WSSecurity10">
+      <summary>WS-Security のバージョン 1.0 を取得します。</summary>
+      <returns>WS-Security のバージョン 1.0。</returns>
+    </member>
+    <member name="P:System.ServiceModel.Security.SecurityVersion.WSSecurity11">
+      <summary>WS-Security のバージョン 1.1 を取得します。</summary>
+      <returns>WS-Security のバージョン 1.1。</returns>
+    </member>
+    <member name="T:System.ServiceModel.Security.TrustVersion">
+      <summary>サポートされる WS-Trust のバージョンのセットが含まれます。これは抽象クラスです。</summary>
+    </member>
+    <member name="P:System.ServiceModel.Security.TrustVersion.Default">
+      <summary>既定のバージョンを取得します。</summary>
+      <returns>既定のバージョン。</returns>
+    </member>
+    <member name="P:System.ServiceModel.Security.TrustVersion.Namespace">
+      <summary>この Trust バージョンの名前空間を取得します。</summary>
+      <returns>この Trust バージョンの名前空間。</returns>
+    </member>
+    <member name="P:System.ServiceModel.Security.TrustVersion.Prefix">
+      <summary>プレフィックスを取得します。</summary>
+      <returns>プレフィックス。</returns>
+    </member>
+    <member name="P:System.ServiceModel.Security.TrustVersion.WSTrustFeb2005">
+      <summary>WS-Trust の 2005 年 2 月バージョンを取得します。</summary>
+      <returns>WS-Trust の 2005 年 2 月バージョン。</returns>
+    </member>
+    <member name="T:System.ServiceModel.Security.Tokens.SecureConversationSecurityTokenParameters">
+      <summary>セキュリティで保護された通信のセキュリティ トークンのパラメーターを表します。</summary>
+    </member>
+    <member name="M:System.ServiceModel.Security.Tokens.SecureConversationSecurityTokenParameters.#ctor">
+      <summary>
+        <see cref="T:System.ServiceModel.Security.Tokens.SecureConversationSecurityTokenParameters" /> クラスの新しいインスタンスを初期化します。</summary>
+    </member>
+    <member name="M:System.ServiceModel.Security.Tokens.SecureConversationSecurityTokenParameters.#ctor(System.ServiceModel.Channels.SecurityBindingElement)">
+      <summary>指定した <see cref="T:System.ServiceModel.Channels.SecurityBindingElement" /> のプロパティから <see cref="T:System.ServiceModel.Security.Tokens.SecureConversationSecurityTokenParameters" /> クラスの新しいインスタンスを初期化します。</summary>
+      <param name="bootstrapSecurityBindingElement">ブートストラップ セキュリティ バインディング要素。</param>
+    </member>
+    <member name="P:System.ServiceModel.Security.Tokens.SecureConversationSecurityTokenParameters.BootstrapSecurityBindingElement">
+      <summary>ブートストラップ セキュリティ バインド要素を取得または設定します。</summary>
+      <returns>ブートストラップ セキュリティ バインディング要素。</returns>
+    </member>
+    <member name="T:System.ServiceModel.Security.Tokens.SecurityTokenParameters">
+      <summary>実装された場合にセキュリティ トークンのパラメーターを表す abstract クラスを指定します。</summary>
+    </member>
+    <member name="M:System.ServiceModel.Security.Tokens.SecurityTokenParameters.Clone">
+      <summary>クラスのこのインスタンスを複製します。</summary>
+      <returns>
+        <see cref="T:System.ServiceModel.Security.Tokens.SecurityTokenParameters" /> インスタンスのコピー。</returns>
+      <exception cref="T:System.InvalidOperationException">クラスのこのインスタンスを複製できません。</exception>
+    </member>
+    <member name="T:System.ServiceModel.Security.Tokens.SupportingTokenParameters">
+      <summary>セキュリティ バインディング要素が必要とするサポート セキュリティ トークンのパラメーターを表します。</summary>
+    </member>
+    <member name="M:System.ServiceModel.Security.Tokens.SupportingTokenParameters.#ctor">
+      <summary>
+        <see cref="T:System.ServiceModel.Security.Tokens.SupportingTokenParameters" /> クラスの新しいインスタンスを初期化します。</summary>
+    </member>
+    <member name="M:System.ServiceModel.Security.Tokens.SupportingTokenParameters.Clone">
+      <summary>クラスのこのインスタンスを複製します。</summary>
+      <returns>
+        <see cref="T:System.ServiceModel.Security.Tokens.SupportingTokenParameters" />
+      </returns>
+    </member>
+    <member name="P:System.ServiceModel.Security.Tokens.SupportingTokenParameters.Endorsing">
+      <summary>セキュリティ バインディング要素が必要とする保証サポート トークンのセキュリティ トークン パラメーターのコレクションを取得します。</summary>
+      <returns>
+        <see cref="T:System.ServiceModel.Security.Tokens.SecurityTokenParameters" /> のコレクション。</returns>
+    </member>
+    <member name="P:System.ServiceModel.Security.Tokens.SupportingTokenParameters.SignedEncrypted">
+      <summary>セキュリティ バインディング要素が必要とする暗号化された署名付きサポート トークンのセキュリティ トークン パラメーターのコレクションを取得します。</summary>
+      <returns>
+        <see cref="T:System.ServiceModel.Security.Tokens.SecurityTokenParameters" /> のコレクション。</returns>
+    </member>
+    <member name="T:System.ServiceModel.Security.Tokens.UserNameSecurityTokenParameters">
+      <summary>ユーザー名セキュリティ トークンのパラメーターを表します。</summary>
+    </member>
+    <member name="M:System.ServiceModel.Security.Tokens.UserNameSecurityTokenParameters.#ctor">
+      <summary>
+        <see cref="T:System.ServiceModel.Security.Tokens.UserNameSecurityTokenParameters" /> クラスの新しいインスタンスを初期化します。</summary>
+    </member>
+  </members>
+</doc>

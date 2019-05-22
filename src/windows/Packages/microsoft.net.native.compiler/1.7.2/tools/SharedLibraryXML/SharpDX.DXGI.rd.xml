@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Directives xmlns="http://schemas.microsoft.com/netfx/2013/01/metadata">
+  <Library Name="*SharpDX.DXGI*">
+    <Type Name="SharpDX.DXGI.Adapter">
+      <Method Name="IsInterfaceSupported">
+        <TypeParameter Name="type" Browse="Public" />
+      </Method>     
+    </Type>
+    <Type Name="SharpDX.DXGI.Factory1">
+      <Subtypes Browse="Public" />
+    </Type>
+  </Library>
+</Directives>

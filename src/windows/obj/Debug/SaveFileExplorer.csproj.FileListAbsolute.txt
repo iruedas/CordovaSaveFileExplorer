@@ -1,8 +1,8 @@
+C:\code\CRM\Main\Cordova\SaveFileExplorer\src\windows\obj\Debug\SaveFileExplorer.csproj.CoreCompileInputs.cache
 C:\code\CRM\Main\Cordova\SaveFileExplorer\src\windows\bin\Debug\SaveFileExplorer.winmd
 C:\code\CRM\Main\Cordova\SaveFileExplorer\src\windows\bin\Debug\SaveFileExplorer.pdb
 C:\code\CRM\Main\Cordova\SaveFileExplorer\src\windows\bin\Debug\SaveFileExplorer.pri
 C:\code\CRM\Main\Cordova\SaveFileExplorer\src\windows\obj\Debug\SaveFileExplorer.csprojAssemblyReference.cache
-C:\code\CRM\Main\Cordova\SaveFileExplorer\src\windows\obj\Debug\SaveFileExplorer.csproj.CoreCompileInputs.cache
 C:\code\CRM\Main\Cordova\SaveFileExplorer\src\windows\obj\Debug\SaveFileExplorer.winmd
 C:\code\CRM\Main\Cordova\SaveFileExplorer\src\windows\obj\Debug\SaveFileExplorer.pdb
 C:\code\CRM\Main\Cordova\SaveFileExplorer\src\windows\obj\Debug\SaveFileExplorer.winmdobj

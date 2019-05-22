@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Directives xmlns="http://schemas.microsoft.com/netfx/2013/01/metadata">
+    <Library Name="*protobuf-net*">
+        <Type Name="ProtoBuf.Meta.TypeModel">
+            <Method Name="TrySerializeAuxiliaryType">
+                <TypeParameter Name="type" Serialize="Required All" />
+            </Method>
+            <Method Name="TryDeserializeAuxiliaryType">
+                <TypeParameter Name="type" Serialize="Required All" />
+            </Method>
+        </Type>
+        <Type Name="System.Collections.Generic.ICollection{T}" Dynamic="Required All" />
+        <Type Name="System.Collections.Generic.List{T}" Dynamic="Required All" />
+    </Library>
+</Directives>

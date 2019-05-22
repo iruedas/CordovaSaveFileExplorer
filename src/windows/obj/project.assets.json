@@ -27853,7 +27853,7 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Irving.Rueda\\.nuget\\packages\\": {},
+    "C:\\code\\CRM\\Main\\Cordova\\SaveFileExplorer\\src\\windows\\Packages": {},
     "C:\\Microsoft\\Xamarin\\NuGet\\": {},
     "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\": {}
   },
@@ -27863,7 +27863,7 @@
       "projectUniqueName": "C:\\code\\CRM\\Main\\Cordova\\SaveFileExplorer\\src\\windows\\SaveFileExplorer.csproj",
       "projectName": "SaveFileExplorer",
       "projectPath": "C:\\code\\CRM\\Main\\Cordova\\SaveFileExplorer\\src\\windows\\SaveFileExplorer.csproj",
-      "packagesPath": "C:\\Users\\Irving.Rueda\\.nuget\\packages\\",
+      "packagesPath": "C:\\code\\CRM\\Main\\Cordova\\SaveFileExplorer\\src\\windows\\Packages",
       "outputPath": "C:\\code\\CRM\\Main\\Cordova\\SaveFileExplorer\\src\\windows\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
@@ -27872,6 +27872,7 @@
         "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\"
       ],
       "configFilePaths": [
+        "C:\\code\\CRM\\Main\\Cordova\\SaveFileExplorer\\src\\windows\\NuGet.Config",
         "C:\\Users\\Irving.Rueda\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"

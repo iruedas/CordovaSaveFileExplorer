@@ -1,0 +1,195 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>System.ServiceModel.Duplex</name>
+  </assembly>
+  <members>
+    <member name="T:System.ServiceModel.CallbackBehaviorAttribute">
+      <summary>Configure l'implémentation d'un service de rappel dans une application cliente.</summary>
+    </member>
+    <member name="M:System.ServiceModel.CallbackBehaviorAttribute.#ctor">
+      <summary>Initialise une nouvelle instance de la classe <see cref="T:System.ServiceModel.CallbackBehaviorAttribute" />.  </summary>
+    </member>
+    <member name="P:System.ServiceModel.CallbackBehaviorAttribute.AutomaticSessionShutdown">
+      <summary>Spécifie si une session doit être automatiquement fermée lorsqu'un service ferme une session duplex.</summary>
+      <returns>true si les objets de rappel duplex ferment automatiquement une session lorsque le service ferme une session duplex ; sinon, false.La valeur par défaut est true.</returns>
+    </member>
+    <member name="M:System.ServiceModel.CallbackBehaviorAttribute.System#ServiceModel#Description#IEndpointBehavior#AddBindingParameters(System.ServiceModel.Description.ServiceEndpoint,System.ServiceModel.Channels.BindingParameterCollection)">
+      <summary>Configure les éléments de liaison afin de prendre en charge le comportement d'appel.</summary>
+      <param name="serviceEndpoint">Point de terminaison de l'objet de rappel.</param>
+      <param name="parameters">Collection des paramètres de liaison configurés.</param>
+    </member>
+    <member name="M:System.ServiceModel.CallbackBehaviorAttribute.System#ServiceModel#Description#IEndpointBehavior#ApplyClientBehavior(System.ServiceModel.Description.ServiceEndpoint,System.ServiceModel.Dispatcher.ClientRuntime)">
+      <summary>Configure l'exécution du client pour la prise en charge de l'objet de rappel.</summary>
+      <param name="serviceEndpoint">Point de terminaison configuré par l'attribut.</param>
+      <param name="clientRuntime">Objet d'exécution du client configuré par l'attribut.</param>
+    </member>
+    <member name="M:System.ServiceModel.CallbackBehaviorAttribute.System#ServiceModel#Description#IEndpointBehavior#ApplyDispatchBehavior(System.ServiceModel.Description.ServiceEndpoint,System.ServiceModel.Dispatcher.EndpointDispatcher)">
+      <summary>Implémentation de la méthode <see cref="M:System.ServiceModel.Description.IEndpointBehavior.ApplyDispatchBehavior(System.ServiceModel.Description.ServiceEndpoint,System.ServiceModel.Dispatcher.EndpointDispatcher)" />.Cette implémentation n'a aucun effet.</summary>
+      <param name="serviceEndpoint">Point de terminaison à modifier.   </param>
+      <param name="endpointDispatcher">Répartiteur de points de terminaison modifié par la méthode.   </param>
+    </member>
+    <member name="M:System.ServiceModel.CallbackBehaviorAttribute.System#ServiceModel#Description#IEndpointBehavior#Validate(System.ServiceModel.Description.ServiceEndpoint)">
+      <summary>Valide la description du point de terminaison avant de générer l'exécution.</summary>
+      <param name="serviceEndpoint">Point de terminaison à valider.</param>
+    </member>
+    <member name="P:System.ServiceModel.CallbackBehaviorAttribute.UseSynchronizationContext">
+      <summary>Obtient ou définit une valeur qui spécifie si le contexte de synchronisation actuel doit être utilisé pour sélectionner le thread d'exécution.</summary>
+      <returns>true si tous les appels au service doivent être exécutés sur le thread spécifié par le <see cref="T:System.Threading.SynchronizationContext" /> ; sinon, false.La valeur par défaut est true.</returns>
+    </member>
+    <member name="T:System.ServiceModel.DuplexChannelFactory`1">
+      <summary>Fournit les moyens permettant de créer et gérer des canaux duplex de types différents utilisés par les clients pour envoyer des messages à et recevoir des messages de points de terminaison de service.</summary>
+      <typeparam name="TChannel">Type de canal produit par la fabrique de canal.</typeparam>
+    </member>
+    <member name="M:System.ServiceModel.DuplexChannelFactory`1.#ctor(System.ServiceModel.InstanceContext,System.ServiceModel.Channels.Binding)">
+      <summary>Initialise une nouvelle instance de la classe <see cref="T:System.ServiceModel.DuplexChannelFactory`1" /> avec un contexte qui implémente le contrat de rappel et une liaison spécifiée.</summary>
+      <param name="callbackInstance">Le <see cref="T:System.ServiceModel.InstanceContext" /> que le client utilise pour écouter les messages du service connecté.</param>
+      <param name="binding">La <see cref="T:System.ServiceModel.Channels.Binding" /> utilisée pour se connecter au service par les canaux produits par la fabrique.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="callbackInstance" /> ou <paramref name="binding" /> est null.</exception>
+    </member>
+    <member name="M:System.ServiceModel.DuplexChannelFactory`1.#ctor(System.ServiceModel.InstanceContext,System.ServiceModel.Channels.Binding,System.ServiceModel.EndpointAddress)">
+      <summary>Initialise une nouvelle instance de la classe <see cref="T:System.ServiceModel.DuplexChannelFactory`1" /> avec un objet qui implémente le contrat de rappel et une liaison et une adresse de point de terminaison spécifiées.</summary>
+      <param name="callbackInstance">Le <see cref="T:System.ServiceModel.InstanceContext" /> que le client utilise pour écouter les messages du service connecté.</param>
+      <param name="binding">La <see cref="T:System.ServiceModel.Channels.Binding" /> utilisée pour se connecter au service par les canaux produits par la fabrique.</param>
+      <param name="remoteAddress">
+        <see cref="T:System.ServiceModel.EndpointAddress" /> qui fournit l'emplacement du service.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="callbackInstance" /> ou <paramref name="binding" /> ou <paramref name="remoteAddress" /> a la valeur null.</exception>
+    </member>
+    <member name="M:System.ServiceModel.DuplexChannelFactory`1.#ctor(System.ServiceModel.InstanceContext,System.ServiceModel.Channels.Binding,System.String)">
+      <summary>Initialise une nouvelle instance de la classe <see cref="T:System.ServiceModel.DuplexChannelFactory`1" /> avec un contexte d'instance, une liaison et une adresse distante spécifiés.</summary>
+      <param name="callbackInstance">Le <see cref="T:System.ServiceModel.InstanceContext" /> que le client utilise pour écouter les messages du service connecté.</param>
+      <param name="binding">La <see cref="T:System.ServiceModel.Channels.Binding" /> utilisée pour se connecter au service par les canaux produits par la fabrique.</param>
+      <param name="remoteAddress">Adresse distante qui fournit l'emplacement du service.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="callbackInstance" /> ou <paramref name="binding" /> ou <paramref name="remoteAddress" /> a la valeur null.</exception>
+    </member>
+    <member name="M:System.ServiceModel.DuplexChannelFactory`1.#ctor(System.ServiceModel.InstanceContext,System.String)">
+      <summary>Initialise une nouvelle instance de la classe <see cref="T:System.ServiceModel.DuplexChannelFactory`1" /> avec un objet qui implémente le contrat de rappel et une configuration spécifiée.</summary>
+      <param name="callbackInstance">Le <see cref="T:System.ServiceModel.InstanceContext" /> que le client utilise pour écouter les messages du service connecté.</param>
+      <param name="endpointConfigurationName">Nom utilisé pour la configuration de point de terminaison.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="callbackInstance" /> ou <paramref name="endpointConfigurationName" /> est null.</exception>
+    </member>
+    <member name="M:System.ServiceModel.DuplexChannelFactory`1.#ctor(System.ServiceModel.InstanceContext,System.String,System.ServiceModel.EndpointAddress)">
+      <summary>Initialise une nouvelle instance de la classe <see cref="T:System.ServiceModel.DuplexChannelFactory`1" /> avec un objet qui implémente le contrat de rappel et une configuration et une adresse de point de terminaison spécifiées.</summary>
+      <param name="callbackInstance">Le <see cref="T:System.ServiceModel.InstanceContext" /> que le client utilise pour écouter les messages du service connecté.</param>
+      <param name="endpointConfigurationName">Nom utilisé pour la configuration de point de terminaison.</param>
+      <param name="remoteAddress">
+        <see cref="T:System.ServiceModel.EndpointAddress" /> qui fournit l'emplacement du service.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="callbackInstance" /> ou <paramref name="endpointConfigurationName" /> ou <paramref name="remoteAddress" /> a la valeur null.</exception>
+    </member>
+    <member name="M:System.ServiceModel.DuplexChannelFactory`1.CreateChannel(System.ServiceModel.EndpointAddress,System.Uri)">
+      <summary>Crée un canal duplex entre un service et une instance de rappel sur le client.</summary>
+      <returns>Canal duplex de type <paramref name="TChannel" />, paramètre générique pour la fabrique, entre le client et le service.</returns>
+      <param name="address">
+        <see cref="T:System.ServiceModel.EndpointAddress" /> qui fournit l'emplacement du service.</param>
+      <param name="via">
+        <see cref="T:System.Uri" /> qui contient l'adresse de transport à laquelle le message est envoyé.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="address" /> a la valeur null.</exception>
+    </member>
+    <member name="M:System.ServiceModel.DuplexChannelFactory`1.CreateChannel(System.ServiceModel.InstanceContext)">
+      <summary>Crée un canal duplex entre un service et une instance de rappel sur le client.</summary>
+      <returns>Canal duplex de type <paramref name="TChannel" />, paramètre générique pour la fabrique, entre le client et le service.</returns>
+      <param name="callbackInstance">Le <see cref="T:System.ServiceModel.InstanceContext" /> que le client utilise pour écouter les messages du service connecté.</param>
+      <exception cref="T:System.InvalidOperationException">
+        <paramref name="callbackInstance" /> ou <paramref name="callbackInstance" />.UserObject a la valeur null.</exception>
+    </member>
+    <member name="M:System.ServiceModel.DuplexChannelFactory`1.CreateChannel(System.ServiceModel.InstanceContext,System.ServiceModel.EndpointAddress)">
+      <summary>Crée un canal duplex entre un service et une instance de rappel sur le client.</summary>
+      <returns>Canal duplex de type <paramref name="TChannel" />, paramètre générique pour la fabrique, entre le client et le service.</returns>
+      <param name="callbackInstance">Le <see cref="T:System.ServiceModel.InstanceContext" /> que le client utilise pour écouter les messages du service connecté.</param>
+      <param name="address">
+        <see cref="T:System.ServiceModel.EndpointAddress" /> qui fournit l'emplacement du service.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="address" /> a la valeur null.</exception>
+      <exception cref="T:System.InvalidOperationException">
+        <paramref name="callbackInstance" /> ou <paramref name="callbackInstance" />.UserObject a la valeur null.</exception>
+    </member>
+    <member name="M:System.ServiceModel.DuplexChannelFactory`1.CreateChannel(System.ServiceModel.InstanceContext,System.ServiceModel.EndpointAddress,System.Uri)">
+      <summary>Crée un canal duplex entre un service et une instance de rappel sur le client.</summary>
+      <returns>Canal de type <paramref name="TChannel" />, paramètre générique pour la fabrique, entre le client et le service.</returns>
+      <param name="callbackInstance">Le <see cref="T:System.ServiceModel.InstanceContext" /> que le client utilise pour écouter les messages du service connecté.</param>
+      <param name="address">
+        <see cref="T:System.ServiceModel.EndpointAddress" /> qui fournit l'emplacement du service.</param>
+      <param name="via">
+        <see cref="T:System.Uri" /> qui contient l'adresse de transport à laquelle le message est envoyé.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="address" /> a la valeur null.</exception>
+      <exception cref="T:System.InvalidOperationException">
+        <paramref name="callbackInstance" /> ou <paramref name="callbackInstance" />.UserObject a la valeur null.</exception>
+    </member>
+    <member name="T:System.ServiceModel.DuplexClientBase`1">
+      <summary>Utilisé pour créer un canal à un service en duplex et associer ce canal à un objet de rappel.</summary>
+      <typeparam name="TChannel">Type du canal à créer.</typeparam>
+    </member>
+    <member name="M:System.ServiceModel.DuplexClientBase`1.#ctor(System.ServiceModel.InstanceContext)">
+      <summary>Initialise une nouvelle instance de la classe <see cref="T:System.ServiceModel.DuplexClientBase`1" /> à l'aide de l'objet de rappel spécifié.</summary>
+      <param name="callbackInstance">Objet <see cref="T:System.ServiceModel.InstanceContext" /> qui associe l'objet de rappel au canal au service.</param>
+      <exception cref="T:System.ArgumentNullException">L'instance de rappel a la valeur Null.</exception>
+    </member>
+    <member name="M:System.ServiceModel.DuplexClientBase`1.#ctor(System.ServiceModel.InstanceContext,System.ServiceModel.Channels.Binding,System.ServiceModel.EndpointAddress)">
+      <summary>Initialise une nouvelle instance de la classe <see cref="T:System.ServiceModel.DuplexClientBase`1" /> à l'aide de l'objet de rappel, de la liaison et de l'adresse de point de terminaison de service spécifiés.</summary>
+      <param name="callbackInstance">Objet utilisé pour créer le contexte d'instance qui associe l'objet de rappel au canal au service.</param>
+      <param name="binding">Liaison avec laquelle appeler le service.</param>
+      <param name="remoteAddress">Adresse de point de terminaison de service à utiliser.</param>
+    </member>
+    <member name="M:System.ServiceModel.DuplexClientBase`1.#ctor(System.ServiceModel.InstanceContext,System.String)">
+      <summary>Initialise une nouvelle instance de la classe <see cref="T:System.ServiceModel.DuplexClientBase`1" /> avec l'objet de rappel et le nom de configuration spécifiés.</summary>
+      <param name="callbackInstance">Objet utilisé pour créer le contexte d'instance qui associe l'objet de rappel au canal au service.</param>
+      <param name="endpointConfigurationName">Nom des informations sur le point de terminaison client dans le fichier de configuration de l'application.</param>
+      <exception cref="T:System.ArgumentNullException">L'instance de rappel a la valeur Null.</exception>
+      <exception cref="T:System.ArgumentNullException">Le nom de configuration a la valeur Null.</exception>
+    </member>
+    <member name="M:System.ServiceModel.DuplexClientBase`1.#ctor(System.ServiceModel.InstanceContext,System.String,System.ServiceModel.EndpointAddress)">
+      <summary>Initialise une nouvelle instance de la classe <see cref="T:System.ServiceModel.DuplexClientBase`1" /> à l'aide de l'objet de rappel, du nom de configuration et de l'adresse de point de terminaison de service spécifiés.</summary>
+      <param name="callbackInstance">Objet utilisé pour créer le contexte d'instance qui associe l'objet de rappel au canal au service.</param>
+      <param name="endpointConfigurationName">Nom des informations sur le point de terminaison client dans le fichier de configuration de l'application.</param>
+      <param name="remoteAddress">Adresse du point de terminaison de service à utiliser.</param>
+      <exception cref="T:System.ArgumentNullException">L'instance de rappel a la valeur Null.</exception>
+      <exception cref="T:System.ArgumentNullException">Le nom de configuration a la valeur Null.</exception>
+      <exception cref="T:System.ArgumentNullException">L'adresse a la valeur Null.</exception>
+    </member>
+    <member name="M:System.ServiceModel.DuplexClientBase`1.#ctor(System.ServiceModel.InstanceContext,System.String,System.String)">
+      <summary>Initialise une nouvelle instance de la classe <see cref="T:System.ServiceModel.DuplexClientBase`1" /> à l'aide de l'objet de rappel, du nom de configuration et de l'adresse de point de terminaison de service spécifiés.</summary>
+      <param name="callbackInstance">Objet utilisé pour créer le contexte d'instance qui associe l'objet de rappel au canal au service.</param>
+      <param name="endpointConfigurationName">Nom des informations sur le point de terminaison client dans le fichier de configuration de l'application.</param>
+      <param name="remoteAddress">Adresse du point de terminaison de service à utiliser.</param>
+      <exception cref="T:System.ArgumentNullException">L'instance de rappel a la valeur Null.</exception>
+      <exception cref="T:System.ArgumentNullException">Le nom de configuration a la valeur Null.</exception>
+      <exception cref="T:System.ArgumentNullException">L'adresse a la valeur Null.</exception>
+    </member>
+    <member name="T:System.ServiceModel.InstanceContext">
+      <summary>Représente les informations de contexte pour une instance de service.</summary>
+    </member>
+    <member name="M:System.ServiceModel.InstanceContext.#ctor(System.Object)">
+      <summary>Initialise une nouvelle instance de la classe <see cref="T:System.ServiceModel.InstanceContext" /> pour un objet spécifié qui implémente l'instance de service.</summary>
+      <param name="implementation">Objet qui implémente l'instance de service.</param>
+    </member>
+    <member name="M:System.ServiceModel.InstanceContext.GetServiceInstance(System.ServiceModel.Channels.Message)">
+      <summary>Retourne l'instance du service pour le contexte d'instance en réponse à un message entrant.</summary>
+      <returns>Objet qui représente l'instance de service.</returns>
+      <param name="message">Message entrant qui a déclenché la création d'un objet de service.</param>
+      <exception cref="T:System.InvalidOperationException">L'instance de service est dans un état créé ou d'ouverture ou n'est pas initialisée.</exception>
+      <exception cref="T:System.ServiceModel.CommunicationObjectAbortedException">L'instance de service est abandonnée.</exception>
+      <exception cref="T:System.ObjectDisposedException">L'instance de service a déjà été fermée et ne peut pas être modifiée dans ces états.</exception>
+      <exception cref="T:System.ServiceModel.CommunicationObjectFaultedException">L'instance de service a provoqué une erreur et ne peut pas être modifiée dans ces états.</exception>
+    </member>
+    <member name="P:System.ServiceModel.InstanceContext.SynchronizationContext">
+      <summary>Obtient ou définit le contexte utilisé pour la synchronisation de threads avec le contexte d'instance en cours.</summary>
+      <returns>
+        <see cref="T:System.Threading.SynchronizationContext" /> utilisé pour la synchronisation de threads avec le contexte d'instance en cours.</returns>
+      <exception cref="T:System.InvalidOperationException">L'objet de communication est ouvert ou en cours de fermeture et ne peut pas être modifié dans ces états.</exception>
+      <exception cref="T:System.ServiceModel.CommunicationObjectAbortedException">L'objet de communication a été abandonné et ne peut pas être modifié dans ces états.</exception>
+      <exception cref="T:System.ObjectDisposedException">L'objet de communication a déjà été fermé et ne peut pas être modifié dans ces états.</exception>
+      <exception cref="T:System.ServiceModel.CommunicationObjectFaultedException">L'objet de communication a provoqué une erreur et ne peut pas être modifié dans ces états.</exception>
+    </member>
+    <member name="P:System.ServiceModel.InstanceContext.System#ServiceModel#IExtensibleObject{T}#Extensions">
+      <summary>Collection d'objets d'extension.</summary>
+      <returns>retourne <see cref="T:System.ServiceModel.IExtensionCollection`1" /> ;</returns>
+    </member>
+  </members>
+</doc>

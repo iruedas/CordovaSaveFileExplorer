@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata minClientVersion="2.12">
+    <id>System.ServiceModel.Primitives</id>
+    <version>4.1.0</version>
+    <title>System.ServiceModel.Primitives</title>
+    <authors>Microsoft</authors>
+    <owners>microsoft,dotnetframework</owners>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <licenseUrl>http://go.microsoft.com/fwlink/?LinkId=329770</licenseUrl>
+    <iconUrl>http://go.microsoft.com/fwlink/?LinkID=288859</iconUrl>
+    <description>Provides common Windows Communication Foundation (WCF) types for consuming and communicating with services.
+
+Commonly Used Types:
+System.ServiceModel.ClientBase&lt;TChannel&gt;
+System.ServiceModel.IClientChannel
+System.ServiceModel.ICommunicationObject
+System.ServiceModel.Channels.IChannel
+System.ServiceModel.IContextChannel
+System.ServiceModel.IExtensibleObject&lt;T&gt;
+System.ServiceModel.DataContractFormatAttribute
+System.ServiceModel.Description.IOperationBehavior
+System.ServiceModel.Channels.Message
+System.ServiceModel.FaultException&lt;TDetail&gt;
+ 
+TFS ID: 1612576, GitHub SHA: https://github.com/dotnet/corefx/tree/f47c814b003d17da52940739e227f04e52b10279 
+When using NuGet 3.x this package requires at least version 3.4.</description>
+    <copyright>© Microsoft Corporation.  All rights reserved.</copyright>
+    <serviceable>true</serviceable>
+    <dependencies>
+      <group targetFramework="MonoAndroid1.0" />
+      <group targetFramework="MonoTouch1.0" />
+      <group targetFramework=".NETFramework4.5" />
+      <group targetFramework=".NETFramework4.6">
+        <dependency id="System.Security.Cryptography.X509Certificates" version="4.1.0" />
+      </group>
+      <group targetFramework=".NETCore5.0">
+        <dependency id="System.Collections" version="4.0.11" />
+        <dependency id="System.ComponentModel.EventBasedAsync" version="4.0.11" />
+        <dependency id="System.Globalization" version="4.0.11" />
+        <dependency id="System.IO" version="4.1.0" />
+        <dependency id="System.Net.Primitives" version="4.0.11" />
+        <dependency id="System.ObjectModel" version="4.0.12" />
+        <dependency id="System.Private.ServiceModel" version="4.1.0" exclude="Compile" />
+        <dependency id="System.Reflection" version="4.1.0" />
+        <dependency id="System.Runtime" version="4.1.0" />
+        <dependency id="System.Runtime.Serialization.Primitives" version="4.1.1" />
+        <dependency id="System.Runtime.Serialization.Xml" version="4.1.1" />
+        <dependency id="System.Security.Cryptography.X509Certificates" version="4.1.0" />
+        <dependency id="System.Security.Principal" version="4.0.1" />
+        <dependency id="System.Text.Encoding" version="4.0.11" />
+        <dependency id="System.Threading" version="4.0.11" />
+        <dependency id="System.Xml.ReaderWriter" version="4.0.11" />
+      </group>
+      <group targetFramework=".NETStandard1.0">
+        <dependency id="System.ComponentModel.EventBasedAsync" version="4.0.11" />
+        <dependency id="System.Globalization" version="4.0.11" />
+        <dependency id="System.IO" version="4.1.0" />
+        <dependency id="System.ObjectModel" version="4.0.12" />
+        <dependency id="System.Reflection" version="4.1.0" />
+        <dependency id="System.Runtime" version="4.1.0" />
+        <dependency id="System.Runtime.Serialization.Primitives" version="4.1.1" />
+        <dependency id="System.Runtime.Serialization.Xml" version="4.1.1" />
+        <dependency id="System.Text.Encoding" version="4.0.11" />
+        <dependency id="System.Threading" version="4.0.11" />
+        <dependency id="System.Xml.ReaderWriter" version="4.0.11" />
+      </group>
+      <group targetFramework=".NETStandard1.1">
+        <dependency id="System.ComponentModel.EventBasedAsync" version="4.0.11" />
+        <dependency id="System.Globalization" version="4.0.11" />
+        <dependency id="System.IO" version="4.1.0" />
+        <dependency id="System.Net.Primitives" version="4.0.11" />
+        <dependency id="System.ObjectModel" version="4.0.12" />
+        <dependency id="System.Reflection" version="4.1.0" />
+        <dependency id="System.Runtime" version="4.1.0" />
+        <dependency id="System.Runtime.Serialization.Primitives" version="4.1.1" />
+        <dependency id="System.Runtime.Serialization.Xml" version="4.1.1" />
+        <dependency id="System.Security.Principal" version="4.0.1" />
+        <dependency id="System.Text.Encoding" version="4.0.11" />
+        <dependency id="System.Threading" version="4.0.11" />
+        <dependency id="System.Xml.ReaderWriter" version="4.0.11" />
+      </group>
+      <group targetFramework=".NETStandard1.3">
+        <dependency id="System.Collections" version="4.0.11" />
+        <dependency id="System.ComponentModel.EventBasedAsync" version="4.0.11" />
+        <dependency id="System.Globalization" version="4.0.11" />
+        <dependency id="System.IO" version="4.1.0" />
+        <dependency id="System.Net.Primitives" version="4.0.11" />
+        <dependency id="System.ObjectModel" version="4.0.12" />
+        <dependency id="System.Private.ServiceModel" version="4.1.0" exclude="Compile" />
+        <dependency id="System.Reflection" version="4.1.0" />
+        <dependency id="System.Runtime" version="4.1.0" />
+        <dependency id="System.Runtime.Serialization.Primitives" version="4.1.1" />
+        <dependency id="System.Runtime.Serialization.Xml" version="4.1.1" />
+        <dependency id="System.Security.Cryptography.X509Certificates" version="4.1.0" />
+        <dependency id="System.Security.Principal" version="4.0.1" />
+        <dependency id="System.Text.Encoding" version="4.0.11" />
+        <dependency id="System.Threading" version="4.0.11" />
+        <dependency id="System.Xml.ReaderWriter" version="4.0.11" />
+      </group>
+      <group targetFramework=".NETPortable0.0-Profile78" />
+      <group targetFramework="Windows8.0" />
+      <group targetFramework="WindowsPhone8.0" />
+      <group targetFramework="Xamarin.iOS1.0" />
+      <group targetFramework="Xamarin.Mac2.0" />
+      <group targetFramework="Xamarin.TVOS1.0" />
+      <group targetFramework="Xamarin.WatchOS1.0" />
+    </dependencies>
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="mscorlib" targetFramework=".NETFramework4.6" />
+      <frameworkAssembly assemblyName="System.IdentityModel" targetFramework=".NETFramework4.6" />
+      <frameworkAssembly assemblyName="System.ServiceModel" targetFramework=".NETFramework4.5" />
+      <frameworkAssembly assemblyName="System.ServiceModel" targetFramework=".NETFramework4.6" />
+    </frameworkAssemblies>
+  </metadata>
+</package>

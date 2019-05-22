@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Directives xmlns="http://schemas.microsoft.com/netfx/2013/01/metadata">
+  <Library Name="*HugeFlow.Common*">
+    <Type Name="HugeFlow.Common.Settings.AppSettingsBase">
+      <Method Name="SetStateEx">
+        <Parameter Name="state" DataContractSerializer="Required All"/>
+      </Method>
+    </Type>
+  </Library>
+</Directives>
